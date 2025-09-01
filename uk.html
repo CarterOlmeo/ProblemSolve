@@ -89,16 +89,19 @@ async function loadSMC2024(){
     const arr = await r.json();
     if (!Array.isArray(arr)) throw new Error("JSON not array");
     const probs = arr.map(b => ({
-      id: `SMC-2024-Q${b.num}`,
-      source: "UKMT",
-      contest: "SMC",
-      year: 2024,
-      num: b.num,
-      kind: "mc",
-      rights: "© UKMT, used with permission.",
-      difficulty: diffBucket(b.num),
-      statement: b.statement,
-      answer: b.answer || null
+  id: `SMC-2024-Q${b.num}`,
+  source: "UKMT",
+  contest: "SMC",
+  year: 2024,
+  num: b.num,
+  kind: "mc",
+  rights: "© UKMT, used with permission.",
+  difficulty: diffBucket(b.num),
+  statement: b.statement,
+  options: b.options || [],   // 🔥 add this
+  answer: b.answer || null
+}));
+
     }));
     window._smc2024 = probs;
     statusEl.textContent = `Loaded SMC 2024 ✓ (JSON, ${probs.length} problems)`;
