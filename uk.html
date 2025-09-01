@@ -130,26 +130,34 @@ const LOCAL_CANDIDATES = [
 ];
 const UKMT_SMC_2024 = "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf";
 
+const UKMT_SMC_2024 = "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf";
+const LOCAL_ABS = "/ProblemSolve/assets/SMC-2024-Paper.pdf";
+const LOCAL_REL = "assets/SMC-2024-Paper.pdf";
+
 async function loadSMC2024(){
   statusEl.textContent = "Loading SMC 2024…";
-  const tries = [UKMT_SMC_2024, ...LOCAL_CANDIDATES];
+  const tries = [LOCAL_ABS, LOCAL_REL, UKMT_SMC_2024]; // try your local copy first
   for (const u of tries){
     try{
       const probs = await extractSMC2024(u);
       if (probs && probs.length){
         window._smc2024 = probs;
-        statusEl.textContent = `Loaded SMC 2024 ✓ (${u.includes('http')?'UKMT':'local'})`;
+        statusEl.textContent = `Loaded SMC 2024 ✓ (${u.includes('http') ? 'UKMT' : u})`;
         return probs;
       }
-    }catch(e){ console.warn('load failed for', u, e); }
+    }catch(e){
+      console.warn('load failed for', u, e);
+      statusEl.textContent = `Tried ${u.includes('http')?'UKMT':'local'}…`;
+    }
   }
-  statusEl.textContent = "SMC 2024 load failed — check /ProblemSolve/assets/SMC-2024-Paper.pdf exists (case-sensitive).";
+  statusEl.textContent = "SMC 2024 load failed — check the PDF path/casing.";
   return [
     {id:"SMC-2024-Q1",source:"UKMT",contest:"SMC",year:2024,num:1,kind:"mc",
      rights:"© UKMT, used with permission.",difficulty:"E",
      statement:"(Seed) If $a+b=10$ and $ab=21$, find $a^2+b^2$. (A) 42 (B) 58 (C) 62 (D) 70 (E) 100"}
   ];
 }
+
 
 function renderList(problems){
   const list = $('#list');
