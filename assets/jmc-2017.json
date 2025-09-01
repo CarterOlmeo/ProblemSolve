@@ -1,0 +1,206 @@
+[
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 1,
+    "statement": "Which of the following calculations gives the largest answer?",
+    "options": ["2 − 1", "2 ÷ 1", "2 × 1", "1 × 2", "2 + 1"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 2,
+    "statement": "Nadiya is baking a cake. The recipe says that her cake should be baked in the oven for 1 hour and 35 minutes. She puts the cake in the oven at 11:40 am. At what time should she take the cake out of the oven?",
+    "options": ["12:15 pm", "12:40 pm", "1:05 pm", "1:15 pm", "2:15 pm"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 3,
+    "statement": "In the diagram (see paper) an angle of 303° and an angle labelled x° are shown. What is the value of x?",
+    "options": ["43", "47", "53", "57", "67"],
+    "answer": "",
+    "diagram": "assets/images/jmc-2017-q03.png"
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 4,
+    "statement": "A download is 95% complete. What fraction is yet to be downloaded?",
+    "options": ["1/2", "1/5", "1/9", "1/10", "1/20"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 5,
+    "statement": "What is the value of 201 × 7 − 7 × 102?",
+    "options": ["142800", "793", "693", "607", "0"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 6,
+    "statement": "In a magic square using the integers 2 to 10 the numbers in each row/column/diagonal have the same total. Which of the following are the missing cells? (options shown in the paper)",
+    "options": ["9 3 6", "9 3 6", "9 3 6", "9 3 6", "9 3 6"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 7,
+    "statement": "If you work out the values of the expressions below and then place them in increasing numerical order, which comes in the middle? (expressions shown in the paper)",
+    "options": ["A", "B", "C", "D", "E"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 8,
+    "statement": "The diagram shows rectangle PQRS with T a point on PR such that QT is perpendicular to RT. The length of RT is 4 cm and QT is 2 cm. What is the area of rectangle PQRS? (see diagram)",
+    "options": ["6 cm^2", "8 cm^2", "10 cm^2", "12 cm^2", "16 cm^2"],
+    "answer": "",
+    "diagram": "assets/images/jmc-2017-q08.png"
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 9,
+    "statement": "Which of the following is equal to the number of seconds in one thousandth of one minute?",
+    "options": ["0.24", "0.6", "0.024", "0.06", "0.006"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 10,
+    "statement": "Which of the following integers is not a multiple of 45?",
+    "options": ["765", "675", "585", "495", "305"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 11,
+    "statement": "Seven squares are drawn on the sides of a heptagon so that they are outside the heptagon, as shown in the diagram. What is the sum of the seven marked angles?",
+    "options": ["315°", "360°", "420°", "450°", "630°"],
+    "answer": "",
+    "diagram": "assets/images/jmc-2017-q11.png"
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 12,
+    "statement": "Last year, at the school where Gill teaches Mathematics, 315 out of the 600 pupils were girls. This year the number of pupils is 640 and the proportion of girls is the same as last year. How many girls are there this year?",
+    "options": ["339", "338", "337", "336", "335"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 13,
+    "statement": "Consider the following three statements: (i) Doubling a positive number always makes it larger. (ii) Squaring a positive number always makes it larger. (iii) Taking the positive square root of a positive number always makes it smaller. Which statements are true?",
+    "options": ["All three", "None", "Only (i)", "(i) and (ii)", "(ii) and (iii)"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 14,
+    "statement": "Mathias is given a grid of twelve small squares. He is asked to shade exactly four of the small squares so that the grid has two lines of reflection symmetry. How many different grids could he produce?",
+    "options": ["2", "3", "4", "5", "6"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 15,
+    "statement": "What is the remainder when the square of 49 is divided by the square root of 49?",
+    "options": ["0", "2", "3", "4", "7"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 16,
+    "statement": "In New Threeland there are three types of coins: 2p, 5p and a third coin. The smallest number of coins needed to make 13p is three. The smallest number for 19p is three. What is the value of the third coin?",
+    "options": ["4p", "6p", "7p", "9p", "12p"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 17,
+    "statement": "I add up all even numbers between 1 and 101. Then from my total I subtract all odd numbers between 0 and 100. What is the result?",
+    "options": ["0", "50", "100", "255", "2525"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 18,
+    "statement": "What is the sum of the digits in the completed crossnumber? (clues: 1. A cube; 2. A square; 3. A power of 11 — see paper)",
+    "options": ["25", "29", "32", "34", "35"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 19,
+    "statement": "The diagram shows a regular hexagon PQRSTU, a square PUWX and an equilateral triangle UVW. What is the size of angle TVU?",
+    "options": ["45°", "42°", "39°", "36°", "33°"],
+    "answer": "",
+    "diagram": "assets/images/jmc-2017-q19.png"
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 20,
+    "statement": "The range of a list of integers is 20 and the median is 17. What is the smallest possible number of integers in the list?",
+    "options": ["1", "2", "3", "4", "5"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 21,
+    "statement": "The small trapezium has three equal sides and angles 60° and 120°. Nine copies make a larger trapezium with perimeter 18 cm. What is the perimeter of the smaller trapezium?",
+    "options": ["2 cm", "4 cm", "6 cm", "8 cm", "9 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 22,
+    "statement": "In the window there are some unicycles, some bicycles and some tricycles. There are seven saddles in total, thirteen wheels in total and more bicycles than tricycles. How many unicycles are in the window?",
+    "options": ["1", "2", "3", "4", "5"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 23,
+    "statement": "The positive integers from 1 to 150 are placed in a 10 by 15 grid. Multiples of 3 are red, of 5 blue, of 7 green. How many cells have more than one mark?",
+    "options": ["10", "12", "15", "18", "19"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 24,
+    "statement": "A large solid cube is cut into two pieces by a single plane cut. How many of the following four shapes could be the shape of the cross-section formed by the cut?",
+    "options": ["0", "1", "2", "3", "4"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2017,
+    "num": 25,
+    "statement": "The distance between Exeter and London is 175 miles. Sam left Exeter at 10:00 on Tuesday for London. Morgan left London for Exeter at 13:00 the same day. Up to the time when they met, Sam averaged 25 mph and Morgan 35 mph. At what time did they meet?",
+    "options": ["17:00", "15:55", "15:30", "15:00", "14:40"],
+    "answer": ""
+  }
+]
