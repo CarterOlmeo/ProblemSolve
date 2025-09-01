@@ -1,0 +1,213 @@
+[
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 1,
+    "statement": "What is the value of $(222 + 22) \\div 2$?",
+    "options": ["111","112","122","133","233"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 2,
+    "statement": "A train carriage has 80 seats. On my journey I noticed that all the seats in my carriage were taken and 7 people were standing. At Banbury, 9 people left the carriage, 28 people entered it and all seats were taken. How many people now had no seat?",
+    "options": ["0","7","16","26","35"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 3,
+    "statement": "The diagram shows an equilateral triangle, a square, and one diagonal of the square. What is the value of the marked angle $x^\\circ$?",
+    "diagram": "assets/images/jmc-2018-q03.png",
+    "options": ["105","110","115","120","135"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 4,
+    "statement": "The perimeter of the regular decagon $P$ is 8 times the perimeter of the regular octagon $Q$. Each edge of the regular octagon $Q$ is 10 cm long. How long is each edge of the regular decagon $P$?",
+    "options": ["8 cm","10 cm","40 cm","60 cm","64 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 5,
+    "statement": "My train left Southampton at 06:15 and arrived in Birmingham at 08:48 later that morning. How many minutes did the journey take?",
+    "options": ["153","193","233","1463","1501"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 6,
+    "statement": "The diagram shows a partially completed magic square in which all rows, all columns and both main diagonals have the same total. What is the value of $x+y$?",
+    "diagram": "assets/images/jmc-2018-q06.png",
+    "options": ["10","11","12","13","14"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 7,
+    "statement": "How many integers are greater than $20+18$ and also less than $20\\times18$?",
+    "options": ["320","321","322","323","324"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 8,
+    "statement": "Gill scored a goal half way through the second quarter of a 'teachers versus pupils' netball match. At that point, what fraction of the whole match remained to be played?",
+    "options": ["1/4","3/8","1/2","5/8","3/4"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 9,
+    "statement": "The approximate cost of restoring the Flying Scotsman was £4 million. This was about 500 times the cost of building the steam engine in 1923. Roughly what did the engine cost to build?",
+    "options": ["£800","£2000","£8000","£20 000","£80 000"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 10,
+    "statement": "Adding four of the five fractions $\\tfrac{1}{2},\\;\\tfrac{1}{3},\\;\\tfrac{1}{6},\\;\\tfrac{1}{9},\\;\\tfrac{1}{18}$ gives a total of 1. Which of the fractions is not used?",
+    "options": ["1/2","1/3","1/6","1/9","1/18"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 11,
+    "statement": "How many digits are there in the correct answer to the calculation $123\\,123\\,123\\,123 \\div 123$?",
+    "options": ["4","6","8","10","12"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 12,
+    "statement": "The diagram shows a quadrilateral $PQRS$ in which $PQ$ and $PR$ have the same length. Also $PR$ bisects $QS$, the ratio of $QR$ to $RS$ is $2:3$ and $\\angle PSR = 110^\\circ$. How large is angle $PQR$?",
+    "diagram": "assets/images/jmc-2018-q12.png",
+    "options": ["124","120","110","90","28"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 13,
+    "statement": "The diagram shows a shape made from four $3\\,\\text{cm}\\times3\\,\\text{cm}\\times3\\,\\text{cm}$ wooden cubes joined by their edges. What, in cm\\u00b2, is the surface area of the shape?",
+    "diagram": "assets/images/jmc-2018-q13.png",
+    "options": ["162","180","198","216","234"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 14,
+    "statement": "Billy has three times as many llamas as lambs. Milly has twice as many lambs as llamas. They have 17 animals in total. How many of the animals are llamas?",
+    "options": ["5","6","7","8","9"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 15,
+    "statement": "Beatrix places copies of the L-shape shown on a 4 × 4 board so that each L-shape covers exactly three cells of the board. She may turn or flip the L-shapes. What is the largest number of L-shapes she can place on the board without overlaps?",
+    "diagram": "assets/images/jmc-2018-q15.png",
+    "options": ["2","3","4","5","6"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 16,
+    "statement": "How many pairs of digits $(p,q)$ are there so that the five-digit integer '869pq' is a multiple of 15?",
+    "options": ["2","3","4","5","6"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 17,
+    "statement": "The areas of the two rectangles in the diagram are 25 cm\\u00b2 and 13 cm\\u00b2 as indicated. What is the value of $x$ (in cm)?",
+    "diagram": "assets/images/jmc-2018-q17.png",
+    "options": ["3","4","5","6","7"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 18,
+    "statement": "Between them, the two five-digit integers $M$ and $N$ contain all ten digits from 0 to 9. What is the least possible difference between $M$ and $N$?",
+    "options": ["123","247","427","472","742"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 19,
+    "statement": "Which one of these diagrams could be folded to make a cube?",
+    "diagram": "assets/images/jmc-2018-q19.png",
+    "options": ["A","B","C","D","E"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 20,
+    "statement": "A drawer contains ten identical yellow socks, eight identical blue socks and four identical pink socks. Amrita picks socks from the drawer without looking. What is the smallest number of socks she must pick to be sure that she has at least two pairs of matching socks?",
+    "options": ["5","6","8","11","13"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 21,
+    "statement": "There are \"———\" vowels in this short sentence. Which of the following options should replace \"———\" to make the sentence true?",
+    "options": ["twelve","thirteen","fourteen","fifteen","sixteen"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 22,
+    "statement": "In triangles $PQR$ and $STU$ we have $\\angle RPQ = 2\\times\\angle UST$, $\\angle PRQ = 2\\times\\angle SUT$ and $\\angle RQP = \\tfrac{1}{5}\\times\\angle UTS$. How large is $\\angle UTS$?",
+    "diagram": "assets/images/jmc-2018-q22.png",
+    "options": ["90","100","120","150","more information needed"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 23,
+    "statement": "Ali wants to fill the empty squares so that the number in each square after the fourth from the left is the sum of the numbers in the four squares to its left. What number should Ali write in the final square?",
+    "diagram": "assets/images/jmc-2018-q23.png",
+    "options": ["16","8","4","2","1"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 24,
+    "statement": "The shapes $P$ and $Q$ are formed from two and three identical rectangles respectively. Their perimeters are 58 cm and 85 cm respectively. What is the perimeter of one of the rectangles?",
+    "diagram": "assets/images/jmc-2018-q24.png",
+    "options": ["30","31","32","33","34"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2018,
+    "num": 25,
+    "statement": "In the diagram $PQ$ and $QR$ are sides of a regular $n$-sided polygon, $\\angle SPQ = \\angle SRQ = 80^\\circ$, $\\angle PTR = 70^\\circ$, and $PT = ST = RT$. What is the value of $n$?",
+    "diagram": "assets/images/jmc-2018-q25.png",
+    "options": ["15","18","20","24","30"],
+    "answer": ""
+  }
+]
