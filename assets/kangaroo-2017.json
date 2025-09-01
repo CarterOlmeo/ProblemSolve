@@ -1,0 +1,212 @@
+[
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 1,
+    "statement": "Kieran the Kangaroo takes 6 seconds to make 4 jumps. How long does it take him to make 30 jumps?\\n(A) 30 seconds\\n(B) 36 seconds\\n(C) 42 seconds\\n(D) 45 seconds\\n(E) 48 seconds",
+    "options": ["30 seconds","36 seconds","42 seconds","45 seconds","48 seconds"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 2,
+    "statement": "Sophie wants to complete the grid shown so that each row and each column of the grid contains the digits 1, 2 and 3 exactly once. What is the sum of the digits she will write in the shaded cells?\\n(See diagram)",
+    "diagram": "assets/images/jk-2017-q02.png",
+    "options": ["2","3","4","5","6"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 3,
+    "statement": "Ben has exactly the right number of cubes, each of side 5 cm, to make a solid cube of side 1 m. He places the smaller cubes side by side to form a single row. How long is this row?\\n(A) 5 km\\n(B) 400 m\\n(C) 300 m\\n(D) 20 m\\n(E) 1 m",
+    "options": ["5 km","400 m","300 m","20 m","1 m"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 4,
+    "statement": "Beattie walks from P to Q along the paths shown, always moving in the direction from P to Q. She will add the numbers on the paths she walks along. How many different totals could she obtain?\\n(See diagram)",
+    "diagram": "assets/images/jk-2017-q04.png",
+    "options": ["3","4","5","6","8"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 5,
+    "statement": "Anna is 13 years old. Her mother Annie is three times as old as Anna. How old will Annie be when Anna is three times as old as she is now?\\n(A) 13\\n(B) 26\\n(C) 39\\n(D) 52\\n(E) 65",
+    "options": ["13","26","39","52","65"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 6,
+    "statement": "Hasan writes down a two-digit number. He then writes the same two-digit number next to his original number to form a four-digit number. What is the ratio of his four-digit number to his two-digit number?\\n(A) 2:1\\n(B) 100:1\\n(C) 101:1\\n(D) 1001:1\\n(E) It depends on his number",
+    "options": ["2:1","100:1","101:1","1001:1","It depends on his number"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 7,
+    "statement": "A square piece of card has perimeter 20 cm. Charlie cuts the card into two rectangles. The perimeter of one of the rectangles is 16 cm. What is the perimeter of the other rectangle?\\n(A) 4 cm\\n(B) 8 cm\\n(C) 10 cm\\n(D) 12 cm\\n(E) 14 cm",
+    "options": ["4 cm","8 cm","10 cm","12 cm","14 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 8,
+    "statement": "Niko counted a total of 60 birds perching in three trees. Five minutes later, 6 birds had flown away from the first tree, 8 birds had flown away from the second tree and 4 birds had flown away from the third tree. He noticed that there was now the same number of birds in each tree. How many birds were originally perched in the second tree?\\n(A) 14\\n(B) 18\\n(C) 20\\n(D) 21\\n(E) 22",
+    "options": ["14","18","20","21","22"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 9,
+    "statement": "Alex colours all the small squares that lie on the two longest diagonals of a square grid. She colours 201 small squares. What is the size of the square grid?\\n(A) 1009×1009? (See paper for choices) ",
+    "options": ["1009","1008","2017","2016","2015"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 10,
+    "statement": "In the sequence of letters KANGAROOKANGAROO... the word KANGAROO is repeated indefinitely. What is the 2017th letter in this sequence?\\n(A) A\\n(B) K\\n(C) G\\n(D) R\\n(E) O",
+    "options": ["A","K","G","R","O"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 11,
+    "statement": "A cube has diagonals drawn on three adjacent faces as shown in the diagram. Which of the following nets could Usman use to make the cube shown?\\n(See diagram)",
+    "diagram": "assets/images/jk-2017-q11.png",
+    "options": ["A","B","C","D","none of those shown"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 12,
+    "statement": "Maddie has a paper ribbon of length 36 cm. She divides it into four rectangles of different lengths. She draws two lines joining the centres of two adjacent rectangles as shown. What is the sum of the lengths of the lines that she draws?\\n(See diagram)",
+    "diagram": "assets/images/jk-2017-q12.png",
+    "options": ["18 cm","17 cm","20 cm","19 cm","Depends on rectangle sizes"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 13,
+    "statement": "In trapezium P Q R S, $\\angle RPS = 2\\times\\angle SPQ$ and $\\angle SPQ = 2\\times\\angle QPR$. Also $\\angle QRS = 20^\\circ$. What is the value of $\\angle QPR$?\\n(A) 2\\n(B) 3\\n(C) 4\\n(D) 5\\n(E) 6 (see paper for degrees formatting)",
+    "options": ["2","3","4","5","6"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 14,
+    "statement": "Taran thought of a whole number and then multiplied it by either 5 or 6. Krishna added 5 or 6 to Taran's answer. Finally Shan subtracted either 5 or 6 from Krishna's answer. The final result was 73. What number did Taran choose?\\n(A) 10\\n(B) 11\\n(C) 12\\n(D) 13\\n(E) 14",
+    "options": ["10","11","12","13","14"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 15,
+    "statement": "In the diagram, PRST is a rectangle with PR = 20 cm and RV = 12 cm. If Perky marks points U and T on VS and Q on PR as shown, what is the shaded area?\\n(See diagram)",
+    "diagram": "assets/images/jk-2017-q15.png",
+    "options": ["A: More information needed","B: 60 cm^2","C: 100 cm^2","D: 110 cm^2","E: 120 cm^2"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 16,
+    "statement": "The line PQ is divided into six parts by the points P, W, X, Y and Z. Squares are drawn on PV, VW, WX, XY, YZ and ZQ as shown. The length of one line PQ is 24 cm. What is the length of the path from P to Q indicated by the arrows?\\n(See diagram)",
+    "diagram": "assets/images/jk-2017-q16.png",
+    "options": ["48 cm","60 cm","66 cm","72 cm","96 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 17,
+    "statement": "Henna has four hair ribbons of width 10 cm. When she measures them she finds that each ribbon is 25 cm longer than the next smallest ribbon. She then arranges the ribbons to form two different shapes as shown. How much longer is the perimeter of the second shape than the perimeter of the first shape?\\n(See diagram)",
+    "diagram": "assets/images/jk-2017-q17.png",
+    "options": ["75 cm","50 cm","25 cm","20 cm","0 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 18,
+    "statement": "In the diagram, PQRS is a square of side 10 cm. T is a point inside the square so that $\\angle ZSPT = 75^\\circ$ and $\\angle TSP = 30^\\circ$. What is the length of TR?\\n(See diagram)",
+    "diagram": "assets/images/jk-2017-q18.png",
+    "options": ["8 cm","8.5 cm","9 cm","9.5 cm","10 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 19,
+    "statement": "In the diagram, PQRS and WXYZ are congruent squares. The sides PS and WZ are parallel. The shaded region has area 1 cm^2. What is the area of square PQRS?\\n(See diagram)",
+    "diagram": "assets/images/jk-2017-q19.png",
+    "options": ["1 cm^2","2 cm^2","1\\tfrac{1}{2} cm^2","1\\tfrac{1}{4} cm^2","1\\tfrac{2}{9} cm^2"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 20,
+    "statement": "The multiplication $abc \\times de = 7632$ uses each of the digits 1 to 9 exactly once. What is the value of $b$?\\n(A) 1\\n(B) 4\\n(C) 5\\n(D) 8\\n(E) 9",
+    "options": ["1","4","5","8","9"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 21,
+    "statement": "Rory uses four identical standard dice to build the solid shown in the diagram. Whenever two dice touch, the numbers on the touching faces are the same. The numbers on some of the faces of the solid are shown. What number is written on the face marked with question mark?\\n(See diagram)",
+    "diagram": "assets/images/jk-2017-q21.png",
+    "options": ["6","5","4","3","2"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 22,
+    "statement": "Harriet tells Topaz that she is thinking of three positive integers, not necessarily all different. She tells her that the product of her three integers is 36. She also tells her the sum of her three integers. However, Topaz still cannot work out what the three integers are. What is the sum of Harriet's three integers?\\n(A) 10\\n(B) 11\\n(C) 13\\n(D) 14\\n(E) 16",
+    "options": ["10","11","13","14","16"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 23,
+    "statement": "Three congruent isosceles trapeziums are assembled to form an equilateral triangle with a hole in the middle, as shown. What is the perimeter of the hole? Express in terms of side lengths a and b.\\n(See diagram)",
+    "options": ["3a + 6b","3b - 6a","6b - 3a","6a + 3b","6a - 3b"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 24,
+    "statement": "Jacob and Zain take pencils from a box of 21 pencils without replacing them. On Monday Jacob takes 2/3 of the number of pencils that Zain takes. On Tuesday Jacob takes 4 pencils fewer than Zain. On Wednesday morning the box is empty. How many pencils does Jacob take?\\n(A) 8\\n(B) 7\\n(C) 6\\n(D) 5\\n(E) 4",
+    "options": ["8","7","6","5","4"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2017,
+    "num": 25,
+    "statement": "How many three-digit numbers are equal to 34 times the sum of their digits?\\n(A) 0\\n(B) 1\\n(C) 2\\n(D) 3\\n(E) 4",
+    "options": ["0","1","2","3","4"],
+    "answer": ""
+  }
+]
