@@ -3,174 +3,223 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trivial — UKMT & CRUX Extension (Link‑only)</title>
+  <title>Trivial — Random Set Generator (UKMT + CRUX)</title>
   <style>
-    :root { --bg: #0b0f14; --fg: #e6edf3; --muted:#9aa7b3; --card:#11161d; --accent:#6aa3ff; }
-    html, body { background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; margin:0; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header { padding: 24px 16px; max-width: 1100px; margin: 0 auto; }
-    h1 { margin: 0 0 6px; font-weight: 800; letter-spacing: -0.02em; }
-    .sub { color: var(--muted); font-size: 14px; }
-    .toolbar { display: grid; gap: 12px; grid-template-columns: 1fr; padding: 0 16px 16px; max-width: 1100px; margin: 0 auto; }
-    .toolbar .row { display:flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-    .chip { background: #0f1520; color: var(--fg); padding: 8px 12px; border-radius: 999px; border: 1px solid #1b2430; display:inline-flex; align-items:center; gap:8px; }
-    input[type="search"], select { background: #0f1520; color: var(--fg); border: 1px solid #1b2430; border-radius: 12px; padding: 10px 12px; outline: none; min-width: 220px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; padding: 0 16px 48px; max-width: 1100px; margin: 0 auto; }
-    .card { background: var(--card); border:1px solid #1b2430; border-radius: 16px; padding: 14px; display:flex; flex-direction:column; gap: 10px; }
-    .card h3 { margin: 0; font-size: 16px; }
-    .pill { display:inline-flex; padding: 4px 8px; border-radius: 999px; background:#101827; color:#cbd5e1; font-size: 12px; border:1px solid #1b2430; }
-    .meta { display:flex; gap:8px; flex-wrap: wrap; }
-    .btn-row { display:flex; gap:10px; margin-top: 6px; }
-    .btn { padding: 8px 10px; border-radius: 10px; border:1px solid #1b2430; background:#0f1520; color:var(--fg); cursor:pointer; }
-    .btn:hover { background:#111a2a; }
-    footer { max-width:1100px; margin: 0 auto; padding: 12px 16px 40px; color: var(--muted); font-size: 12px; line-height: 1.5; }
-    .warn { color:#f6c76f; }
+    :root{--bg:#0b0f14;--fg:#e6edf3;--muted:#9aa7b3;--card:#11161d;--line:#1b2430;--accent:#6aa3ff;}
+    html,body{background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; margin:0}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    header{padding:24px 16px;max-width:1100px;margin:0 auto}
+    h1{margin:0 0 6px;letter-spacing:-.02em}
+    .sub{color:var(--muted);font-size:14px}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 16px 24px}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+    .btn{border:1px solid var(--line);background:#0f1520;color:var(--fg);padding:10px 12px;border-radius:12px;cursor:pointer}
+    .btn:hover{background:#111a2a}
+    input[type="number"],select{background:#0f1520;color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+    label{display:flex;gap:8px;align-items:center}
+    .set{display:grid;gap:12px;margin:16px 0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px}
+    .pill{display:inline-flex;padding:2px 8px;border-radius:999px;background:#101827;color:#cbd5e1;font-size:12px;border:1px solid var(--line);margin-left:6px}
+    .meta{color:var(--muted);font-size:12px}
+    .footer{color:var(--muted);font-size:12px;margin-top:10px}
+    .right{margin-left:auto}
+    .danger{color:#f6c76f}
+    .ctrls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .linkbox{background:#0f1520;border:1px dashed var(--line);border-radius:12px;padding:8px 10px;color:var(--muted);font-size:12px}
   </style>
 </head>
 <body>
-  <header>
-    <h1>UKMT & CRUX — Link‑only Library</h1>
-    <div class="sub">A drop‑in page for <em>amctrivial.com</em> that indexes official UKMT past papers and CRUX issues without republishing statements. Built to respect rights while giving fast navigation.</div>
-  </header>
-
-  <section class="toolbar" id="toolbar">
-    <div class="row">
-      <input id="q" type="search" placeholder="Search source / contest / year / tags… (e.g. BMO1 2024 geometry)" />
-      <select id="source">
-        <option value="">All sources</option>
-        <option>UKMT</option>
-        <option>CRUX</option>
-      </select>
-      <select id="contest">
-        <option value="">All contests</option>
-        <option>SMC</option>
-        <option>IMC</option>
-        <option>JMC</option>
-        <option>JMO</option>
-        <option>BMO1</option>
-        <option>BMO2</option>
-        <option>MOG</option>
-        <option>CRUX</option>
-      </select>
-      <select id="year">
-        <option value="">All years</option>
-        <option>2025</option>
-        <option>2024</option>
-        <option>2023</option>
-        <option>2022</option>
-        <option>2021</option>
-        <option>2020</option>
-        <option>2019</option>
-      </select>
+<header>
+  <h1>Random Set Generator — UKMT & CRUX (link‑only)</h1>
+  <div class="sub">Build a shareable practice set from official papers without mirroring statements. Click a problem to open the **official PDF** at (or near) the question. You can safely use this on GitHub Pages.
+  <div class="danger">Permissions note: we store only metadata (contest, year, number, URLs). No statements or bulk reproduction.</div></div>
+</header>
+<div class="wrap">
+  <section class="panel">
+    <div class="grid">
+      <div>
+        <label>Number of problems <input id="count" type="number" min="1" max="30" value="10"></label>
+        <label>Difficulty mix
+          <select id="mix">
+            <option value="balanced">Balanced (E/M/H)</option>
+            <option value="easy">Easy‑leaning</option>
+            <option value="hard">Hard‑leaning</option>
+            <option value="pureRandom">Pure random</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <div class="sub" style="margin-bottom:6px">Sources</div>
+        <label><input type="checkbox" class="src" value="UKMT" checked> UKMT (JMC/IMC/SMC/BMO)</label><br>
+        <label><input type="checkbox" class="src" value="CRUX" checked> CRUX journal</label>
+      </div>
+      <div>
+        <div class="sub" style="margin-bottom:6px">Contest types</div>
+        <label><input type="checkbox" class="kind" value="mc" checked> Multiple‑choice</label>
+        <label><input type="checkbox" class="kind" value="proof" checked> Proof</label>
+      </div>
+      <div>
+        <div class="sub" style="margin-bottom:6px">Contest filters</div>
+        <div class="row">
+          <label><input type="checkbox" class="ct" value="JMC" checked> JMC</label>
+          <label><input type="checkbox" class="ct" value="IMC" checked> IMC</label>
+          <label><input type="checkbox" class="ct" value="SMC" checked> SMC</label>
+          <label><input type="checkbox" class="ct" value="BMO1" checked> BMO1</label>
+          <label><input type="checkbox" class="ct" value="BMO2"> BMO2</label>
+          <label><input type="checkbox" class="ct" value="CRUX" checked> CRUX</label>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <span class="chip">Mode: <strong>Link‑only</strong> • zero statements mirrored</span>
-      <button class="btn" id="shuffle">Random pick</button>
-      <button class="btn" id="clear">Reset filters</button>
+    <div class="ctrls" style="margin-top:10px">
+      <button class="btn" id="gen">Generate set</button>
+      <button class="btn" id="reshuffle">Reshuffle</button>
+      <button class="btn" id="clear">Clear</button>
+      <button class="btn" id="print">Print</button>
+      <span class="right linkbox" id="sharebox">Share link will appear here after you generate…</span>
     </div>
   </section>
 
-  <main class="grid" id="grid"></main>
+  <section id="out" class="set"></section>
 
-  <footer>
-    <p class="warn"><strong>Usage & permissions.</strong> This page links to official UKMT PDFs and CRUX issues and stores only lightweight metadata (year, contest, URLs, tags). Do not mirror or bulk‑reproduce problem statements or solutions without written permission from the rights holders. See UKMT guidance on use of material (April 2024) and BMO usage notes; and CMS permissions for Crux.</p>
-  </footer>
+  <div class="footer">Tip: Edit <code>problem-data</code> below to add more years/problems. For each entry, we only keep the official URLs and the problem number.
+  </div>
+</div>
 
-  <!-- Minimal demo dataset embedded for portability. Replace with /data/ukmt.index.json and /data/crux.index.json in production. -->
-  <script type="application/json" id="seed-data">{
-    "items": [
-      {
-        "id": "UKMT-SMC-2024",
-        "source": "UKMT",
-        "contest": "SMC",
-        "year": 2024,
-        "kind": "questions+solutions",
-        "question_pdf": "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf",
-        "solution_pdf": "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC_2024_Solutions.pdf",
-        "tags": ["multiple-choice", "senior", "uk"],
-        "notes": "Direct official PDFs. Link‑only."
-      },
-      {
-        "id": "UKMT-BMO1-2024",
-        "source": "UKMT",
-        "contest": "BMO1",
-        "year": 2024,
-        "kind": "questions",
-        "question_pdf": "https://ukmt.org.uk/wp-content/uploads/2024/11/BMO1-2024-Paper-1.pdf",
-        "solution_pdf": null,
-        "tags": ["proof", "olympiad", "senior"],
-        "notes": "BMO Round 1 paper link."
-      },
-      {
-        "id": "CRUX-46-2-2020-issue",
-        "source": "CRUX",
-        "contest": "CRUX",
-        "year": 2020,
-        "kind": "issue",
-        "issue": "Vol 46 No 2",
-        "issue_pdf": "https://cms.math.ca/wp-content/uploads/2020/02/CRUXv46n2.pdf",
-        "tags": ["journal", "problems", "mixed"],
-        "notes": "Issue‑level link. Use for personal study only; other reuse needs CMS permission."
-      }
-    ]
-  }</script>
+<!-- PROBLEM SEED: minimal demo; replace/extend safely. -->
+<script type="application/json" id="problem-data">{
+  "problems": [
+    {"id":"SMC-2024-Q1","source":"UKMT","contest":"SMC","year":2024,"num":1,"kind":"mc","paper":"https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf","solutions":"https://ukmt.org.uk/wp-content/uploads/2024/10/SMC_2024_Solutions.pdf","page":1},
+    {"id":"SMC-2024-Q7","source":"UKMT","contest":"SMC","year":2024,"num":7,"kind":"mc","paper":"https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf","solutions":"https://ukmt.org.uk/wp-content/uploads/2024/10/SMC_2024_Solutions.pdf"},
+    {"id":"SMC-2024-Q15","source":"UKMT","contest":"SMC","year":2024,"num":15,"kind":"mc","paper":"https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf","solutions":"https://ukmt.org.uk/wp-content/uploads/2024/10/SMC_2024_Solutions.pdf"},
+    {"id":"SMC-2024-Q22","source":"UKMT","contest":"SMC","year":2024,"num":22,"kind":"mc","paper":"https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf","solutions":"https://ukmt.org.uk/wp-content/uploads/2024/10/SMC_2024_Solutions.pdf"},
 
-  <script>
-    const $ = (sel) => document.querySelector(sel);
-    const data = JSON.parse(document.getElementById('seed-data').textContent).items;
+    {"id":"BMO1-2024-Q1","source":"UKMT","contest":"BMO1","year":2024,"num":1,"kind":"proof","paper":"https://ukmt.org.uk/wp-content/uploads/2024/11/BMO1-2024-Paper-1.pdf"},
+    {"id":"BMO1-2024-Q2","source":"UKMT","contest":"BMO1","year":2024,"num":2,"kind":"proof","paper":"https://ukmt.org.uk/wp-content/uploads/2024/11/BMO1-2024-Paper-1.pdf"},
+    {"id":"BMO1-2024-Q3","source":"UKMT","contest":"BMO1","year":2024,"num":3,"kind":"proof","paper":"https://ukmt.org.uk/wp-content/uploads/2024/11/BMO1-2024-Paper-1.pdf"},
 
-    const state = { q:"", source:"", contest:"", year:"" };
+    {"id":"CRUX-46-2-P1","source":"CRUX","contest":"CRUX","year":2020,"num":1,"kind":"proof","paper":"https://cms.math.ca/wp-content/uploads/2020/02/CRUXv46n2.pdf","note":"Exact page varies by layout; use PDF search inside the issue."},
+    {"id":"CRUX-46-2-P2","source":"CRUX","contest":"CRUX","year":2020,"num":2,"kind":"proof","paper":"https://cms.math.ca/wp-content/uploads/2020/02/CRUXv46n2.pdf"}
+  ]
+}
+</script>
 
-    function norm(x){ return (x??"").toString().toLowerCase(); }
+<script>
+(function(){
+  const $ = (s)=>document.querySelector(s);
+  const data = JSON.parse($('#problem-data').textContent).problems;
 
-    function match(item){
-      const q = norm(state.q);
-      const hay = [item.source, item.contest, item.year, ...(item.tags||[]), item.issue, item.notes].map(norm).join(" ");
-      const passQ = !q || hay.includes(q);
-      const passS = !state.source || item.source === state.source;
-      const passC = !state.contest || item.contest === state.contest;
-      const passY = !state.year || String(item.year) === state.year;
-      return passQ && passS && passC && passY;
+  function diffScore(p){
+    if(p.kind==='mc'){
+      // heuristic: later MC numbers are harder
+      const n = +p.num || 1; const max = p.contest==='JMC'||p.contest==='IMC'||p.contest==='SMC'?25:25;
+      return n/max; // 0..1
     }
+    // BMO/CRUX: higher Q numbers usually harder; cap at 6
+    const n = +p.num || 1; return Math.min(n,6)/6;
+  }
 
-    function tagPill(t){ return `<span class="pill">${t}</span>`; }
+  function bucket(p){
+    const d = diffScore(p);
+    if(d<.34) return 'E'; if(d<.67) return 'M'; return 'H';
+  }
 
-    function card(item){
-      const title = [item.source, item.contest, item.year, item.issue?`· ${item.issue}`:``].filter(Boolean).join(' · ');
-      const links = [];
-      if (item.question_pdf) links.push(`<a class="btn" target="_blank" rel="noopener" href="${item.question_pdf}">Open questions</a>`);
-      if (item.solution_pdf) links.push(`<a class="btn" target="_blank" rel="noopener" href="${item.solution_pdf}">Open solutions</a>`);
-      if (item.issue_pdf) links.push(`<a class="btn" target="_blank" rel="noopener" href="${item.issue_pdf}">Open issue PDF</a>`);
-      return `<article class="card">
-        <h3>${title}</h3>
-        <div class="meta">${(item.tags||[]).map(tagPill).join('')}</div>
-        ${item.notes ? `<div class="sub">${item.notes}</div>`: ''}
-        <div class="btn-row">${links.join('')}</div>
-      </article>`;
+  function choose(list, k){
+    // simple reservoir-ish sampling without replacement
+    const a = list.slice(); const res=[];
+    for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+    for(let i=0;i<Math.min(k,a.length);i++) res.push(a[i]);
+    return res;
+  }
+
+  function filterPool(){
+    const count = +$('#count').value || 10;
+    const mix = $('#mix').value;
+    const srcs = Array.from(document.querySelectorAll('.src:checked')).map(x=>x.value);
+    const kinds = Array.from(document.querySelectorAll('.kind:checked')).map(x=>x.value);
+    const cts = Array.from(document.querySelectorAll('.ct:checked')).map(x=>x.value);
+
+    let pool = data.filter(p=>srcs.includes(p.source) && cts.includes(p.contest) && kinds.includes(p.kind));
+    return {pool,count,mix};
+  }
+
+  function pickSet(pool, count, mix){
+    if(mix==='pureRandom') return choose(pool, count);
+
+    // target distributions
+    let weights = {balanced:{E:.4,M:.4,H:.2}, easy:{E:.6,M:.3,H:.1}, hard:{E:.15,M:.45,H:.4}}[mix] || {E:.4,M:.4,H:.2};
+
+    const buckets = {E: pool.filter(p=>bucket(p)==='E'), M: pool.filter(p=>bucket(p)==='M'), H: pool.filter(p=>bucket(p)==='H')};
+    const want = {E: Math.round(count*weights.E), M: Math.round(count*weights.M)}; want.H = count - want.E - want.M;
+
+    let chosen = [];
+    for(const k of ['E','M','H']){
+      const got = choose(buckets[k], want[k]);
+      chosen = chosen.concat(got);
     }
-
-    function render(){
-      const items = data.filter(match).sort((a,b)=> (b.year||0)-(a.year||0));
-      $('#grid').innerHTML = items.map(card).join('') || `<div class="sub" style="padding: 16px">No matches. Try clearing filters.</div>`;
+    // If underfilled (bucket too small), top up from remaining
+    if(chosen.length<count){
+      const remaining = pool.filter(p=>!chosen.includes(p));
+      chosen = chosen.concat(choose(remaining, count - chosen.length));
     }
+    return chosen;
+  }
 
-    function reset(){ state.q=""; state.source=""; state.contest=""; state.year=""; $('#q').value=''; $('#source').value=''; $('#contest').value=''; $('#year').value=''; render(); }
-
-    $('#q').addEventListener('input', e=> { state.q = e.target.value; render(); });
-    $('#source').addEventListener('change', e=> { state.source = e.target.value; render(); });
-    $('#contest').addEventListener('change', e=> { state.contest = e.target.value; render(); });
-    $('#year').addEventListener('change', e=> { state.year = e.target.value; render(); });
-    $('#clear').addEventListener('click', reset);
-    $('#shuffle').addEventListener('click', ()=>{
-      const picks = data.filter(match);
-      if(!picks.length) return;
-      const it = picks[Math.floor(Math.random()*picks.length)];
-      const url = it.question_pdf || it.issue_pdf || it.solution_pdf;
-      if(url) window.open(url, '_blank', 'noopener');
+  function renderSet(items){
+    const out = $('#out');
+    if(!items.length){ out.innerHTML = '<div class="sub">No problems match your filters yet. Add more entries to the problem-data block.</div>'; return; }
+    const lines = items.map((p,i)=>{
+      const lab = `${i+1}. ${p.source} · ${p.contest} ${p.year} · Q${p.num}`;
+      const href = p.page? `${p.paper}#page=${p.page}` : p.paper;
+      const sol = p.solutions? ` <a class="pill" target="_blank" rel="noopener" href="${p.solutions}">solutions</a>`:'';
+      const tag = `<span class="pill">${bucket(p)}</span>`;
+      return `<article class="card"><div class="row"><strong>${lab}</strong> ${tag} <span class="meta">(${p.kind==='mc'?'multiple‑choice':'proof'})</span></div>
+      <div class="row" style="margin-top:6px"><a class="btn" target="_blank" rel="noopener" href="${href}">Open problem paper</a>${sol}${p.note?`<span class="meta"> · ${p.note}</span>`:''}</div></article>`
     });
+    out.innerHTML = lines.join('');
+  }
 
-    render();
-  </script>
+  function toSharePayload(items){
+    const ids = items.map(p=>p.id);
+    return btoa(unescape(encodeURIComponent(JSON.stringify({ids}))));
+  }
+  function fromSharePayload(hash){
+    try{ const j = JSON.parse(decodeURIComponent(escape(atob(hash)))); return j.ids||[]; }catch(e){ return []; }
+  }
+
+  function updateShare(items){
+    const hash = toSharePayload(items);
+    const url = location.origin + location.pathname + '#set=' + hash;
+    const box = $('#sharebox'); box.textContent = url; box.onclick = ()=>{navigator.clipboard.writeText(url)};
+  }
+
+  function generate(){
+    const {pool,count,mix} = filterPool();
+    const items = pickSet(pool, count, mix);
+    renderSet(items);
+    updateShare(items);
+  }
+
+  // Allow loading a shared set from URL hash
+  function loadFromHash(){
+    const m = /#set=([A-Za-z0-9+/=\-_]+)/.exec(location.hash||'');
+    if(!m) return false;
+    const ids = fromSharePayload(m[1]);
+    const items = ids.map(id=>data.find(p=>p.id===id)).filter(Boolean);
+    if(items.length){ renderSet(items); updateShare(items); return true; }
+    return false;
+  }
+
+  // wire up
+  $('#gen').addEventListener('click', generate);
+  $('#reshuffle').addEventListener('click', generate);
+  $('#clear').addEventListener('click', ()=>{ location.hash=''; $('#out').innerHTML=''; $('#sharebox').textContent='Share link will appear here after you generate…'; });
+  $('#print').addEventListener('click', ()=>window.print());
+
+  // auto‑generate first pass or load from hash
+  if(!loadFromHash()) generate();
+})();
+</script>
 </body>
 </html>
