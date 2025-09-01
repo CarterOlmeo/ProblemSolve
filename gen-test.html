@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Generator test</title>
+<button id="gen">Generate</button>
+<pre id="out" style="padding:12px;border:1px solid #ccc"></pre>
+<script>
+  const problems = [
+    {id:"P1", statement:"If a+b=10 and ab=21, find a^2+b^2."},
+    {id:"P2", statement:"Show n^3 - n is divisible by 3."}
+  ];
+  document.getElementById('gen').addEventListener('click', () => {
+    const p = problems[Math.floor(Math.random()*problems.length)];
+    document.getElementById('out').textContent = p.statement;
+  });
+</script>
