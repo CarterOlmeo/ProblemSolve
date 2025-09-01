@@ -270,20 +270,36 @@
   );
 
   // toggle solution for the currently viewed item
-  out.querySelectorAll('button[data-sel]').forEach(btn =>
-    btn.addEventListener('click', (e) => {
-      const i = +e.currentTarget.getAttribute('data-sel');
-      if (current[i]) {
-        if (i === idx) $('#solution').classList.toggle('visible');
-        jump(i);
-      }
+ out.querySelectorAll('button[data-sel]').forEach(btn =>
+  btn.addEventListener('click', (e) => {
+    const i = +e.currentTarget.getAttribute('data-sel');
+    if (current[i]) {
+      if (i === idx) $('#solution').classList.toggle('visible');
+      jump(i);
+    }
+  })
+);
+} // <-- closes renderList
+
 
   function updateProgress(){ $('#progress').textContent = current.length? `${idx+1} / ${current.length}` : ''; }
   function jump(i){ if(!current.length) return; idx = (i+current.length)%current.length; renderProblem(current[idx]); updateProgress(); }
 
   function toSharePayload(items){ const ids=items.map(p=>p.id); return btoa(unescape(encodeURIComponent(JSON.stringify({ids})))); }
   function fromSharePayload(h){ try{const j=JSON.parse(decodeURIComponent(escape(atob(h)))); return j.ids||[]}catch(e){return []} }
-  function updateShare(items){ const hash=toSharePayload(items); const url=location.origin+location.pathname+'#set='+hash; const box=$('#sharebox'); box.textContent=url; box.onclick=()=>navigator.clipboard.writeText(url); }
+  function updateShare(items){
+  try {
+    const ids = items.map(p=>p.id);
+    const hash = btoa(unescape(encodeURIComponent(JSON.stringify({ids}))));
+    const url = location.origin + location.pathname + '#set=' + hash;
+    const box = $('#sharebox'); 
+    box.textContent = url; 
+    box.onclick = () => navigator.clipboard.writeText(url);
+  } catch (e) {
+    $('#sharebox').textContent = 'Share link unavailable';
+  }
+}
+
   function loadFromHash(){ const m=/#set=([A-Za-z0-9+/=\-_]+)/.exec(location.hash||''); if(!m) return false; const ids=fromSharePayload(m[1]); const items=ids.map(id=>data.find(p=>p.id===id)).filter(Boolean); if(items.length){ current=items; idx=0; renderProblem(current[0]); updateProgress(); renderList(current); updateShare(current); return true } return false }
 
   function generate(){ const {pool,count,mix} = filterPool(); current = pickSet(pool,count,mix); idx=0; if(current[0]){ renderProblem(current[0]); updateProgress(); } renderList(current); updateShare(current); localStorage.setItem('trivial.lastSet', JSON.stringify(current.map(p=>p.id))); }
