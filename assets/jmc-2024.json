@@ -1,256 +1,210 @@
 [
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 1,
-    "kind": "mc",
-    "statement": "When the five expressions below are simplified, how many different values are obtained?\\\\\n\\\\\n$2+2^2$, $2\\times2^2$, $2^2-2^2$, $2^2\\div2^2$, $2^{2}$",
-    "options": ["A: 1","B: 2","C: 3","D: 4","E: 5"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": true,
-    "needs_check": false
+    "statement": "When the five expressions below are simplified, how many different values are obtained?\\n\\n$2+2^2$, $2\\times2^2$, $2^2-2^2$, $2^2\\div2^2$, $2^{2}$",
+    "options": ["1","2","3","4","5"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 2,
-    "kind": "mc",
     "statement": "Which of the following could have a capacity of 10 litres?",
-    "options": ["A: An aeroplane","B: A bucket","C: A cup","D: A dustpan","E: An egg"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": false
+    "options": ["An aeroplane","A bucket","A cup","A dustpan","An egg"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 3,
-    "kind": "mc",
     "statement": "Gill is 36 this year. In which year will her age next be a square?",
-    "options": ["A: 2025","B: 2037","C: 2047","D: 2052","E: 2060"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": false
+    "options": ["2025","2037","2047","2052","2060"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 4,
-    "kind": "mc",
     "statement": "A drink is made by mixing one part cordial with four parts water. What percentage of the drink is cordial?",
-    "options": ["A: 20","B: 25","C: 40","D: 75","E: 80"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": false
+    "options": ["20","25","40","75","80"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 5,
-    "kind": "mc",
-    "statement": "What is the value of $1+2-3\\times4\\div5$?",
-    "options": ["A: 0.2","B: 0.3","C: 0.4","D: 0.5","E: 0.6"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": true,
-    "needs_check": false
+    "statement": "What is the value of $1 + 2 - 3 \\times 4 \\div 5$?",
+    "options": ["0.2","0.3","0.4","0.5","0.6"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 6,
-    "kind": "mc",
-    "statement": "Which of the following has the same remainder when divided by $3$ as it does when divided by $4$?",
-    "options": ["A: 7","B: 11","C: 17","D: 19","E: 25"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": false
+    "statement": "Which of the following has the same remainder when divided by 3 as it does when divided by 4?",
+    "options": ["7","11","17","19","25"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 7,
-    "kind": "mc",
-    "statement": "The diagram shows a large square divided into four smaller squares; both diagonals of the large square and two diagonals of smaller squares are shown. What fraction of the area of the large square has been shaded?",
-    "options": ["A: $\\tfrac{3}{16}$","B: $\\tfrac{1}{4}$","C: $\\tfrac{5}{16}$","D: $\\tfrac{3}{8}$","E: $\\tfrac{7}{16}$"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": true,
-    "needs_check": true,
-    "diagram": "image required / please paste diagram or SVG here"
+    "statement": "The diagram shows a large square which has been divided into four smaller squares. It also shows both diagonals of the large square and two diagonals of smaller squares. What fraction of the area of the large square has been shaded?",
+    "image": "assets/images/jmc-2024-q7.png",
+    "options": ["$\\tfrac{3}{16}$","$\\tfrac{1}{4}$","$\\tfrac{5}{16}$","$\\tfrac{3}{8}$","$\\tfrac{7}{16}$"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 8,
-    "kind": "mc",
     "statement": "Skye has half as many pens as Ishaa. Ana has twice as many pens as Skye. What fraction of all their pens does Skye have?",
-    "options": ["A: $\\tfrac{1}{3}$","B: $\\tfrac{1}{4}$","C: $\\tfrac{1}{5}$","D: $\\tfrac{1}{6}$","E: $\\tfrac{1}{8}$"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": true,
-    "needs_check": false
+    "options": ["$\\tfrac{1}{3}$","$\\tfrac{1}{4}$","$\\tfrac{1}{5}$","$\\tfrac{1}{6}$","$\\tfrac{1}{8}$"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 9,
-    "kind": "mc",
     "statement": "The diagram shows the regular hexagon $PQRSTU$. What is the size of angle $\\angle TUP$?",
-    "options": ["A: $30^\\circ$","B: $45^\\circ$","C: $60^\\circ$","D: $120^\\circ$","E: $150^\\circ$"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": true,
-    "needs_check": true,
-    "diagram": "image required"
+    "image": "assets/images/jmc-2024-q9.png",
+    "options": ["$30^{\\circ}$","$45^{\\circ}$","$60^{\\circ}$","$120^{\\circ}$","$150^{\\circ}$"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 10,
-    "kind": "mc",
-    "statement": "In Fred's field there are some humans and some horses. There are $25$ heads in total and $60$ legs in total. What is the difference between the number of humans and the number of horses?",
-    "options": ["A: 3","B: 7","C: 9","D: 11","E: 15"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": false
+    "statement": "In Fred’s field there are some humans and some horses. There are 25 heads in total and 60 legs in total. What is the difference between the number of humans and the number of horses?",
+    "options": ["3","7","9","11","15"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 11,
-    "kind": "mc",
-    "statement": "A hexagon is formed by arranging three equilateral triangles as shown. The side-length of the largest equilateral triangle is $10\\,$cm. What is the perimeter, in cm, of the hexagon?",
-    "options": ["A: 45","B: 40","C: 35","D: 30","E: more information needed"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": true,
-    "diagram": "image required"
+    "statement": "A hexagon is formed by arranging three equilateral triangles, as shown in the diagram. The side-length of the largest equilateral triangle is 10 cm. What is the perimeter, in cm, of the hexagon?",
+    "image": "assets/images/jmc-2024-q11.png",
+    "options": ["45","40","35","30","more information needed"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 12,
-    "kind": "mc",
-    "statement": "In the multiplication sum shown, $H$ represents the same digit each time. What is the value of $H$?\\\\\n\\\\\n(visual: a multiplication layout: $3y\\times4yy=1y77y$ — keep as diagram or type as text if needed)",
-    "options": ["A: 0","B: 1","C: 4","D: 5","E: 6"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": true,
-    "diagram": "text layout; please verify layout"
+    "statement": "In the multiplication sum shown, H represents the same digit each time. What is the value of H?\\\\n\\\\n$\\;\\;3y \\times 4yy = 1y77y$",
+    "image": "assets/images/jmc-2024-q12.png",
+    "options": ["0","1","4","5","6"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 13,
-    "kind": "mc",
-    "statement": "In triangle $PQRS$, the point $R$ is on edge $QS$. Given $\\angle PRQ = \\angle (some relation)$ — (parsed from PDF: multiple equal angle relations). What is the value of $G$? (question involves angle chasing)",
-    "options": ["A: 30","B: 33","C: 36","D: 40","E: 45"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": true,
-    "diagram": "image required; angle labels need placing"
+    "statement": "In the triangle $PQRS$, the point $R$ is on the edge $QS$. $\\angle QPR = \\angle PRQ$, $\\angle PQR = \\angle (\\text{given})$ and $\\angle RQS = G^{\\circ}$. What is the value of $G$?",
+    "image": "assets/images/jmc-2024-q13.png",
+    "options": ["30","33","36","40","45"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 14,
-    "kind": "mc",
-    "statement": "The digits 1,2,3,5 and 8 are to be placed in the grid (division, addition and equals) to make a correct mathematical statement. Which number should come immediately after the division sign?",
-    "options": ["A: 1","B: 2","C: 3","D: 5","E: 8"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": true,
-    "diagram": "grid required"
+    "statement": "The digits 1, 2, 3, 5 and 8 are to be placed in the grid below, one to a cell, to make a correct mathematical statement: $\\div \\; + \\; =$. Which number should come immediately after the division sign?",
+    "options": ["1","2","3","5","8"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 15,
-    "kind": "mc",
-    "statement": "In the diagram shown, $PQRS$ is a rhombus and $PQT$ is an isosceles triangle in which $\\angle P = \\angle Q$. Angle $P(\\') = 110^\\circ$. What is the size of angle $(\\&)$? (diagram text may need correction)",
-    "options": ["A: $5^\\circ$","B: $10^\\circ$","C: $12.5^\\circ$","D: $15^\\circ$","E: $20^\\circ$"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": true,
-    "diagram": "image required"
+    "statement": "In the diagram shown, $PQRS$ is a rhombus and $PQT$ is an isosceles triangle in which $\\angle P = \\angle Q$. Angle $P S T = 110^{\\circ}$. What is the size of angle $(\\text{shaded})$?",
+    "image": "assets/images/jmc-2024-q15.png",
+    "options": ["$5^{\\circ}$","$10^{\\circ}$","$12.5^{\\circ}$","$15^{\\circ}$","$20^{\\circ}$"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 16,
-    "kind": "mc",
-    "statement": "The world’s smallest vertebrate (frog _paedophryne amauensis_) is only $7.7\\,$mm long. Approximately how many of these frogs, placed end to end, are needed to make a line $1\\,$m long?",
-    "options": ["A: 100","B: 130","C: 260","D: 390","E: 520"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": false
+    "statement": "The world’s smallest vertebrate is much shorter than its name! Discovered in 2022, the frog \\textit{Paedophryne amauensis} is only 7.7 mm long. Approximately how many of these frogs, placed end to end, would be needed to make a line 1 metre long?",
+    "options": ["100","130","260","390","520"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 17,
-    "kind": "mc",
-    "statement": "$PQRS$ is a square with area $100\\,\\mathrm{cm}^2$. Point $T$ is inside the square. Triangle $RST$ has area $24\\,\\mathrm{cm}^2$. What is the area, in $\\mathrm{cm}^2$, of triangle $P T )$? (parsed text; check point labels)",
-    "options": ["A: 24","B: 25","C: 26","D: 27","E: 28"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": true,
-    "needs_check": true,
-    "diagram": "image required"
+    "statement": "$PQRS$ is a square with area $100\\ \\mathrm{cm}^2$. The point $T$ is inside the square. Triangle $RST$ has area $24\\ \\mathrm{cm}^2$. What is the area, in $\\mathrm{cm}^2$, of triangle $PTQ$?",
+    "image": "assets/images/jmc-2024-q17.png",
+    "options": ["24","25","26","27","28"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 18,
-    "kind": "mc",
     "statement": "Goldilocks eats three equal-sized bowls of porridge, one after the other. When she has eaten $\\tfrac{3}{7}$ of the total amount of porridge, what fraction of the porridge in the second bowl has she eaten?",
-    "options": ["A: $\\tfrac{2}{63}$","B: $\\tfrac{1}{7}$","C: $\\tfrac{1}{3}$","D: $\\tfrac{2}{7}$","E: $\\tfrac{1}{2}$"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": true,
-    "needs_check": false
+    "options": ["$\\tfrac{2}{63}$","$\\tfrac{1}{7}$","$\\tfrac{1}{3}$","$\\tfrac{2}{7}$","$\\tfrac{1}{2}$"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 19,
-    "kind": "mc",
-    "statement": "Jokers always lie. Clowns always tell the truth. A group of four (each a Joker or Clown) make statements about each other: P says “Q always lies”; Q says “R always lies”; R says “P always tells the truth”; S says “Exactly two of P,Q,R are Jokers.” How many of P,Q,R,S are Clowns?",
-    "options": ["A: 0","B: 1","C: 2","D: 3","E: 4"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": false
+    "statement": "Jokers always lie. Clowns always tell the truth. A group of four, each of whom is a Joker or a Clown, make the following statements: P says “Q always lies”; Q says “R always lies”; R says “P always tells the truth”; S says “Exactly two of P, Q and R are Jokers”. How many of P, Q, R and S are Clowns?",
+    "options": ["0","1","2","3","4"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 20,
-    "kind": "mc",
     "statement": "When you cut a regular hexagon into two pieces with a single straight cut, you get two polygons. Which of these shapes cannot be obtained?",
-    "options": ["A: triangle","B: quadrilateral","C: pentagon","D: heptagon","E: octagon"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": false
+    "options": ["A triangle","A quadrilateral","A pentagon","A heptagon","An octagon"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 21,
-    "kind": "mc",
-    "statement": "(missing/diagram) — question depends on a provided diagram in the official paper; parsed content incomplete. Please paste diagram or confirm text to convert to LaTeX.",
-    "options": ["A: (option A)","B: (option B)","C: (option C)","D: (option D)","E: (option E)"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "latex": false,
-    "needs_check": true
+    "statement": "The rectangle $PQRS$ is divided into eight squares: one large unshaded square, four small unshaded squares and three shaded squares, as shown. What fraction of the area of rectangle $PQRS$ is shaded?",
+    "image": "assets/images/jmc-2024-q21.png",
+    "options": ["$\\tfrac{1}{5}$","$\\tfrac{5}{17}$","$\\tfrac{2}{7}$","$\\tfrac{3}{10}$","$\\tfrac{1}{3}$"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 22,
-    "kind": "mc",
-    "statement": "(missing/diagram) — parsed text incomplete; please provide diagram or confirm layout",
-    "options": ["A: (option A)","B: (option B)","C: (option C)","D: (option D)","E: (option E)"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "needs_check": true
+    "statement": "Forty furry ferrets weigh the same as fifty fit ferrets. Forty-five fit ferrets weigh the same as fifty-four friendly ferrets. How many friendly ferrets weigh the same as fifty furry ferrets?",
+    "options": ["40","55","60","75","80"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 23,
-    "kind": "mc",
-    "statement": "(missing/diagram) — parsed text incomplete; please provide diagram or confirm layout",
-    "options": ["A","B","C","D","E"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "needs_check": true
+    "statement": "The area of a square is six times the area of a rectangle with a length half that of the square and a width 6 cm less than the width of the square. What is the perimeter of the square?",
+    "options": ["24 cm","28 cm","32 cm","36 cm","40 cm"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 24,
-    "kind": "mc",
-    "statement": "(missing/diagram) — parsed text incomplete; please provide diagram or confirm layout",
-    "options": ["A","B","C","D","E"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "needs_check": true
+    "statement": "Rovers, United, City and Wanderers played against each other once in a hockey tournament. The results table is shown. What was the score in the match between Rovers and United?",
+    "options": ["3 - 1","3 - 0","2 - 1","2 - 0","1 - 0"],
+    "answer": ""
   },
   {
+    "contest": "JMC",
+    "year": 2024,
     "num": 25,
-    "kind": "mc",
-    "statement": "(missing/diagram) — parsed text incomplete; please provide diagram or confirm layout",
-    "options": ["A","B","C","D","E"],
-    "answer": null,
-    "rights": "© UKMT 2024",
-    "needs_check": true
+    "statement": "In a school, one fifth of the students have blue eyes. One tenth of the left-handed students have blue eyes. One quarter of the right-handed students have blue eyes. What fraction of the students are left-handed?",
+    "options": ["$\\tfrac{1}{3}$","$\\tfrac{1}{4}$","$\\tfrac{1}{5}$","$\\tfrac{1}{8}$","$\\tfrac{1}{10}$"],
+    "answer": ""
   }
 ]
