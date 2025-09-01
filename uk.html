@@ -120,7 +120,10 @@ function renderList(problems){
   list.innerHTML = problems.map((p,i)=>`
     <div class="problem">
       <div class="ptitle">PROBLEM ${i+1} <span class="meta">(${p.year} ${p.contest} #${p.num})</span></div>
-      <div class="stem">${p.statement}</div>
+      <div class="stem">${p.statement.replace(/\n/g,'<br>')}</div>
+      <ul class="options">
+        ${p.options.map((opt,j)=>`<li>(${String.fromCharCode(65+j)}) ${opt}</li>`).join('')}
+      </ul>
       <div class="meta" style="margin-top:8px">${p.rights||''}</div>
       <hr class="sep">
     </div>
@@ -128,6 +131,8 @@ function renderList(problems){
   renderMathIn(list);
   $('#titlebar').textContent = `Problem Set — SMC 2024 (${problems.length} problems)`;
 }
+
+
 
 function toPlainText(problems){
   return problems.map((p,i)=>`PROBLEM ${i+1} (${p.year} ${p.contest} #${p.num})\n${p.statement}`).join("\n\n---\n\n");
