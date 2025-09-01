@@ -1,12 +1,13 @@
 [
-{
+  {
   "contest": "JMC",
   "year": 2024,
   "num": 1,
   "statement": "When the five expressions below are simplified, how many different values are obtained?\n$2+2^2$, $2\\times2^2$, $2^2-2^2$, $2^2\\div2^2$, $2^{2}$",
   "options": ["1","2","3","4","5"],
   "answer": ""
-}
+},
+
 
   {
     "contest": "JMC",
