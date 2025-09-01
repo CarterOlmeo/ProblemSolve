@@ -1,0 +1,211 @@
+[
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 1,
+    "statement": "My umbrella has the word KANGAROO written on top, as shown in the diagram. Which of the following does not represent a view of my umbrella?",
+    "diagram": "assets/images/jk-2024-q01.png",
+    "options": ["A","B","C","D","E"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 2,
+    "statement": "Priya painted each of the nine squares shown black, white or grey. What is the smallest number of squares that she would need to repaint so that no two squares with a common side are painted in the same colour?",
+    "diagram": "assets/images/jk-2024-q02.png",
+    "options": ["2","3","4","5","6"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 3,
+    "statement": "There are 12 ducks on McBride's farm. Three ducks each lay one egg every day, four ducks each lay one egg every other day and five ducks each lay one egg every three days. How many eggs do these 12 ducks lay in a period of 12 days?",
+    "options": ["60","72","75","80","96"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 4,
+    "statement": "Which of the following fractions is closest to 2?",
+    "options": ["17/6","18/7","19/8","20/9","21/10"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 5,
+    "statement": "Sophie and Armaan are playing a game. The winner of each game gets 3 points and the loser gets 1 point. Armaan wins 6 games and Sophie has a total of 18 points. How many games do they play?",
+    "options": ["6","7","8","9","10"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 6,
+    "statement": "Molly and Holly each own a big dog. Molly's dog and Holly's dog weigh 80 kg in total. Molly's dog and a 20 kg bag of dog food weigh the same as Holly's dog. What is the weight, in kg, of Holly's dog?",
+    "options": ["20","30","35","40","50"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 7,
+    "statement": "Every plant in my mum's window box has either two leaves and one flower or five leaves and no flowers. In total, the plants have six flowers and 32 leaves. How many plants are in my mum's window box?",
+    "options": ["10","11","12","13","14"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 8,
+    "statement": "Alisha has four paper strips of the same length. She glues two of them together with a 10 cm overlap to make a strip 50 cm long. With the other two strips she wants to make a strip 56 cm long. How long, in cm, should the overlap be?",
+    "diagram": "assets/images/jk-2024-q08.png",
+    "options": ["2","4","6","8","10"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 9,
+    "statement": "Elliot drew six squares, each with side-length 1 cm, to make the shape shown. What is the perimeter, in cm, of the shape?",
+    "diagram": "assets/images/jk-2024-q09.png",
+    "options": ["9","10","11","12","13"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 10,
+    "statement": "Every day Freya writes down the date in her diary and calculates the sum of the digits she writes. For example, on 11th June she writes 11/06 and calculates 1+1+0+6 = 8. What is the largest daily sum she calculates over the course of a year?",
+    "options": ["8","13","16","20","23"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 11,
+    "statement": "On Abdication Street, there are nine houses in a row. At least one person lives in each house. Any two neighbouring houses have at most six people living in them. What is the largest number of people that could be living in Abdication Street?",
+    "options": ["23","25","27","29","31"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 12,
+    "statement": "The rectangle PQRS shown is divided into four smaller congruent rectangles. The length of PQ is 1 cm. What is the length, in cm, of RQ?",
+    "diagram": "assets/images/jk-2024-q12.png",
+    "options": ["4","3.5","3","2.5","2"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 13,
+    "statement": "Diego noticed that 20% of 30% of a number was 3 less than 30% of 40% of the same number. What was that number?",
+    "options": ["30","35","40","45","50"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 14,
+    "statement": "The area of a rectangle is 12 cm². The lengths of its sides, measured in cm, are integers. Which of the following could be the perimeter of the rectangle?",
+    "options": ["18 cm","20 cm","22 cm","24 cm","26 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 15,
+    "statement": "Mabel wants to colour each of the nine line segments shown in the diagram red, blue or green. The sides of every triangle should be coloured with three different colours. She has already coloured three of the segments, as shown. What colour can the line segment marked x be coloured?",
+    "diagram": "assets/images/jk-2024-q15.png",
+    "options": ["only blue","only red","only green","any of red, blue or green","such a colouring is not possible"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 16,
+    "statement": "A bag contains 3 green apples, 5 yellow apples, 7 green pears and 2 yellow pears. George takes out pieces of fruit at random, one piece at a time. How many pieces of fruit must he take to be certain he has at least one apple and one pear of the same colour?",
+    "options": ["9","10","11","12","13"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 17,
+    "statement": "In the sum shown, equal letters represent equal digits and different letters represent different digits. What is the value of X + Y + Z? (see paper for the addition figure)",
+    "diagram": "assets/images/jk-2024-q17.png",
+    "options": ["15","16","17","18","19"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 18,
+    "statement": "The number 100 is multiplied by either 2 or 3. The result then has 1 or 2 added to it. Finally the new result is divided by either 3 or 4. The final result is an integer. What is this integer?",
+    "options": ["50","51","67","68","more than one final answer is possible"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 19,
+    "statement": "In the four-digit number 'PQRS', the digits P, Q, R and S are all non-zero and are in increasing order from left to right. What is the largest possible difference 'QS' - 'PR' between the two two-digit numbers 'QS' and 'PR'?",
+    "options": ["86","61","56","50","16"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 20,
+    "statement": "Harvey writes a number on each face of a cube. Then, for each vertex, he adds the numbers on the three faces that meet at that vertex. The totals he gets for vertices R, S and T are 14, 16 and 24, respectively. What total does he get for vertex U?",
+    "diagram": "assets/images/jk-2024-q20.png",
+    "options": ["15","19","22","24","26"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 21,
+    "statement": "A train has 12 carriages. Each carriage has the same number of compartments. Iliana is travelling in the 7th carriage and in the 50th compartment from the front. How many compartments are there in each carriage?",
+    "options": ["7","8","9","10","12"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 22,
+    "statement": "In how many ways can three kangaroos be placed in three different cells of the grid shown so that no two adjacent cells both contain kangaroos?",
+    "diagram": "assets/images/jk-2024-q22.png",
+    "options": ["7","8","9","10","11"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 23,
+    "statement": "Jo, Flo and Mo divide up a sum of money. Jo took £10 plus a quarter of what was then left. Next Flo took £40 plus a quarter of what was then left. Finally Mo took what was left. Jo and Flo took the same amount of money. How much did Mo take?",
+    "options": ["100","120","150","180","350"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 24,
+    "statement": "Four points lie on a straight line. The distances between pairs of points are, in increasing order, 2, 3, 4, 11, 12 and 14. What is the value of k?",
+    "options": ["9","8","7","6","5"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2024,
+    "num": 25,
+    "statement": "Hayden used small cubes of side 1 to build a large cube with side 4. Then he painted three of the faces of his large cube red and the other three faces blue. When he finished, there was no small cube that had three faces painted red. How many small cubes had both red and blue faces?",
+    "options": ["18","20","22","24","26"],
+    "answer": ""
+  }
+]
