@@ -1,0 +1,214 @@
+[
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 1,
+    "statement": "Which of the following traffic signs has the greatest number of lines of symmetry?",
+    "diagram": "assets/images/jk-2025-q01.png",
+    "options": ["A","B","C","D","E"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 2,
+    "statement": "Joseph draws a square with side-length $10\\,$cm. He joins the midpoints of the sides to make a smaller square, as shown in the diagram. What is the area, in cm\\(^2\\), of the smaller square?",
+    "diagram": "assets/images/jk-2025-q02.png",
+    "options": ["10","20","30","40","50"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 3,
+    "statement": "Millie's mother likes her to set the table with a knife on the right-hand side of the plate and a fork on the left-hand side. Starting with the arrangement in the diagram, what is the smallest number of times Millie needs to swap a knife and a fork in order to satisfy her mother?",
+    "diagram": "assets/images/jk-2025-q03.png",
+    "options": ["1","2","3","5","6"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 4,
+    "statement": "On the left-hand side of the room, Jia and Lottie are sleeping with their heads on the pillows and facing each other. On the right-hand side of the room, Anaya and Isla are sleeping with their heads on the pillows with their backs to each other. How many of the girls are sleeping with their right ear on the pillow?",
+    "diagram": "assets/images/jk-2025-q04.png",
+    "options": ["0","1","2","3","4"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 5,
+    "statement": "The piece of paper shown is folded along the dotted lines to make an open box. The box is placed on the table with the top open. What is the letter on the face on the table?",
+    "diagram": "assets/images/jk-2025-q05.png",
+    "options": ["P","Q","R","S","T"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 6,
+    "statement": "Which of the following figures cannot be formed by gluing these two identical squares of paper together?",
+    "diagram": "assets/images/jk-2025-q06.png",
+    "options": ["A","B","C","D","E"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 7,
+    "statement": "2025 is a square. How many distinct primes divide exactly into 2025?",
+    "options": ["1","2","3","4","5"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 8,
+    "statement": "Five squirrels V, W, X, Y and Z are sitting on the line shown below. There are six nuts on the line, marked with crosses. At one instant the five squirrels start running towards the nearest nut at the same speed. As soon as a squirrel reaches a nut it picks it up and starts running towards the next nearest nut. Which squirrel will get two nuts?",
+    "diagram": "assets/images/jk-2025-q08.png",
+    "options": ["V","W","X","Y","Z"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 9,
+    "statement": "There are 30 students in a class. They sit in pairs so that each boy is sitting next to a girl and exactly half of the girls are sitting next to a boy. How many boys are there in the class?",
+    "options": ["25","20","15","10","5"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 10,
+    "statement": "The number 2581953764 is written on a strip of paper. Dilraj cuts the strip twice and gets three numbers. He then adds these three numbers. What is the smallest possible sum he could get?",
+    "options": ["2675","2975","2978","4217","4298"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 11,
+    "statement": "My granny bought enough cat food to last her four cats for twelve days. However on her way home she found two stray cats and brought them home. Each cat was given the same amount of food each day. How many days did her cat food last?",
+    "options": ["8","7","6","5","4"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 12,
+    "statement": "Each letter in the eight-digit integer 'BENJAMIN' represents one of the digits 1,2,3,4,5,6 or 7. Different letters represent different digits. The integer 'BENJAMIN' is odd and divisible by 3. Which digit is represented by N?",
+    "options": ["1","3","4","5","7"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 13,
+    "statement": "Tim, Tom and Jim are triplets. Their brother Carl is three years younger. Which of the following could be the sum of the ages of the four brothers?",
+    "options": ["53","54","56","59","63"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 14,
+    "statement": "The perimeter of the rectangle PQRS is 30 cm. A new shape is formed by placing three other rectangles so that their centres are at the points P, Q and S, as shown in the diagram. The sum of the perimeters of the three added rectangles is 20 cm. What is the total perimeter of the new shape?",
+    "diagram": "assets/images/jk-2025-q14.png",
+    "options": ["50 cm","45 cm","40 cm","35 cm","33 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 15,
+    "statement": "Run ZE writes down all the integers with the following properties: the first digit is 1; each of the following digits is at least as large as the digit before it; the sum of the digits of the integer is 5. How many integers does he write?",
+    "options": ["9","8","7","6","5"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 16,
+    "statement": "What is the largest number of shapes of this form that can be cut out from the $5\\times5$ square shown on the right?",
+    "diagram": "assets/images/jk-2025-q16.png",
+    "options": ["2","4","3","6","7"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 17,
+    "statement": "Luigi opened a small restaurant. His friend Giacomo gave him some square tables and some chairs. When he tried to arrange all the tables as single tables with four chairs each, he found he had six chairs too few. When he decided to arrange the tables in pairs with six chairs for each pair of tables, he found he had four chairs left over. How many tables did Luigi receive from Giacomo?",
+    "options": ["8","10","12","14","16"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 18,
+    "statement": "Lilly wants to make a large triangle from small triangular tiles. She has already put some tiles together, as shown in the diagram. What is the smallest number of small tiles that she now needs to complete a large triangle?",
+    "diagram": "assets/images/jk-2025-q18.png",
+    "options": ["5","9","12","15","18"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 19,
+    "statement": "Three vertices of the rectangle PQRS are at P(1,1), Q(7,4) and R(5,8). What are the co-ordinates of S?",
+    "options": ["(-1,4)","(0,5)","(-2,6)","(-1,5)","(-1,6)"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 20,
+    "statement": "A large cube was built from eight equally-sized small cubes, some of which were painted black and some painted white. Five of the faces of the large cube are shown in the diagram. What does the sixth face of the large cube look like?",
+    "diagram": "assets/images/jk-2025-q20.png",
+    "options": ["A","B","C","D","E"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 21,
+    "statement": "A rectangular swimming pool of length 20 m is surrounded on all four sides by a path 2 m wide. The area of the path is the same as the area of the pool. What is the width, in metres, of the pool?",
+    "options": ["6.5","6","5.5","5","4.5"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 22,
+    "statement": "Kirsten wrote numbers in five of the ten circles arranged around a pentagon, as shown in the diagram. She wants to write a number in each of the remaining five circles so that the sums of the three numbers along each side of the pentagon are equal. Which number should she write in the circle marked X?",
+    "diagram": "assets/images/jk-2025-q22.png",
+    "options": ["7","8","11","13","15"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 23,
+    "statement": "Joey is playing with his calculator. He starts with the number 12 and then multiplies or divides by 2 or by 3 until he has done 60 calculations. Which of the following could not be his answer?",
+    "options": ["12","18","36","72","108"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 24,
+    "statement": "The digits of the three-digit integer 'XYZ' are all different. The sum of the digits of the three-digit integer 'XXY' is the two-digit integer 'YZ'. The sum of the digits of the two-digit integer 'YZ' is the one-digit integer 'Y'. What digit does 'X' represent?",
+    "options": ["4","5","6","8","9"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2025,
+    "num": 25,
+    "statement": "Two three-digit integers have all six of their digits distinct. The first digit of the second integer is twice the last digit of the first integer. What is the smallest possible sum of the two such integers?",
+    "options": ["597","546","537","535","301"],
+    "answer": ""
+  }
+]
