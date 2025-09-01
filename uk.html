@@ -248,23 +248,16 @@ function toPlainText(problems){
 
 /* ---------- Subset generation (optional) ---------- */
 function pickSubset(all, count, mix){
-  if (mix==='pureRandom') return choose(all, count);
-  const weights = {
-    balanced:{E:.4,M:.4,H:.2},
-    easy:{E:.6,M:.3,H:.1},
-    hard:{E:.15,M:.45,H:.4}
-  }[mix] || {E:.4,M:.4,H:.2};
+  if (mix==='pureRandom') return choose(all, count).sort((a,b)=>a.num-b.num);
+  const weights = { balanced:{E:.4,M:.4,H:.2}, easy:{E:.6,M:.3,H:.1}, hard:{E:.15,M:.45,H:.4} }[mix] || {E:.4,M:.4,H:.2};
   const by = {E:[],M:[],H:[]};
-  all.forEach(p => by[p.difficulty || diffBucket(p.num)].push(p));
-  const want = {
-    E: Math.round(count*weights.E),
-    M: Math.round(count*weights.M)
-  };
-  want.H = count - want.E - want.M;
+  all.forEach(p => by[p.difficulty || (p.num/25 < .34 ? 'E' : p.num/25 < .67 ? 'M' : 'H')].push(p));
+  const want = {E:Math.round(count*weights.E), M:Math.round(count*weights.M)}; want.H = count - want.E - want.M;
   let out = [].concat(choose(by.E, want.E), choose(by.M, want.M), choose(by.H, want.H));
   if (out.length < count) out = out.concat(choose(all.filter(p=>!out.includes(p)), count - out.length));
-  return out;
+  return out.sort((a,b)=>a.num-b.num); // ★ keep SMC order
 }
+
 
 /* ---------- Wire-up ---------- */
 (async function init(){
