@@ -1,0 +1,216 @@
+[
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 1,
+    "statement": "Riana has been asked to erase digits from the number 12 323 314 to obtain a number which reads the same from left to right as it does from right to left. What is the smallest number of digits Riana needs to erase?",
+    "options": ["1","2","3","4","5"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 2,
+    "statement": "The diagram shows squares of three different sizes arranged into a rectangle. The length of each side of the smallest square is 20 cm. Adam walks along the path marked from P to Q. How far does Adam walk?",
+    "diagram": "assets/images/jk-2019-q02.png",
+    "options": ["380 cm","400 cm","420 cm","440 cm","460 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 3,
+    "statement": "A bridge is built across a river. One quarter of the bridge is over the left bank of the river and one third of the bridge is over the right bank. The river is 170 m wide. How long is the bridge?",
+    "options": ["150 m","190 m","240 m","288 m","324 m"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 4,
+    "statement": "In four years' time Evie will be three times older than she was two years ago. How old will Evie be in one year's time?",
+    "options": ["2","3","4","6","7"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 5,
+    "statement": "Two rectangles of dimensions 8 cm by 10 cm and 9 cm by 12 cm overlap as shown in the diagram. The area of the black region is 37 cm². What is the area of the grey region?",
+    "diagram": "assets/images/jk-2019-q05.png",
+    "options": ["60 cm²","62 cm²","62.5 cm²","64 cm²","65 cm²"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 6,
+    "statement": "In the quadrilateral PQRS, the length of PQ is 11 cm, the length of QR is 7 cm, the length of RS is 9 cm and the length of SP is 3 cm. Both ∠QRS and ∠SPQ are 90°. What is the area of the quadrilateral PQRS?",
+    "options": ["30 cm²","48 cm²","50 cm²","52 cm²","60 cm²"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 7,
+    "statement": "There are 30 pupils in my class. 20 pupils like Maths and 18 pupils like English. Twice as many pupils like both subjects as like neither of them. How many pupils like only Maths?",
+    "options": ["20","16","12","8","4"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 8,
+    "statement": "The mean of five numbers is 25. Abbie adds 5 to the first number, 10 to the second number, 15 to the third number, 20 to the fourth number and 25 to the fifth number to obtain a new set of five numbers. What is the mean of the numbers in the new set?",
+    "options": ["100","50","40","30","25"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 9,
+    "statement": "What is the smallest possible sum of two positive integers whose product is 240?",
+    "options": ["30","31","32","34","38"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 10,
+    "statement": "There are 39 boys and 23 girls in a dance group. Every week 6 boys and 8 girls join the group and no one leaves. What is the total number of people in the dance group in the week when the number of boys is equal to the number of girls?",
+    "options": ["144","154","164","174","184"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 11,
+    "statement": "Two of the following four facts about a positive integer N are true and two are false: N is divisible by 5; N is divisible by 11; N is divisible by 55; N is less than 10. What is the value of N?",
+    "options": ["5","10","11","55","110"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 12,
+    "statement": "The shape in the diagram is made up of a rectangle, a square and an equilateral triangle, all of which have the same perimeter. The length of the side of the square is 9 cm. What is the length of the shorter sides of the rectangle?",
+    "diagram": "assets/images/jk-2019-q12.png",
+    "options": ["4 cm","5 cm","6 cm","7 cm","8 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 13,
+    "statement": "What is the minimum number of cubes of the same size required to fill a box with dimensions 30 cm by 40 cm by 50 cm?",
+    "options": ["20","40","60","80","120"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 14,
+    "statement": "Henry starts to read a 290-page book on a Sunday. He reads four pages every day except on Sundays when he reads 25 pages. How many days does it take him to finish the book?",
+    "options": ["41","40","35","12","6"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 15,
+    "statement": "Amy, Bob, Cat and Dee occupy the top four positions in a chess tournament. The sum of Amy's position, Bob's position and Dee's position is 6. The sum of Bob's position and Cat's position is 6. Bob finished ahead of Amy. Who came first in the tournament?",
+    "options": ["Amy","Bob","Cat","Dee","You can't be certain"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 16,
+    "statement": "Eight cards are numbered from 1 to 8. The cards are placed in two boxes P and Q so that the sum of the numbers on the three cards in box P is equal to the sum of the numbers on the five cards in box Q. Which of the following statements must be true?",
+    "options": [
+      "The card numbered 1 is not in box Q",
+      "Four cards in box Q have even numbers on",
+      "The card numbered 5 is in box Q",
+      "The card numbered 2 is in box Q",
+      "Exactly three cards in box Q have odd numbers on"
+    ],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 17,
+    "statement": "The diagram shows a square, an equilateral triangle and a regular pentagon. What is the size of ∠W V U?",
+    "diagram": "assets/images/jk-2019-q17.png",
+    "options": ["21°","23°","25°","27°","29°"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 18,
+    "statement": "In the diagram ♦ and ▲ each represent a positive integer. The sums of the numbers in each row and in each column are as shown. What is the value of ♦ + ▲ + ▲ ?",
+    "diagram": "assets/images/jk-2019-q18.png",
+    "options": ["12","17","18","22","23"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 19,
+    "statement": "In the diagram, PQRS is a square of side 10 cm. The distance MN is 6 cm. The square is divided into four congruent isosceles triangles, four congruent squares and the shaded region. What is the area of the shaded region?",
+    "diagram": "assets/images/jk-2019-q19.png",
+    "options": ["42 cm²","46 cm²","48 cm²","52 cm²","58 cm²"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 20,
+    "statement": "The diagram shows a 2 × 4 table in which the numbers in each column except the first column are the sum and the difference of the numbers in the previous column. Carl completes a 2 × 7 table in the same way and obtains the numbers 96 and 64 in the final column. What is the sum of the numbers in the first column of Carl's table?",
+    "diagram": "assets/images/jk-2019-q20.png",
+    "options": ["24","20","12","10","8"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 21,
+    "statement": "Ellis's Eel Emporium contains a large tank holding three different types of eel: electric eels, moray eels and freshwater eels. A notice on the tank reads as follows: \"All the eels are electric eels except 12. All the eels are moray eels except 14. All the eels are freshwater eels except 16.\" How many eels are in the tank?",
+    "options": ["42","33","24","21","20"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 22,
+    "statement": "Geraint always cycles to work, leaving at 8 am every morning. When he averages 15 km/h, he arrives 10 minutes late. When he averages 30 km/h, he arrives 10 minutes early. What speed should he average to arrive on time?",
+    "options": ["20 km/h","21 km/h","22.5 km/h","24 km/h","25 km/h"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 23,
+    "statement": "Sid is colouring the cells in the grid using the four colours red, blue, yellow and green in such a way that any two cells that share a vertex are coloured differently. He has already coloured some of the cells as shown. What colour will he use for the cell marked X?",
+    "diagram": "assets/images/jk-2019-q23.png",
+    "options": ["Red","Blue","Yellow","Green","You can't be certain"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 24,
+    "statement": "There are two ponds at the bottom of Gabrielle's garden, each containing frogs and toads. In one pond the ratio of frogs to toads is 3 : 4. In the other pond the ratio of frogs to toads is 5 : 6. Suppose there are 36 frogs in total. What would be the largest possible total number of toads in the ponds?",
+    "options": ["48","46","44","42","40"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2019,
+    "num": 25,
+    "statement": "The room numbers of a hotel are all three-digit numbers. The first digit represents the floor and the last two digits represent the room number. The hotel has rooms on five floors, numbered 1 to 5. It has 35 rooms on each floor, numbered 01 to 35. If numbering all the rooms, how many times will the digit 2 be used?",
+    "options": ["60","65","95","100","105"],
+    "answer": ""
+  }
+]
