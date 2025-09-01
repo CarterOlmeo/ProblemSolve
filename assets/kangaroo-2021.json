@@ -1,0 +1,211 @@
+[
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 1,
+    "statement": "Which of these expressions has the largest value?",
+    "options": ["1 + 2 × 3 + 4","1 + 2 + 3 × 4","1 + 2 + 3 + 4","1 × 2 + 3 + 4","1 × 2 + 3 × 4"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 2,
+    "statement": "Lily pours 296 litres of water into the top of the pipework shown in the diagram. Each time a pipe forks, half the water flows to one side and half to the other. How many litres of water will reach container Y?",
+    "diagram": "assets/images/jk-2021-q02.png",
+    "options": ["210","213","222","225","231"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 3,
+    "statement": "Andrew wants to write the letters of the word KANGAROO in the cells of a 2 × 4 grid such that each cell contains exactly one letter. He can write the first letter in any cell he chooses but each subsequent letter can only be written in a cell with at least one common vertex with the cell in which the previous letter was written. Which of the following arrangements of letters could he NOT produce in this way? (see diagram)",
+    "diagram": "assets/images/jk-2021-q03.png",
+    "options": ["A","B","C","D","E"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 4,
+    "statement": "At 8:00 my watch was four minutes slow. However, it gains time at a constant rate and at 16:00 on the same day it was six minutes fast. At what time did it show the correct time?",
+    "options": ["9:10","10:11","11:12","12:13","13:14"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 5,
+    "statement": "In how many two-digit numbers is one digit twice the other?",
+    "options": ["6","8","10","12","14"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 6,
+    "statement": "What day will it be 2021 hours after 20:21 on Monday?",
+    "options": ["Friday","Thursday","Wednesday","Tuesday","Monday"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 7,
+    "statement": "A square of paper is cut into two pieces by a single straight cut. Which of the following shapes cannot be the shape of either piece?",
+    "options": ["An isosceles triangle","A right-angled triangle","A pentagon","A rectangle","A square"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 8,
+    "statement": "When Cathy the cat just lazes around, she drinks 60 ml of milk per day. However, each day she chases mice she drinks a third more milk. Also, each day she gets chased by a dog she drinks half as much again as when she chases mice. In the last two weeks Cathy has been chasing mice on alternate days and has also been chased by a dog on two other days. How much milk did she drink in the last two weeks?",
+    "options": ["900 ml","980 ml","1040 ml","1080 ml","1100 ml"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 9,
+    "statement": "The houses on the south side of Crazy Street are numbered in increasing order starting at 1 and using consecutive odd numbers, except that odd numbers that contain the digit 3 are missed out. What is the number of the 20th house on the south side of Crazy Street?",
+    "options": ["41","49","51","59","61"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 10,
+    "statement": "The diagram shows four congruent right-angled triangles inside a rectangle. What is the total area, in cm², of the four triangles? (diagram with 28 cm and 30 cm shown)",
+    "diagram": "assets/images/jk-2021-q10.png",
+    "options": ["46","52","54","56","64"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 11,
+    "statement": "Dad says he is exactly 35 years old, not counting weekends. How old is he really?",
+    "options": ["40","42","45","49","56"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 12,
+    "statement": "The mean of a set of 8 numbers is 12. Two numbers with a mean of 18 are removed from the set. What is the mean of the remaining 6 numbers?",
+    "options": ["6","7","8","9","10"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 13,
+    "statement": "The diagram shows three triangles which are formed by the five line segments ACDF, BCG, GDE, AB and EF so that AC = BC = CD = GD = EF = AF and ∠CAB = ∠EFD. What is the size, in degrees, of ∠CAB? (see diagram)",
+    "diagram": "assets/images/jk-2021-q13.png",
+    "options": ["40°","45°","50°","55°","60°"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 14,
+    "statement": "The ratio a : b : c = 2 : 3 : 4. The ratio c : d : e = 3 : 4 : 5. What is the ratio a : e?",
+    "options": ["1 : 10","1 : 5","3 : 10","2 : 5","1 : 2"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 15,
+    "statement": "Each square in the grid shown is 1 cm by 1 cm. What is the area of the shaded figure, in cm²? (see grid diagram)",
+    "diagram": "assets/images/jk-2021-q15.png",
+    "options": ["14","15","16","17","18"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 16,
+    "statement": "Aimee says Bella is lying. Bella says Marc is lying. Marc says Bella is lying. Terry says Aimee is lying. How many of the four children are lying?",
+    "options": ["0","1","2","3","4"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 17,
+    "statement": "In three games a football team scored three goals and conceded one. In those three games, the club won one game, drew one game and lost one game. What was the score in the game they won?",
+    "options": ["3 - 0","2 - 0","1 - 0","3 - 1","2 - 1"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 18,
+    "statement": "The diagram shows the eight vertices of an octagon connected by line segments. Jodhvir wants to write one of the integers 1, 2, 3 or 4 at each of the vertices so that the two integers at the ends of every line segment are different. He has already written three integers as shown. How many times will the integer 4 appear in his completed diagram?",
+    "diagram": "assets/images/jk-2021-q18.png",
+    "options": ["5","4","3","2","1"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 19,
+    "statement": "Sacha places 25 counters into 14 boxes so that each box contains 1, 2 or 3 counters. No box is inside any other box. Seven boxes contain 1 counter. How many contain 3 counters?",
+    "options": ["2","3","4","5","6"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 20,
+    "statement": "In the addition sum shown, J, K and L stand for different digits. What is the value of J + K + L? (J K L / J L L / + J K L = 4 7 9 shown in the problem)",
+    "diagram": "assets/images/jk-2021-q20.png",
+    "options": ["6","8","9","10","11"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 21,
+    "statement": "In a particular month there were 5 Saturdays and 5 Sundays but only 4 Mondays and 4 Fridays. What must occur in the next month?",
+    "options": ["5 Wednesdays","5 Thursdays","5 Fridays","5 Saturdays","5 Sundays"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 22,
+    "statement": "In the diagram PQRS is a rhombus. Point T is the mid-point of PS and point W is the mid-point of SR. What is the ratio of the unshaded area to the shaded area? (see diagram)",
+    "diagram": "assets/images/jk-2021-q22.png",
+    "options": ["1 : 1","2 : 3","3 : 5","4 : 7","5 : 9"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 23,
+    "statement": "Using only pieces like the one shown in the diagram, Zara wants to make a complete square without gaps or overlaps. What is the smallest number of pieces she can use?",
+    "diagram": "assets/images/jk-2021-q23.png",
+    "options": ["5","8","16","20","75"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 24,
+    "statement": "Four positive numbers p, q, r and s are in increasing order of size. One of the numbers is to be increased by 1 so that the product of the four new numbers is now as small as possible. Which number should be increased?",
+    "options": ["p","q","r","s","either q or r"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2021,
+    "num": 25,
+    "statement": "Sonia wants to write a positive five-digit integer whose digits are 1, 2, 3, 4 and 5 in some order. The first digit of the integer is to be divisible by 1, the first two digits are to form a two-digit integer divisible by 2, the first three digits are to form a three-digit integer divisible by 3, the first four digits are to form a four-digit integer divisible by 4 and the five-digit integer itself is to be divisible by 5. How many such five-digit integers could Sonia write?",
+    "options": ["10","5","2","1","0"],
+    "answer": ""
+  }
+]
