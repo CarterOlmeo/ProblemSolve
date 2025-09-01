@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trivial — UKMT & CRUX Extension (Link‑only)</title>
+  <style>
+    :root { --bg: #0b0f14; --fg: #e6edf3; --muted:#9aa7b3; --card:#11161d; --accent:#6aa3ff; }
+    html, body { background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; margin:0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { padding: 24px 16px; max-width: 1100px; margin: 0 auto; }
+    h1 { margin: 0 0 6px; font-weight: 800; letter-spacing: -0.02em; }
+    .sub { color: var(--muted); font-size: 14px; }
+    .toolbar { display: grid; gap: 12px; grid-template-columns: 1fr; padding: 0 16px 16px; max-width: 1100px; margin: 0 auto; }
+    .toolbar .row { display:flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .chip { background: #0f1520; color: var(--fg); padding: 8px 12px; border-radius: 999px; border: 1px solid #1b2430; display:inline-flex; align-items:center; gap:8px; }
+    input[type="search"], select { background: #0f1520; color: var(--fg); border: 1px solid #1b2430; border-radius: 12px; padding: 10px 12px; outline: none; min-width: 220px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; padding: 0 16px 48px; max-width: 1100px; margin: 0 auto; }
+    .card { background: var(--card); border:1px solid #1b2430; border-radius: 16px; padding: 14px; display:flex; flex-direction:column; gap: 10px; }
+    .card h3 { margin: 0; font-size: 16px; }
+    .pill { display:inline-flex; padding: 4px 8px; border-radius: 999px; background:#101827; color:#cbd5e1; font-size: 12px; border:1px solid #1b2430; }
+    .meta { display:flex; gap:8px; flex-wrap: wrap; }
+    .btn-row { display:flex; gap:10px; margin-top: 6px; }
+    .btn { padding: 8px 10px; border-radius: 10px; border:1px solid #1b2430; background:#0f1520; color:var(--fg); cursor:pointer; }
+    .btn:hover { background:#111a2a; }
+    footer { max-width:1100px; margin: 0 auto; padding: 12px 16px 40px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .warn { color:#f6c76f; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>UKMT & CRUX — Link‑only Library</h1>
+    <div class="sub">A drop‑in page for <em>amctrivial.com</em> that indexes official UKMT past papers and CRUX issues without republishing statements. Built to respect rights while giving fast navigation.</div>
+  </header>
+
+  <section class="toolbar" id="toolbar">
+    <div class="row">
+      <input id="q" type="search" placeholder="Search source / contest / year / tags… (e.g. BMO1 2024 geometry)" />
+      <select id="source">
+        <option value="">All sources</option>
+        <option>UKMT</option>
+        <option>CRUX</option>
+      </select>
+      <select id="contest">
+        <option value="">All contests</option>
+        <option>SMC</option>
+        <option>IMC</option>
+        <option>JMC</option>
+        <option>JMO</option>
+        <option>BMO1</option>
+        <option>BMO2</option>
+        <option>MOG</option>
+        <option>CRUX</option>
+      </select>
+      <select id="year">
+        <option value="">All years</option>
+        <option>2025</option>
+        <option>2024</option>
+        <option>2023</option>
+        <option>2022</option>
+        <option>2021</option>
+        <option>2020</option>
+        <option>2019</option>
+      </select>
+    </div>
+    <div class="row">
+      <span class="chip">Mode: <strong>Link‑only</strong> • zero statements mirrored</span>
+      <button class="btn" id="shuffle">Random pick</button>
+      <button class="btn" id="clear">Reset filters</button>
+    </div>
+  </section>
+
+  <main class="grid" id="grid"></main>
+
+  <footer>
+    <p class="warn"><strong>Usage & permissions.</strong> This page links to official UKMT PDFs and CRUX issues and stores only lightweight metadata (year, contest, URLs, tags). Do not mirror or bulk‑reproduce problem statements or solutions without written permission from the rights holders. See UKMT guidance on use of material (April 2024) and BMO usage notes; and CMS permissions for Crux.</p>
+  </footer>
+
+  <!-- Minimal demo dataset embedded for portability. Replace with /data/ukmt.index.json and /data/crux.index.json in production. -->
+  <script type="application/json" id="seed-data">{
+    "items": [
+      {
+        "id": "UKMT-SMC-2024",
+        "source": "UKMT",
+        "contest": "SMC",
+        "year": 2024,
+        "kind": "questions+solutions",
+        "question_pdf": "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf",
+        "solution_pdf": "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC_2024_Solutions.pdf",
+        "tags": ["multiple-choice", "senior", "uk"],
+        "notes": "Direct official PDFs. Link‑only."
+      },
+      {
+        "id": "UKMT-BMO1-2024",
+        "source": "UKMT",
+        "contest": "BMO1",
+        "year": 2024,
+        "kind": "questions",
+        "question_pdf": "https://ukmt.org.uk/wp-content/uploads/2024/11/BMO1-2024-Paper-1.pdf",
+        "solution_pdf": null,
+        "tags": ["proof", "olympiad", "senior"],
+        "notes": "BMO Round 1 paper link."
+      },
+      {
+        "id": "CRUX-46-2-2020-issue",
+        "source": "CRUX",
+        "contest": "CRUX",
+        "year": 2020,
+        "kind": "issue",
+        "issue": "Vol 46 No 2",
+        "issue_pdf": "https://cms.math.ca/wp-content/uploads/2020/02/CRUXv46n2.pdf",
+        "tags": ["journal", "problems", "mixed"],
+        "notes": "Issue‑level link. Use for personal study only; other reuse needs CMS permission."
+      }
+    ]
+  }</script>
+
+  <script>
+    const $ = (sel) => document.querySelector(sel);
+    const data = JSON.parse(document.getElementById('seed-data').textContent).items;
+
+    const state = { q:"", source:"", contest:"", year:"" };
+
+    function norm(x){ return (x??"").toString().toLowerCase(); }
+
+    function match(item){
+      const q = norm(state.q);
+      const hay = [item.source, item.contest, item.year, ...(item.tags||[]), item.issue, item.notes].map(norm).join(" ");
+      const passQ = !q || hay.includes(q);
+      const passS = !state.source || item.source === state.source;
+      const passC = !state.contest || item.contest === state.contest;
+      const passY = !state.year || String(item.year) === state.year;
+      return passQ && passS && passC && passY;
+    }
+
+    function tagPill(t){ return `<span class="pill">${t}</span>`; }
+
+    function card(item){
+      const title = [item.source, item.contest, item.year, item.issue?`· ${item.issue}`:``].filter(Boolean).join(' · ');
+      const links = [];
+      if (item.question_pdf) links.push(`<a class="btn" target="_blank" rel="noopener" href="${item.question_pdf}">Open questions</a>`);
+      if (item.solution_pdf) links.push(`<a class="btn" target="_blank" rel="noopener" href="${item.solution_pdf}">Open solutions</a>`);
+      if (item.issue_pdf) links.push(`<a class="btn" target="_blank" rel="noopener" href="${item.issue_pdf}">Open issue PDF</a>`);
+      return `<article class="card">
+        <h3>${title}</h3>
+        <div class="meta">${(item.tags||[]).map(tagPill).join('')}</div>
+        ${item.notes ? `<div class="sub">${item.notes}</div>`: ''}
+        <div class="btn-row">${links.join('')}</div>
+      </article>`;
+    }
+
+    function render(){
+      const items = data.filter(match).sort((a,b)=> (b.year||0)-(a.year||0));
+      $('#grid').innerHTML = items.map(card).join('') || `<div class="sub" style="padding: 16px">No matches. Try clearing filters.</div>`;
+    }
+
+    function reset(){ state.q=""; state.source=""; state.contest=""; state.year=""; $('#q').value=''; $('#source').value=''; $('#contest').value=''; $('#year').value=''; render(); }
+
+    $('#q').addEventListener('input', e=> { state.q = e.target.value; render(); });
+    $('#source').addEventListener('change', e=> { state.source = e.target.value; render(); });
+    $('#contest').addEventListener('change', e=> { state.contest = e.target.value; render(); });
+    $('#year').addEventListener('change', e=> { state.year = e.target.value; render(); });
+    $('#clear').addEventListener('click', reset);
+    $('#shuffle').addEventListener('click', ()=>{
+      const picks = data.filter(match);
+      if(!picks.length) return;
+      const it = picks[Math.floor(Math.random()*picks.length)];
+      const url = it.question_pdf || it.issue_pdf || it.solution_pdf;
+      if(url) window.open(url, '_blank', 'noopener');
+    });
+
+    render();
+  </script>
+</body>
+</html>
