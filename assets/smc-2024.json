@@ -1,12 +1,127 @@
 [
   {
     "num": 1,
-    "statement": "If a+b=10 and ab=21, find a^2+b^2.\n(A) 42\n(B) 58\n(C) 62\n(D) 70\n(E) 100",
-    "answer": "B"
+    "statement": "What is two-fifths of the recurring decimal 0.‾2‾5?\n(A) 0.‾1\n(B) 0.0‾1\n(C) 0.‾0‾1\n(D) 0.10\n(E) 0.‾1‾0",
+    "answer": ""
   },
   {
     "num": 2,
-    "statement": "Demo problem 2.\n(A) ...\n(B) ...\n(C) ...\n(D) ...\n(E) ...",
-    "answer": "C"
+    "statement": "A twip is a very short unit of length, equal to approximately 0.000018 m. A league is about 4800 m. Roughly how many twips are there in a league?\n(A) 270,000,000\n(B) 27,000,000\n(C) 2,700,000\n(D) 270,000\n(E) 27,000",
+    "answer": ""
+  },
+  {
+    "num": 3,
+    "statement": "Two standard dice are placed on a table, one on top of the other, so only nine faces are seen. The touching faces show the same number. The sum of the visible faces is 33. What is the number on the touching faces?\n(A) 1\n(B) 2\n(C) 3\n(D) 4\n(E) 6",
+    "answer": ""
+  },
+  {
+    "num": 4,
+    "statement": "The three angles of a triangle are G, 7G and G² (degrees). What is the largest angle?\n(A) 10°\n(B) 18°\n(C) 100°\n(D) 120°\n(E) 121°",
+    "answer": ""
+  },
+  {
+    "num": 5,
+    "statement": "When (4/5) × (5/4) is calculated, how many digits are there in the answer?\n(A) 4\n(B) 6\n(C) 10\n(D) 16\n(E) 20",
+    "answer": ""
+  },
+  {
+    "num": 6,
+    "statement": "One face of a solid polyhedron is an octagon. What is the smallest possible number of edges the solid could have?\n(A) 9\n(B) 10\n(C) 12\n(D) 16\n(E) 24",
+    "answer": ""
+  },
+  {
+    "num": 7,
+    "statement": "Which is the largest prime factor of 3^8 − 1?\n(A) 41\n(B) 37\n(C) 31\n(D) 29\n(E) 23",
+    "answer": ""
+  },
+  {
+    "num": 8,
+    "statement": "In the following, G ≠ 0. When one expression is removed, the mean of the remaining four is 11G. Which is removed?\n(A) 4G\n(B) 8G\n(C) 12G\n(D) 16G\n(E) 20G",
+    "answer": ""
+  },
+  {
+    "num": 9,
+    "statement": "A palindromic number reads the same forwards and backwards. What is the hundreds digit of the largest six-digit palindromic number divisible by 18?\n(A) 9\n(B) 7\n(C) 5\n(D) 3\n(E) 1",
+    "answer": ""
+  },
+  {
+    "num": 10,
+    "statement": "The prime factorization of 2024 is 2^3 × 11 × 23. How many two-digit numbers are factors of 2024?\n(A) 2\n(B) 4\n(C) 6\n(D) 7\n(E) 8",
+    "answer": ""
+  },
+  {
+    "num": 11,
+    "statement": "Which expression is always a square number for all integers n ≥ 1?\n(A) n+1\n(B) n(n+1)+1\n(C) n(n+1)(n+2)+1\n(D) n(n+1)(n+2)(n+3)+1\n(E) n(n+1)(n+2)(n+3)(n+4)+1",
+    "answer": ""
+  },
+  {
+    "num": 12,
+    "statement": "p, q, r, s are two-digit primes using all nonzero digits except 5. What is p+q+r+s?\n(A) 220\n(B) 210\n(C) 200\n(D) 190\n(E) more info needed",
+    "answer": ""
+  },
+  {
+    "num": 13,
+    "statement": "A number pyramid is partly completed. Each brick above is the sum of the two below. What number should appear on the brick marked I?\n(A) 176\n(B) 617\n(C) 671\n(D) 716\n(E) 761",
+    "answer": ""
+  },
+  {
+    "num": 14,
+    "statement": "Digits 1–5 are assigned to %, &, ', (, ) in some order. “%')” and “&'(” are three-digit primes. Which digit is '?\n(A) 1\n(B) 2\n(C) 3\n(D) 4\n(E) 5",
+    "answer": ""
+  },
+  {
+    "num": 15,
+    "statement": "Two squares share a corner. One side is 10 cm. The shaded region has area 62 cm². What is the other side length?\n(A) 3\n(B) √18\n(C) √19\n(D) √22\n(E) 5",
+    "answer": ""
+  },
+  {
+    "num": 16,
+    "statement": "A 2×4 cupboard grid has 8 doors. A decorator paints 3 red so that ≥1 in each row is red and ≥2 of the corners are red. How many ways?\n(A) 12\n(B) 24\n(C) 36\n(D) 40\n(E) 56",
+    "answer": ""
+  },
+  {
+    "num": 17,
+    "statement": "A bag contains 4 balls, each red or white. Without replacement, two are drawn. P(both red)=1/2. What is P(both white)?\n(A) 1/2\n(B) 1/3\n(C) 1/4\n(D) 1/6\n(E) 0",
+    "answer": ""
+  },
+  {
+    "num": 18,
+    "statement": "Two concentric circles are divided into 14 equal-area slices. Radius of smaller circle is 1. What is length G of an outer radial line?\n(A) √14−1\n(B) √14−2\n(C) √14/2−1\n(D) √14/2−2\n(E) √14−1/2",
+    "answer": ""
+  },
+  {
+    "num": 19,
+    "statement": "Five friends each get 2 cards from numbers 1–12. Their sums are Paolo 4, Quinn 11, Romy 16, Stephen 19, Thomas 20. Which statement is true?\n(A) Paolo has card 2\n(B) Quinn has card 3\n(C) Romy has card 5\n(D) Stephen has card 7\n(E) Thomas has card 11",
+    "answer": ""
+  },
+  {
+    "num": 20,
+    "statement": "Let G,H be positive integers with 1/G + 1/H = 1/20. What is the maximum possible value of H?\n(A) 40\n(B) 60\n(C) 240\n(D) 420\n(E) 480",
+    "answer": ""
+  },
+  {
+    "num": 21,
+    "statement": "A crossnumber uses digits 1–9, each once, with eight cells. Across: (1) multiple of 9, (3) a square. Down: (1) multiple of 11, (2) multiple of 13 and 19. Which digit is not used?\n(A) 9\n(B) 8\n(C) 5\n(D) 3\n(E) 2",
+    "answer": ""
+  },
+  {
+    "num": 22,
+    "statement": "Triangle ABC is divided into 4 smaller triangles with areas 4, 8, 12, 8. What is the area of triangle ADB?\n(A) 4\n(B) 5\n(C) 6\n(D) 7\n(E) 8",
+    "answer": ""
+  },
+  {
+    "num": 23,
+    "statement": "The plane can be tiled with the ‘hat tile’. It subdivides into 8 congruent kites. Area = 8√3. What is the perimeter?\n(A) 8+12√3\n(B) 16+6√3\n(C) 8+8√3\n(D) 6+8√3\n(E) 8+6√3",
+    "answer": ""
+  },
+  {
+    "num": 24,
+    "statement": "A function f satisfies f(G)+f(1/(1−G))=24G for all real G≠0,1. What is f(3)?\n(A) 40\n(B) 42\n(C) 45\n(D) 48\n(E) 50",
+    "answer": ""
+  },
+  {
+    "num": 25,
+    "statement": "Three semicircles, each of area 24, overlap. Centres are P,Q,R with ∠PRQ=30°. What is the total area of the shaded regions?\n(A) 12\n(B) 6√3\n(C) 15\n(D) 18\n(E) 8√3",
+    "answer": ""
   }
 ]
