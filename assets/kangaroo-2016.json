@@ -1,0 +1,202 @@
+[
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 1,
+    "statement": "At which of these times is the angle between the minute hand and the hour hand of a clock equal to $150^{\\circ}$?",
+    "options": ["9 pm", "8 pm", "6 pm", "5 pm", "4 pm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 2,
+    "statement": "Twelve people, and no more, can sit evenly spaced around a large square table. Rohan arranges eight of these square tables in a row to make one long rectangular table. What is the maximum number of people that can sit evenly spaced around this long table?",
+    "options": ["48", "54", "60", "80", "96"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 3,
+    "statement": "A ball and a bat cost £90 in total. Three balls and two bats cost £210 in total. How much does a bat cost?",
+    "options": ["£20", "£30", "£40", "£50", "£60"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 4,
+    "statement": "It takes 9 litres of paint to cover the surface of the cube on the left (see diagram). How much paint would it take to cover the surface of the shape on the right (see diagram)?",
+    "options": ["9 litres", "8 litres", "6 litres", "4 litres", "2 litres"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 5,
+    "statement": "What is 10% of 30% of 7000?",
+    "options": ["15", "105", "150", "501", "510"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 6,
+    "statement": "Miss Spelling has enough sheets of paper to give each pupil in her class 3 sheets and have 31 sheets left over. Alternatively, she could give each pupil 4 sheets and have 8 sheets left over. How many sheets of paper does she have?",
+    "options": ["31", "34", "43", "91", "100"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 7,
+    "statement": "Which of the following nets can be used to build the partial cube shown in the diagram? (see diagram)",
+    "options": ["A", "B", "C", "D", "E"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 8,
+    "statement": "One angle of an isosceles triangle is $30^{\\circ}$. Which of the following could be the difference between the other two angles?",
+    "options": ["$30^{\\circ}$", "$60^{\\circ}$", "$70^{\\circ}$", "$80^{\\circ}$", "$90^{\\circ}$"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 9,
+    "statement": "A piece of paper in the shape of a regular hexagon is folded so that three marked vertices meet at the centre $O$ of the hexagon (see diagram). What is the shape of the figure that is formed?",
+    "options": ["Six-pointed star", "Dodecagon", "Hexagon", "Square", "Equilateral triangle"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 10,
+    "statement": "Four circles of radius 5 cm touch the sides of a square and each other, as shown in the diagram. On each side of the square, an equilateral triangle is drawn to form a four-pointed star. What is the perimeter of the star?",
+    "options": ["40 cm", "80 cm", "120 cm", "160 cm", "200 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 11,
+    "statement": "Joey calculated the sum of the largest and smallest two-digit numbers that are multiples of three. Zoe calculated the sum of the largest and smallest two-digit numbers that are not multiples of three. What is the difference between their answers?",
+    "options": ["2", "3", "4", "5", "6"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 12,
+    "statement": "The diagram shows a rectangle $ABCD$ in which $AB=1$ metre and $AD=4$ metres. The points $E$ and $G$ are the midpoints of $AD$ and $AB$ and the points $F$ and $H$ are the midpoints of $AE$ and $AG$ respectively (see diagram). What is the area of the shaded rectangle?",
+    "options": ["1 m²", "2 m²", "3 m²", "4 m²", "8 m²"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 13,
+    "statement": "The tens digit of a two-digit number is three more than the units digit. When this two-digit number is divided by the sum of its digits, the answer is 7 remainder 3. What is the sum of the digits of the two-digit number?",
+    "options": ["5", "7", "9", "11", "13"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 14,
+    "statement": "How many different cubes are there with three faces coloured red and three faces coloured blue? (see diagram)",
+    "options": ["1", "2", "3", "4", "5"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 15,
+    "statement": "The diameter of the circle shown is 10 cm. The circle passes through the vertices of a large rectangle which is divided into 16 identical smaller rectangles (see diagram). What is the perimeter of the shape drawn with a dark line?",
+    "options": ["10 cm", "16 cm", "20 cm", "24 cm", "30 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 16,
+    "statement": "The diagram shows part of a river which has two islands in it. There are six bridges linking the islands and the two banks as shown. Leonhard goes for a walk every day in which he walks over each bridge exactly once. He always starts at point A, goes first over bridge 1 and always finishes at point B. What is the maximum number of days that he can walk without repeating the order in which he crosses the bridges?",
+    "options": ["2", "4", "5", "6", "More than 6"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 17,
+    "statement": "The square $ABCD$ consists of four congruent rectangles arranged around a central square. The perimeter of each of the rectangles is 40 cm. What is the area of the square $ABCD$?",
+    "options": ["400 cm²", "200 cm²", "160 cm²", "120 cm²", "80 cm²"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 18,
+    "statement": "When Ellen went to the shop, she found she could spend all her money on 6 cans of cola and 7 croissants or on 8 cans of cola and 4 croissants. If she decided to buy only croissants, how many croissants could she buy?",
+    "options": ["12", "13", "14", "15", "18"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 19,
+    "statement": "Adam, Bill and Chris went swimming 15 times last summer. Adam paid for everyone eight times and Bill paid for everyone seven times. At the end of the summer, Chris calculated that he owed £30. How should he split this between Adam and Bill so that each has paid the same amount?",
+    "options": ["£22 to Adam and £8 to Bill", "£20 to Adam and £10 to Bill", "£18 to Adam and £12 to Bill", "£16 to Adam and £14 to Bill", "£15 to Adam and £15 to Bill"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 20,
+    "statement": "The diagram shows five congruent right-angled isosceles triangles. What is the total area of the triangles? (each small square is 1 cm²) (see diagram)",
+    "options": ["25 cm²", "32 cm²", "35 cm²", "45 cm²", "60 cm²"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 21,
+    "statement": "In Carl's pencil case there are nine pencils. At least one of the pencils is blue. In any group of four pencils, at least two have the same colour. In any group of five pencils, at most three have the same colour. How many pencils are blue?",
+    "options": ["1", "2", "3", "4", "More information needed"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 22,
+    "statement": "Lewis drives from London to Brighton at an average speed of 60 mph. On the way back, he gets stuck in traffic and his average speed is only 40 mph. What is his average speed for the whole journey?",
+    "options": ["55 mph", "50 mph", "48 mph", "45 mph", "Impossible to determine"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 23,
+    "statement": "In the addition sum below, $a$, $b$ and $c$ stand for different digits (see diagram).\\n\\n  \\quad \\; a b c\\n+ \\; a c b\\n-------\\n\\; c 4 a\\n\\nWhat is the value of $a+b+c$?",
+    "options": ["20", "19", "18", "17", "16"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 24,
+    "statement": "The lengths of three adjacent sides of a quadrilateral are equal. The angle between the first and second of these sides is $60^{\\circ}$ and the angle between the second and third of these sides is $100^{\\circ}$. What is the largest angle of the quadrilateral?",
+    "options": ["130°", "140°", "145°", "150°", "160°"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2016,
+    "num": 25,
+    "statement": "The whole numbers from 1 to 2016 inclusive are written on a blackboard. Moritz underlines all the multiples of two in red, all the multiples of three in blue and all the multiples of four in green. How many numbers does Moritz underline exactly twice?",
+    "options": ["1008", "1004", "504", "336", "168"],
+    "answer": ""
+  }
+]
