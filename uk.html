@@ -8,67 +8,13 @@
   <!-- KaTeX for math rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+  <script defer src="https://cdn<script>
+/* surface JS errors in the status line */
+window.addEventListener('error', e => {
+  const s = document.getElementById('status');
+  if (s) s.textContent = 'JS error: ' + e.message;
+});
 
-  <!-- PDF.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-  <script>
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-  </script>
-
-  <style>
-    :root{ --bg:#0b0f14; --fg:#e6edf3; --muted:#9aa7b3; --card:#11161d; --line:#1b2430; --accent:#6aa3ff; --bar:#21b09e; }
-    html,body{background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    .bar{background:var(--bar); color:#031a15; font-weight:800; padding:14px 18px; font-size:20px;}
-    .wrap{max-width:1000px; margin:0 auto; padding:12px 16px 40px;}
-    .actions{color:var(--muted); font-size:14px; margin:10px 0 18px; display:flex; gap:14px; flex-wrap:wrap}
-    .actions button{border:1px solid var(--line); background:#0f1520; color:#fff; padding:8px 10px; border-radius:10px; cursor:pointer}
-    .actions button:hover{background:#111a2a}
-    .panel{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px; margin:14px 0}
-    .row{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
-    input[type="number"],select{background:#0f1520; color:#fff; border:1px solid var(--line); border-radius:10px; padding:6px 8px}
-    .problem{padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:#0f1520; margin:12px 0}
-    .ptitle{font-weight:800; letter-spacing:.02em}
-    .meta{color:var(--muted); font-size:12px}
-    .stem{margin-top:8px; line-height:1.55; font-size:17px}
-    hr.sep{border:none; border-top:1px solid var(--line); margin:12px 0 0}
-    @media print{ .panel, .actions { display:none !important; } body{background:#fff; color:#000} .problem{border:none; background:#fff} .bar{background:#fff; color:#000; border-bottom:1px solid #000} a{color:#000; text-decoration:none} }
-  </style>
-</head>
-<body>
-  <div class="bar" id="titlebar">Problem Set — SMC 2024</div>
-  <div class="wrap">
-    <div class="actions">
-      <button id="btnCopy">Copy problem list</button>
-      <button id="btnPrint">Print this page</button>
-      <span id="status" class="meta"></span>
-    </div>
-
-    <div class="panel">
-      <div class="row">
-        <label>Number of problems <input id="count" type="number" min="1" max="25" value="25"></label>
-        <label>Difficulty mix
-          <select id="mix">
-            <option value="balanced">Balanced (E/M/H)</option>
-            <option value="easy">Easy-leaning</option>
-            <option value="hard">Hard-leaning</option>
-            <option value="pureRandom">Pure random</option>
-          </select>
-        </label>
-        <button id="btnGenerate">Generate subset</button>
-        <button id="btnAll">Show all 25</button>
-      </div>
-      <div class="meta" style="margin-top:6px">
-        Source: official UKMT SMC 2024 paper PDF. Problems restated here with permission; no PDFs mirrored.
-      </div>
-    </div>
-
-    <div id="list"></div>
-  </div>
-
-<script>
 const $ = (s)=>document.querySelector(s);
 const statusEl = $('#status');
 
@@ -85,9 +31,22 @@ function renderMathIn(el){
 function diffBucket(num){ const d=num/25; return d<.34?'E':d<.67?'M':'H'; }
 function choose(list,k){ const a=list.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a.slice(0,Math.min(k,a.length)); }
 
+/* -------- PDF extractor (blob-aware) -------- */
 async function extractSMC2024(url){
-  const pdf = await pdfjsLib.getDocument(url).promise;
+  async function loadPdf(u){
+    try {
+      return await pdfjsLib.getDocument({ url: u, disableRange: true }).promise;
+    } catch (e) {
+      const resp = await fetch(u);
+      if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${u}`);
+      const buf = await resp.arrayBuffer();
+      return await pdfjsLib.getDocument({ data: buf }).promise;
+    }
+  }
+
+  const pdf = await loadPdf(url);
   const lines = [];
+
   for (let p=1; p<=pdf.numPages; p++){
     const page = await pdf.getPage(p);
     const content = await page.getTextContent();
@@ -98,7 +57,9 @@ async function extractSMC2024(url){
     for(const it of items){ if(prevY===null) prevY=it.y; if(Math.abs(it.y-prevY)>2){ flush(); prevY=it.y; } row.push(it); }
     flush(); lines.push('');
   }
+
   let text = lines.join('\n').replace(/(\d)\s+(?=\d)/g,'$1');
+
   const re = /^([1-9]|1\d|2[0-5])\.\s([\s\S]*?)(?=^\s*(?:[1-9]|1\d|2[0-5])\.\s|$)/gm;
   const blocks=[]; let m;
   while((m=re.exec(text))!==null){
@@ -115,34 +76,28 @@ async function extractSMC2024(url){
     if(!/\(A\)[\s\S]*\(B\)[\s\S]*\(C\)[\s\S]*\(D\)[\s\S]*\(E\)/.test(statement)) continue;
     blocks.push({num:n, statement});
   }
+
   return blocks.sort((a,b)=>a.num-b.num).map(b=>({
     id:`SMC-2024-Q${b.num}`, source:"UKMT", contest:"SMC", year:2024, num:b.num, kind:"mc",
     rights:"© UKMT, used with permission.", difficulty:diffBucket(b.num), statement:b.statement
   }));
 }
 
-// robust path handling for GitHub Project Pages
-const parts = location.pathname.split('/').filter(Boolean);
-const ROOT = parts.length >= 2 ? `/${parts[0]}/` : '/'; // "/ProblemSolve/" or "/"
-const LOCAL_CANDIDATES = [
-  "/ProblemSolve/assets/SMC-2024-Paper.pdf", // absolute to project root
-  "assets/SMC-2024-Paper.pdf"                // relative to this page
-];
-const UKMT_SMC_2024 = "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf";
-
+/* -------- sources (single definition each!) -------- */
 const UKMT_SMC_2024 = "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf";
 const LOCAL_ABS = "/ProblemSolve/assets/SMC-2024-Paper.pdf";
 const LOCAL_REL = "assets/SMC-2024-Paper.pdf";
 
+/* -------- loader (try local first, then UKMT) -------- */
 async function loadSMC2024(){
   statusEl.textContent = "Loading SMC 2024…";
-  const tries = [LOCAL_ABS, LOCAL_REL, UKMT_SMC_2024]; // try your local copy first
+  const tries = [LOCAL_ABS, LOCAL_REL, UKMT_SMC_2024];
   for (const u of tries){
     try{
       const probs = await extractSMC2024(u);
       if (probs && probs.length){
         window._smc2024 = probs;
-        statusEl.textContent = `Loaded SMC 2024 ✓ (${u.includes('http') ? 'UKMT' : u})`;
+        statusEl.textContent = `Loaded SMC 2024 ✓ (${u.includes('http') ? 'UKMT' : 'local'})`;
         return probs;
       }
     }catch(e){
@@ -158,7 +113,7 @@ async function loadSMC2024(){
   ];
 }
 
-
+/* -------- rendering & controls -------- */
 function renderList(problems){
   const list = $('#list');
   list.innerHTML = problems.map((p,i)=>`
@@ -170,7 +125,159 @@ function renderList(problems){
     </div>
   `).join('');
   renderMathIn(list);
-  $('#titlebar').textContent = `Problem Set — SMC 2024 (\${problems.length} problems)`;
+  // ❗️fixed: remove the escape so the number is evaluated
+  $('#titlebar').textContent = `Problem Set — SMC 2024 (${problems.length} problems)`;
+}
+
+function toPlainText(problems){
+  return problems.map((p,i)=>`PROBLEM ${i+1} (${p.year} ${p.contest} #${p.num})\n${p.statement}`).join("\n\n---\n\n");
+}
+
+function pickSubset(all,count,mix){
+  if(mix==='pureRandom') return choose(all,count).sort((a,b)=>a.num-b.num);
+  const weights={balanced:{E:.4,M:.4,H:.2},easy:{E:.6,M:.3,H:.1},hard:{E:.15,M:.45,H:.4}}[mix]||{E:.4,M:.4,H:.2};
+  const by={E:[],M:[],H:[]}; all.forEach(p=>by[p.difficulty||diffBucket(p.num)].push(p));
+  const want={E:Math.round(count*weights.E), M:Math.round(count*weights.M)}; want.H=count-want.E-want.M;
+  let out=[].concat(choose(by.E,want.E), choose(by.M,want.M), choose(by.H,want.H));
+  if(out.length<count) out=out.concat(choose(all.filter(p=>!out.includes(p)), count-out.length));
+  return out.sort((a,b)=>a.num-b.num);
+}
+
+(async function init(){
+  const problems = await loadSMC2024();
+  renderList(problems);
+
+  $('#btnCopy').addEventListener('click', async ()=>{
+    try{ await navigator.clipboard.writeText(toPlainText(window._smc2024||problems)); statusEl.textContent="Copied list to clipboard ✓"; }
+    catch(e){ statusEl.textContent="Copy failed: "+e.message; }
+  });
+  $('#btnPrint').addEventListener('click', ()=>window.print());
+  $('#btnAll').addEventListener('click', ()=>renderList(window._smc2024||problems));
+  $('#btnGenerate').addEventListener('click', ()=>{
+    const n=Math.max(1,Math.min(25,+$('#count').value||25));
+    const mix=$('#mix').value;
+    renderList(pickSubset(window._smc2024||problems, n, mix));
+  });
+})();
+<script>
+/* surface JS errors in the status line */
+window.addEventListener('error', e => {
+  const s = document.getElementById('status');
+  if (s) s.textContent = 'JS error: ' + e.message;
+});
+
+const $ = (s)=>document.querySelector(s);
+const statusEl = $('#status');
+
+function renderMathIn(el){
+  if (!window.renderMathInElement) return;
+  window.renderMathInElement(el, {
+    delimiters: [
+      {left:"$$", right:"$$", display:true},
+      {left:"\\(", right:"\\)", display:false},
+      {left:"$", right:"$", display:false}
+    ]
+  });
+}
+function diffBucket(num){ const d=num/25; return d<.34?'E':d<.67?'M':'H'; }
+function choose(list,k){ const a=list.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a.slice(0,Math.min(k,a.length)); }
+
+/* -------- PDF extractor (blob-aware) -------- */
+async function extractSMC2024(url){
+  async function loadPdf(u){
+    try {
+      return await pdfjsLib.getDocument({ url: u, disableRange: true }).promise;
+    } catch (e) {
+      const resp = await fetch(u);
+      if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${u}`);
+      const buf = await resp.arrayBuffer();
+      return await pdfjsLib.getDocument({ data: buf }).promise;
+    }
+  }
+
+  const pdf = await loadPdf(url);
+  const lines = [];
+
+  for (let p=1; p<=pdf.numPages; p++){
+    const page = await pdf.getPage(p);
+    const content = await page.getTextContent();
+    const items = content.items.map(it=>({s:it.str,x:it.transform[4],y:it.transform[5]}))
+      .sort((a,b)=> (a.y===b.y ? a.x-b.x : b.y-a.y));
+    let row=[], prevY=null;
+    const flush=()=>{ if(row.length){ const txt=row.map(t=>t.s).join(' ').replace(/\s+/g,' ').trim(); if(txt) lines.push(txt); row=[]; } };
+    for(const it of items){ if(prevY===null) prevY=it.y; if(Math.abs(it.y-prevY)>2){ flush(); prevY=it.y; } row.push(it); }
+    flush(); lines.push('');
+  }
+
+  let text = lines.join('\n').replace(/(\d)\s+(?=\d)/g,'$1');
+
+  const re = /^([1-9]|1\d|2[0-5])\.\s([\s\S]*?)(?=^\s*(?:[1-9]|1\d|2[0-5])\.\s|$)/gm;
+  const blocks=[]; let m;
+  while((m=re.exec(text))!==null){
+    const n=parseInt(m[1],10);
+    let body=m[2].replace(/[ \t]+/g,' ').trim();
+    const opt=/\(A\)\s*([\s\S]*?)\s*\(B\)\s*([\s\S]*?)\s*\(C\)\s*([\s\S]*?)\s*\(D\)\s*([\s\S]*?)\s*\(E\)\s*([\s\S]*?)$/;
+    let statement=body;
+    const om=opt.exec(body);
+    if(om){
+      const stem=body.slice(0,om.index).trim();
+      const [A,B,C,D,E]=om.slice(1).map(t=>t.replace(/\s+/g,' ').trim());
+      statement=`${stem}\n(A) ${A}\n(B) ${B}\n(C) ${C}\n(D) ${D}\n(E) ${E}`;
+    }
+    if(!/\(A\)[\s\S]*\(B\)[\s\S]*\(C\)[\s\S]*\(D\)[\s\S]*\(E\)/.test(statement)) continue;
+    blocks.push({num:n, statement});
+  }
+
+  return blocks.sort((a,b)=>a.num-b.num).map(b=>({
+    id:`SMC-2024-Q${b.num}`, source:"UKMT", contest:"SMC", year:2024, num:b.num, kind:"mc",
+    rights:"© UKMT, used with permission.", difficulty:diffBucket(b.num), statement:b.statement
+  }));
+}
+
+/* -------- sources (single definition each!) -------- */
+const UKMT_SMC_2024 = "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf";
+const LOCAL_ABS = "/ProblemSolve/assets/SMC-2024-Paper.pdf";
+const LOCAL_REL = "assets/SMC-2024-Paper.pdf";
+
+/* -------- loader (try local first, then UKMT) -------- */
+async function loadSMC2024(){
+  statusEl.textContent = "Loading SMC 2024…";
+  const tries = [LOCAL_ABS, LOCAL_REL, UKMT_SMC_2024];
+  for (const u of tries){
+    try{
+      const probs = await extractSMC2024(u);
+      if (probs && probs.length){
+        window._smc2024 = probs;
+        statusEl.textContent = `Loaded SMC 2024 ✓ (${u.includes('http') ? 'UKMT' : 'local'})`;
+        return probs;
+      }
+    }catch(e){
+      console.warn('load failed for', u, e);
+      statusEl.textContent = `Tried ${u.includes('http')?'UKMT':'local'}…`;
+    }
+  }
+  statusEl.textContent = "SMC 2024 load failed — check the PDF path/casing.";
+  return [
+    {id:"SMC-2024-Q1",source:"UKMT",contest:"SMC",year:2024,num:1,kind:"mc",
+     rights:"© UKMT, used with permission.",difficulty:"E",
+     statement:"(Seed) If $a+b=10$ and $ab=21$, find $a^2+b^2$. (A) 42 (B) 58 (C) 62 (D) 70 (E) 100"}
+  ];
+}
+
+/* -------- rendering & controls -------- */
+function renderList(problems){
+  const list = $('#list');
+  list.innerHTML = problems.map((p,i)=>`
+    <div class="problem">
+      <div class="ptitle">PROBLEM ${i+1} <span class="meta">(${p.year} ${p.contest} #${p.num})</span></div>
+      <div class="stem">${p.statement.replace(/\n/g,'<br>')}</div>
+      <div class="meta" style="margin-top:8px">${p.rights||''}</div>
+      <hr class="sep">
+    </div>
+  `).join('');
+  renderMathIn(list);
+  // ❗️fixed: remove the escape so the number is evaluated
+  $('#titlebar').textContent = `Problem Set — SMC 2024 (${problems.length} problems)`;
 }
 
 function toPlainText(problems){
@@ -204,5 +311,6 @@ function pickSubset(all,count,mix){
   });
 })();
 </script>
+
 </body>
 </html>
