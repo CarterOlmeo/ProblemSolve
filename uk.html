@@ -30,50 +30,33 @@
     .options li{margin:2px 0; line-height:1.4}
     .figure{text-align:center;margin:10px 0}
     .figure img{max-width:90%;border-radius:8px;border:1px solid var(--line)}
+    .controls { display:flex; gap:10px; align-items:center; flex-wrap:wrap }
     hr.sep{border:none; border-top:1px solid var(--line); margin:12px 0 0}
-    @media print{ .panel, .actions { display:none !important; } body{background:#fff; color:#000} .problem{border:none; background:#fff} .bar{background:#fff; color:#000; border-bottom:1px solid #000} a{color:#000; text-decoration:none} }
+    .btn { background:#0f1520; color:#fff; border:1px solid var(--line); padding:6px 8px; border-radius:8px; cursor:pointer }
+    .btn:hover { background:#111a2a }
+    @media print{ .panel, .actions, .btn { display:none !important; } body{background:#fff; color:#000} .problem{border:none; background:#fff} .bar{background:#fff; color:#000; border-bottom:1px solid #000} a{color:#000; text-decoration:none} }
   </style>
 </head>
 <body>
   <div class="bar" id="titlebar">Problem Archive</div>
   <div class="wrap">
     <div class="actions">
-      <button id="btnCopy">Copy problem list</button>
-      <button id="btnPrint">Print this page</button>
+      <button id="btnCopy" class="btn">Copy problem list</button>
+      <button id="btnPrint" class="btn">Print this page</button>
       <span id="status" class="meta"></span>
     </div>
 
     <div class="panel">
       <div class="row">
-        <label>Contest
-          <select id="contest">
-            <option value="smc-2024">SMC 2024</option>
-            <option value="jmc-2015">JMC 2015</option>
-            <option value="jmc-2016">JMC 2016</option>
-            <option value="jmc-2017">JMC 2017</option>
-            <option value="jmc-2018">JMC 2018</option>
-            <option value="jmc-2019">JMC 2019</option>
-            <option value="jmc-2020">JMC 2020</option>
-            <option value="jmc-2021">JMC 2021</option>
-            <option value="jmc-2022">JMC 2022</option>
-            <option value="jmc-2023">JMC 2023</option>
-            <option value="jmc-2024">JMC 2024</option>
-            <option value="jmc-2025">JMC 2025</option>
-            <option value="kangaroo-2025">Junior Kangaroo 2025</option>
-            <option value="kangaroo-2024">Junior Kangaroo 2024</option>
-            <option value="kangaroo-2023">Junior Kangaroo 2023</option>
-            <option value="kangaroo-2022">Junior Kangaroo 2022</option>
-            <option value="kangaroo-2021">Junior Kangaroo 2021</option>
-            <option value="kangaroo-2020">Junior Kangaroo 2020</option>
-            <option value="kangaroo-2019">Junior Kangaroo 2019</option>
-            <option value="kangaroo-2018">Junior Kangaroo 2018</option>
-            <option value="kangaroo-2017">Junior Kangaroo 2017</option>
-            <option value="kangaroo-2016">Junior Kangaroo 2016</option>
-            <option value="kangaroo-2015">Junior Kangaroo 2015</option>
-            <option value="jo-2024">Junior Olympiad 2024</option>
+        <label>
+          Contest
+          <select id="contestSelect">
+            <option value="">(choose contest)</option>
           </select>
         </label>
-        <label>Number of problems <input id="count" type="number" min="1" max="30" value="10"></label>
+
+        <label>Number <input id="count" type="number" min="1" max="50" value="10"></label>
+
         <label>Difficulty mix
           <select id="mix">
             <option value="balanced">Balanced</option>
@@ -82,319 +65,340 @@
             <option value="pureRandom">Pure random</option>
           </select>
         </label>
-        <button id="btnGenerate">Generate subset</button>
-        <button id="btnAll">Show all</button>
+
+        <button id="btnGenerate" class="btn">Generate subset</button>
+        <button id="btnAll" class="btn">Show all</button>
       </div>
       <div class="meta" style="margin-top:6px">
-        Source: UKMT and related contests (restated with permission). Data loaded from <code>assets/problems/*.json</code>.
+        Source: UKMT & friends (restated with permission). Data loaded from <code>assets/*.json</code>. Add JSON files to <code>/ProblemSolve/assets/</code> and edit SOURCES in the script below.
+      </div>
+    </div>
+
+    <!-- sheet builder panel -->
+    <div class="panel">
+      <div class="row controls">
+        <label>Out count <input id="outCount" type="number" min="1" max="50" value="12"></label>
+        <label>Out mix
+          <select id="outMix">
+            <option value="balanced">Balanced (E/M/H)</option>
+            <option value="easy">Easy-leaning</option>
+            <option value="hard">Hard-leaning</option>
+            <option value="pureRandom">Pure random</option>
+          </select>
+        </label>
+
+        <div id="sourcesControls" style="display:flex;gap:8px;align-items:center"></div>
+
+        <button id="buildBtn" class="btn">Generate sheet</button>
+        <button id="printSheetBtn" class="btn">Print sheet</button>
       </div>
     </div>
 
     <div id="list"></div>
-  </div>
 
-  <!-- Add these libs in head (KaTeX already present in your site) -->
-<!-- Insert this block where you want the controls + list -->
-<div class="panel">
-  <div class="row">
-    <label>Number <input id="outCount" type="number" min="1" max="50" value="12"></label>
-    <label>Difficulty mix
-      <select id="outMix">
-        <option value="balanced">Balanced (E/M/H)</option>
-        <option value="easy">Easy-leaning</option>
-        <option value="hard">Hard-leaning</option>
-        <option value="pureRandom">Pure random</option>
-      </select>
-    </label>
-    <label>Sources (choose) <span id="sourcesSpan"></span></label>
-    <button id="buildBtn" class="btn">Generate sheet</button>
-    <button id="printBtn" class="btn">Print</button>
+    <section id="sheetArea" class="panel"></section>
   </div>
-</div>
-
-<section id="sheetArea" class="panel"></section>
 
 <script>
-/* ---------- CONFIG ---------- */
-// If you have assets/index.json, the loader will use it. Otherwise list files here:
-const FALLBACK_JSON_LIST = [
-  '/ProblemSolve/assets/junior-kangaroo-2024.json',
-  '/ProblemSolve/assets/jmc-2024.json',
-  '/ProblemSolve/assets/smc-2024.json'
-  // add more files here
+/* ---------- Configuration: list your JSONs here ---------- */
+/* Put your files in /ProblemSolve/assets/ and name them in SOURCES.
+   Each JSON should be an array of objects:
+   { "contest": "JMC", "year": 2024, "num": 1, "statement": "...", "options": [...], "answer":"", "images": ["assets/img1.png"], "difficulty":"E" }
+*/
+const SOURCES = [
+  { id: 'smc-2024', path: '/ProblemSolve/assets/smc-2024.json' },
+  { id: 'jmc-2024', path: '/ProblemSolve/assets/jmc-2024.json' },
+  { id: 'junior-kangaroo-2024', path: '/ProblemSolve/assets/junior-kangaroo-2024.json' }
+  // add additional JSON files here
 ];
 
-const INDEX_JSON_PATH = '/ProblemSolve/assets/index.json'; // optional
-
-/* ---------- helpers ---------- */
+/* ---------- Helpers ---------- */
 const $ = s => document.querySelector(s);
-const el = s => document.createElement(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const statusEl = $('#status');
 
-function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
-function bucketFromDifficulty(d){ // fallback
-  if(!d) return 'M';
-  if(['E','e','1'].includes(d)) return 'E';
-  if(['M','m','2'].includes(d)) return 'M';
-  return 'H';
+function logStatus(msg){ if(statusEl) statusEl.textContent = msg; else console.log(msg); }
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a; }
+function choose(list,k){ return shuffle(list.slice()).slice(0, Math.min(k, list.length)); }
+
+/* extract options if statement contains (A) ... (B) ... ... */
+const OPT_RE = /(.*?)\s*\(A\)\s*([\s\S]*?)\s*\(B\)\s*([\s\S]*?)\s*\(C\)\s*([\s\S]*?)\s*\(D\)\s*([\s\S]*?)\s*\(E\)\s*([\s\S]*?)(?:$|\n)/m;
+
+/* normalize difficulty marker */
+function normalizeDifficulty(d){
+  if(!d) return null;
+  const s = String(d).trim().toUpperCase();
+  if(s.startsWith('E')) return 'E';
+  if(s.startsWith('M')) return 'M';
+  if(s.startsWith('H')) return 'H';
+  if(['1','EASY'].includes(s)) return 'E';
+  if(['2','MED','MEDIUM'].includes(s)) return 'M';
+  if(['3','HARD'].includes(s)) return 'H';
+  return null;
 }
 
-/* ---------- load all JSONs ---------- */
-async function loadAllProblems(){
-  // try index.json first
-  let list;
-  try {
-    const r = await fetch(INDEX_JSON_PATH, {cache:'no-store'});
-    if(r.ok) list = await r.json();
-  } catch(e){ /* ignore */ }
-  if(!Array.isArray(list)) list = FALLBACK_JSON_LIST;
+/* infer difficulty heuristics (tweak for your taste) */
+function inferDifficulty(problem){
+  if(problem.difficulty) return normalizeDifficulty(problem.difficulty);
+  const c = (problem.contest||'').toUpperCase();
+  const n = Number(problem.num) || 0;
+  if(c.includes('JMC')){
+    if(n <= 5) return 'H';
+    if(n <= 15) return 'M';
+    return 'E';
+  }
+  if(c.includes('SMC')){
+    if(n <= 8) return 'E';
+    if(n <= 17) return 'M';
+    return 'H';
+  }
+  if(c.includes('KANG') || c.includes('JUNIOR')){
+    if(n <= 10) return 'E';
+    if(n <= 20) return 'M';
+    return 'H';
+  }
+  return 'M';
+}
 
-  const problems = [];
-  for(const path of list){
-    try {
-      const r = await fetch(path, {cache:'no-store'});
-      if(!r.ok) { console.warn('skip',path,r.status); continue; }
-      const arr = await r.json();
-      if(Array.isArray(arr)){
-        for(const item of arr){
-          // normalize minimal fields
-          problems.push({
-            id: item.id || `${item.contest||'X'}-${item.year||'NA'}-${item.num||'0'}`,
-            contest: item.contest || 'Unknown',
-            year: item.year || null,
-            num: item.num || null,
-            kind: item.kind || 'mc',
-            difficulty: bucketFromDifficulty(item.difficulty || item.level || item.diff),
-            statement: item.statement || '',
-            options: item.options || [],
-            answer: item.answer || '',
-            images: item.images || [],
-            tags: item.tags || [],
-            rights: item.rights || ''
-          });
-        }
-      }
-    } catch(err){
-      console.error('failed load', path, err);
+/* sanitize a raw JSON problem entry */
+function sanitize(raw, defaultContest){
+  const p = Object.assign({}, raw);
+  p.contest = p.contest || defaultContest || 'Unknown';
+  p.year = p.year || null;
+  p.num = (raw.num === 0 || raw.num) ? raw.num : null;
+  p.id = p.id || `${p.contest}-${p.year || 'NA'}-Q${p.num || 'X'}`;
+  p.options = Array.isArray(raw.options) ? raw.options.slice() : [];
+  p.images = Array.isArray(raw.images) ? raw.images.slice() : (raw.image ? [raw.image] : []);
+  p.answer = raw.answer || raw.answer === 0 ? String(raw.answer) : '';
+  p.rights = raw.rights || '';
+  p.statement = (typeof raw.statement === 'string') ? raw.statement.replace(/\r/g,'').trim() : (raw.statement ? String(raw.statement) : '');
+  // try to extract options if none present
+  if((!p.options || p.options.length === 0) && typeof p.statement === 'string'){
+    const m = OPT_RE.exec(p.statement);
+    if(m){
+      const stem = (m[1] || '').trim();
+      p.statement = stem || p.statement;
+      p.options = [m[2].trim(), m[3].trim(), m[4].trim(), m[5].trim(), m[6].trim()];
     }
   }
-  return problems;
+  p.difficulty = normalizeDifficulty(raw.difficulty) || inferDifficulty(p);
+  return p;
 }
 
-/* ---------- UI for source checkboxes ---------- */
-function buildSourceControls(problems){
-  const sources = [...new Set(problems.map(p=>p.contest))].sort();
-  const span = $('#sourcesSpan'); span.innerHTML='';
-  for(const s of sources){
-    const lbl = el('label');
-    const cb = el('input'); cb.type='checkbox'; cb.value=s; cb.checked=true; cb.className='srcchk';
-    lbl.appendChild(cb);
-    lbl.insertAdjacentText('beforeend', ' ' + s + ' ');
-    span.appendChild(lbl);
-  }
+/* ---------- Load all JSON files (SOURCES) ---------- */
+let ALL_PROBLEMS = [];
+
+async function loadSources(){
+  logStatus('Loading problem JSONs...');
+  const loads = SOURCES.map(async s=>{
+    try{
+      const r = await fetch(s.path, { cache: 'no-store' });
+      if(!r.ok){ console.warn('skip', s.path, r.status); return []; }
+      const arr = await r.json();
+      if(!Array.isArray(arr)) { console.warn('not array', s.path); return []; }
+      const san = arr.map(item => sanitize(item, s.id));
+      return san;
+    }catch(err){
+      console.warn('failed load', s.path, err);
+      return [];
+    }
+  });
+  const results = await Promise.all(loads);
+  ALL_PROBLEMS = results.flat();
+  logStatus(`Loaded ${ALL_PROBLEMS.length} problems from ${SOURCES.length} JSONs.`);
+  return ALL_PROBLEMS;
 }
 
-/* ---------- picking algorithm ---------- */
-function pickProblems(pool, count, mix='balanced'){
-  if(mix === 'pureRandom') return shuffle(pool).slice(0, count);
-  // weights by bucket
+/* ---------- Build source checkboxes (from contests found) ---------- */
+function buildSourcesUI(){
+  const uniqContests = [...new Set(ALL_PROBLEMS.map(p => p.contest || 'Unknown'))].sort();
+  const contSelect = $('#contestSelect');
+  contSelect.innerHTML = '<option value="">(choose contest)</option>';
+  uniqContests.forEach(c => {
+    const opt = document.createElement('option'); opt.value = c; opt.textContent = c;
+    contSelect.appendChild(opt);
+  });
+
+  const sc = $('#sourcesControls');
+  sc.innerHTML = '<strong>Sources:</strong> ';
+  uniqContests.forEach(c => {
+    const label = document.createElement('label'); label.style.marginRight='8px';
+    const cb = document.createElement('input'); cb.type='checkbox'; cb.className='srcchk'; cb.value = c; cb.checked = true;
+    label.appendChild(cb);
+    label.appendChild(document.createTextNode(' ' + c));
+    sc.appendChild(label);
+  });
+}
+
+/* ---------- Pool & selection ---------- */
+function selectedSources(){
+  return $$('.srcchk:checked').map(ch => ch.value);
+}
+
+function poolForSelectedSources(){
+  const sel = selectedSources();
+  if(!sel || sel.length === 0) return ALL_PROBLEMS.slice();
+  return ALL_PROBLEMS.filter(p => sel.includes(p.contest));
+}
+
+function pickProblems(pool, count, mix){
+  if(!pool || pool.length === 0) return [];
+  if(mix === 'pureRandom') return choose(pool, count);
   const weights = {
-    balanced: {E:.4,M:.4,H:.2},
-    easy: {E:.6,M:.3,H:.1},
-    hard: {E:.15,M:.45,H:.4}
+    balanced: {E:.4, M:.4, H:.2},
+    easy: {E:.6, M:.3, H:.1},
+    hard: {E:.15, M:.45, H:.4}
   }[mix] || {E:.4,M:.4,H:.2};
-
-  const by = {E:[],M:[],H:[]};
-  pool.forEach(p => by[p.difficulty || 'M'].push(p));
-  const want = { E: Math.round(count*weights.E), M: Math.round(count*weights.M) };
-  want.H = count - want.E - want.M;
-  let out = [];
-  out = out.concat(shuffle(by.E).slice(0,want.E));
-  out = out.concat(shuffle(by.M).slice(0,want.M));
-  out = out.concat(shuffle(by.H).slice(0,want.H));
+  const buckets = {E:[], M:[], H:[]};
+  pool.forEach(p => {
+    const d = inferDifficulty(p);
+    buckets[d] = buckets[d] || [];
+    buckets[d].push(p);
+  });
+  const wantE = Math.round(count * weights.E);
+  const wantM = Math.round(count * weights.M);
+  const wantH = count - wantE - wantM;
+  let out = [].concat(choose(buckets.E, wantE), choose(buckets.M, wantM), choose(buckets.H, wantH));
   if(out.length < count){
-    const remaining = pool.filter(p=>!out.includes(p));
-    out = out.concat(shuffle(remaining).slice(0, count - out.length));
+    const remaining = pool.filter(p => !out.includes(p));
+    out = out.concat(choose(remaining, count - out.length));
   }
-  // preserve ordering by contest/num or keep shuffled — here we keep the chosen order random:
   return shuffle(out);
 }
 
-/* ---------- rendering sheet ---------- */
-function renderSheet(problems, opts={title:'Custom problem set'}){
-  const host = $('#sheetArea');
-  host.innerHTML = '';
-  const header = el('div'); header.className='row'; header.style.justifyContent='space-between';
-  header.innerHTML = `<div><strong>${opts.title}</strong></div><div class="meta">${new Date().toLocaleString()}</div>`;
-  host.appendChild(header);
-
-  problems.forEach((p,i)=>{
-    const box = el('div'); box.className='problem'; box.style.marginBottom='16px';
-    const head = el('div'); head.innerHTML = `<div class="ptitle">PROBLEM ${i+1} <span class="meta">(${p.contest} ${p.year} #${p.num})</span></div>`;
-    const statement = el('div'); statement.className='stem'; statement.innerHTML = p.statement.replace(/\n/g,'<br>');
-    // images
-    if(p.images && p.images.length){
-      for(const src of p.images){
-        const im = el('img'); im.src = src; im.style.maxWidth='380px'; im.style.display='block';
-        statement.appendChild(im);
-      }
-    }
-    box.appendChild(head);
-    box.appendChild(statement);
-
-    // options (if any)
-    if(p.options && p.options.length){
-      const ul = el('ul'); ul.style.marginTop='8px';
-      p.options.forEach((opt,j) => {
-        const li = el('li');
-        li.innerHTML = `(${String.fromCharCode(65+j)}) ${opt}`;
-        ul.appendChild(li);
-      });
-      box.appendChild(ul);
-    }
-
-    // solution hidden
-    const sol = el('div'); sol.className='meta solution'; sol.style.display='none';
-    sol.innerHTML = `<strong>Answer:</strong> ${p.answer || '—'} ${p.rights?('<div class="meta">'+p.rights+'</div>'):''}`;
-    box.appendChild(sol);
-
-    host.appendChild(box);
-  });
-
-  // add a toggle for solutions at bottom
-  const ctrl = el('div'); ctrl.className='row'; ctrl.style.gap='8px';
-  const showBtn = el('button'); showBtn.className='btn'; showBtn.textContent='Toggle solutions';
-  showBtn.addEventListener('click', ()=>{
-    host.querySelectorAll('.solution').forEach(s=>{
-      s.style.display = (s.style.display === 'none') ? 'block' : 'none';
-    });
-  });
-  ctrl.appendChild(showBtn);
-  host.appendChild(ctrl);
-  // typeset math
-  if(window.renderMathInElement) window.renderMathInElement(host, {delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}]});
-}
-
-/* ---------- wire up ---------- */
-let ALL_PROBLEMS = [];
-
-(async function init(){
-  ALL_PROBLEMS = await loadAllProblems();
-  if(!ALL_PROBLEMS.length){
-    $('#sheetArea').textContent = 'No problems loaded — check assets/index.json or the file list in FALLBACK_JSON_LIST.';
-    return;
-  }
-  buildSourceControls(ALL_PROBLEMS);
-
-  $('#buildBtn').addEventListener('click', ()=>{
-    const n = Math.max(1, Math.min(50, +$('#outCount').value||12));
-    const mix = $('#outMix').value;
-    const srcChecked = [...document.querySelectorAll('.srcchk:checked')].map(i=>i.value);
-    const pool = ALL_PROBLEMS.filter(p => srcChecked.includes(p.contest));
-    const chosen = pickProblems(pool, n, mix);
-    renderSheet(chosen, {title:`Random set (${n}) — ${mix}`});
-  });
-
-  $('#printBtn').addEventListener('click', ()=>window.print());
-})();
-</script>
-
-<script>
-const $ = (s)=>document.querySelector(s);
-const statusEl = $('#status');
-
-function renderMathIn(el){
-  if (!window.renderMathInElement) return;
-  window.renderMathInElement(el, {
-    delimiters: [
-      {left:"$$", right:"$$", display:true},
-      {left:"\\(", right:"\\)", display:false},
-      {left:"$", right:"$", display:false}
-    ]
-  });
-}
-function diffBucket(num){ const d=num/25; return d<.34?'E':d<.67?'M':'H'; }
-function choose(list,k){ const a=list.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a.slice(0,Math.min(k,a.length)); }
-
-/* ---- Load JSON for contest ---- */
-async function loadContest(contestFile){
-  statusEl.textContent = `Loading ${contestFile}…`;
-  try {
-    const r = await fetch(`/ProblemSolve/assets/${contestFile}.json`, {cache:'no-store'});
-    if (!r.ok) throw new Error("HTTP " + r.status);
-    const arr = await r.json();
-    const probs = arr.map(b => ({
-      id: `${b.contest}-${b.year}-Q${b.num}`,
-      source: "UKMT",
-      ...b,
-      rights: "© UKMT, used with permission.",
-      difficulty: diffBucket(b.num),
-      options: b.options || []
-    }));
-    window._currentProblems = probs;
-    statusEl.textContent = `Loaded ✓ ${probs.length} problems from ${contestFile}`;
-    return probs;
-  } catch(e){
-    console.error(e);
-    statusEl.textContent = `Load failed for ${contestFile}`;
-    return [];
-  }
-}
-
-/* ---- Render ---- */
+/* ---------- Rendering functions ---------- */
 function renderList(problems){
   const list = $('#list');
-  list.innerHTML = problems.map((p,i)=>`
-    <div class="problem">
-      <div class="ptitle">PROBLEM ${i+1} <span class="meta">(${p.year} ${p.contest} #${p.num})</span></div>
-      <div class="stem">${p.statement.replace(/\n/g,'<br>')}</div>
-      ${p.image ? `<div class="figure"><img src="${p.image}" alt="Problem ${p.num}" /></div>` : ''}
-      <ul class="options">
-        ${(p.options && p.options.length ? p.options.map((opt,j)=>`<li>(${String.fromCharCode(65+j)}) ${opt}</li>`).join('') : '<li><em>No options</em></li>')}
-      </ul>
-      <div class="meta" style="margin-top:8px">${p.rights||''}</div>
-      <hr class="sep">
-    </div>
-  `).join('');
-  renderMathIn(list);
+  if(!Array.isArray(problems)) problems = [];
+  list.innerHTML = problems.map((p,i) => {
+    const head = `<div class="ptitle">PROBLEM ${i+1} <span class="meta">(${p.year||''} ${p.contest||''} #${p.num||''})</span></div>`;
+    const stmt = `<div class="stem">${(p.statement||'[no statement]').replace(/\n/g,'<br>')}</div>`;
+    const imgs = (p.images && p.images.length) ? p.images.map(src=>`<div class="figure"><img src="${src}" alt=""></div>`).join('') : '';
+    const opts = (p.options && p.options.length) ? `<ul class="options">${p.options.map((o,j)=>`<li>(${String.fromCharCode(65+j)}) ${o}</li>`).join('')}</ul>` : '<div class="meta"><em>No options</em></div>';
+    const rights = p.rights ? `<div class="meta">${p.rights}</div>` : '';
+    return `<div class="problem">${head}${stmt}${imgs}${opts}${rights}<hr class="sep"></div>`;
+  }).join('');
+  if(window.renderMathInElement) {
+    window.renderMathInElement(list, {
+      delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}]
+    });
+  }
   $('#titlebar').textContent = `Problem Archive (${problems.length} problems)`;
 }
 
 function toPlainText(problems){
-  return problems.map((p,i)=>`PROBLEM ${i+1} (${p.year} ${p.contest} #${p.num})\n${p.statement}\nOptions: ${p.options.join(" | ")}`).join("\n\n---\n\n");
+  return problems.map((p,i)=>`PROBLEM ${i+1} (${p.year||''} ${p.contest||''} #${p.num||''})\n${p.statement}\nOptions: ${p.options && p.options.length ? p.options.join(' | ') : '—'}`).join("\n\n---\n\n");
 }
 
-function pickSubset(all,count,mix){
-  if(mix==='pureRandom') return choose(all,count).sort((a,b)=>a.num-b.num);
-  const weights={balanced:{E:.4,M:.4,H:.2},easy:{E:.6,M:.3,H:.1},hard:{E:.15,M:.45,H:.4}}[mix]||{E:.4,M:.4,H:.2};
-  const by={E:[],M:[],H:[]}; all.forEach(p=>by[p.difficulty||diffBucket(p.num)].push(p));
-  const want={E:Math.round(count*weights.E), M:Math.round(count*weights.M)}; want.H=count-want.E-want.M;
-  let out=[].concat(choose(by.E,want.E), choose(by.M,want.M), choose(by.H,want.H));
-  if(out.length<count) out=out.concat(choose(all.filter(p=>!out.includes(p)), count-out.length));
-  return out.sort((a,b)=>a.num-b.num);
+/* ---------- Sheet builder ---------- */
+function renderSheet(probs, opts={title:'Custom set'}){
+  const host = $('#sheetArea');
+  host.innerHTML = '';
+  const header = document.createElement('div'); header.className = 'row'; header.style.justifyContent='space-between';
+  header.innerHTML = `<div><strong>${opts.title}</strong></div><div class="meta">${new Date().toLocaleString()}</div>`;
+  host.appendChild(header);
+
+  probs.forEach((p,i) => {
+    const box = document.createElement('div'); box.className = 'problem';
+    const head = document.createElement('div'); head.innerHTML = `<div class="ptitle">PROBLEM ${i+1} <span class="meta">(${p.contest} ${p.year||''} #${p.num||''})</span></div>`;
+    const statement = document.createElement('div'); statement.className = 'stem'; statement.innerHTML = (p.statement||'').replace(/\n/g,'<br>');
+    box.appendChild(head);
+    box.appendChild(statement);
+    if(p.images && p.images.length){
+      p.images.forEach(src => {
+        const fig = document.createElement('div'); fig.className='figure';
+        const img = document.createElement('img'); img.src = src; img.alt = ''; fig.appendChild(img);
+        box.appendChild(fig);
+      });
+    }
+    if(p.options && p.options.length){
+      const ul = document.createElement('ul'); ul.className = 'options';
+      p.options.forEach((o,j) => {
+        const li = document.createElement('li');
+        li.innerHTML = `(${String.fromCharCode(65+j)}) ${o}`;
+        ul.appendChild(li);
+      });
+      box.appendChild(ul);
+    }
+    const sol = document.createElement('div'); sol.className = 'meta solution'; sol.style.display='none';
+    sol.innerHTML = `<strong>Answer:</strong> ${p.answer || '—'} ${p.rights ? `<div class="meta">${p.rights}</div>` : ''}`;
+    box.appendChild(sol);
+    host.appendChild(box);
+  });
+
+  const ctrl = document.createElement('div'); ctrl.className = 'row';
+  const toggle = document.createElement('button'); toggle.className='btn'; toggle.textContent='Toggle solutions';
+  toggle.addEventListener('click', () => {
+    host.querySelectorAll('.solution').forEach(s => {
+      s.style.display = s.style.display === 'none' ? 'block' : 'none';
+    });
+  });
+  ctrl.appendChild(toggle);
+  host.appendChild(ctrl);
+
+  if(window.renderMathInElement){
+    window.renderMathInElement(host, {
+      delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}]
+    });
+  }
 }
 
-/* ---- Init ---- */
+/* ---------- Wire up controls ---------- */
 (async function init(){
-  const contestFile = $('#contest').value;
-  const problems = await loadContest(contestFile);
-  renderList(problems);
+  await loadSources();
+  buildSourcesUI();
 
-  $('#contest').addEventListener('change', async (e)=>{
-    const probs = await loadContest(e.target.value);
-    renderList(probs);
+  // initial render: show everything
+  renderList(ALL_PROBLEMS);
+
+  // contest dropdown change: show that contest
+  $('#contestSelect').addEventListener('change', (e)=>{
+    const v = e.target.value;
+    if(!v) { renderList(ALL_PROBLEMS); return; }
+    const filtered = ALL_PROBLEMS.filter(p => p.contest === v);
+    renderList(filtered);
   });
 
-  $('#btnCopy').addEventListener('click', async ()=>{ 
-    try{ await navigator.clipboard.writeText(toPlainText(window._currentProblems||[])); statusEl.textContent="Copied ✓"; }
-    catch(e){ statusEl.textContent="Copy failed: "+e.message; }
+  // btnAll
+  $('#btnAll').addEventListener('click', ()=> renderList(ALL_PROBLEMS));
+
+  // generate subset from currently selected sources
+  $('#btnGenerate').addEventListener('click', ()=>{
+    const n = Math.max(1, Math.min(50, +$('#count').value || 10));
+    const mix = $('#mix').value || 'balanced';
+    const pool = poolForSelectedSources();
+    const chosen = pickProblems(pool, n, mix);
+    renderList(chosen);
   });
-  $('#btnPrint').addEventListener('click', ()=>window.print());
-  $('#btnAll').addEventListener('click', ()=>renderList(window._currentProblems||[]));
-  $('#btnGenerate').addEventListener('click', ()=>{ 
-    const n=Math.max(1,Math.min(30,+$('#count').value||30)); 
-    const mix=$('#mix').value; 
-    renderList(pickSubset(window._currentProblems||[], n, mix)); 
+
+  // copy list
+  $('#btnCopy').addEventListener('click', async ()=>{
+    try{
+      const sel = poolForSelectedSources();
+      await navigator.clipboard.writeText(toPlainText(sel));
+      logStatus('Copied list to clipboard ✓');
+    }catch(e){
+      logStatus('Copy failed: ' + (e && e.message));
+    }
   });
+
+  // print main list
+  $('#btnPrint').addEventListener('click', ()=> window.print());
+
+  // build sheet button
+  $('#buildBtn').addEventListener('click', ()=>{
+    const n = Math.max(1, Math.min(50, +$('#outCount').value || 12));
+    const mix = $('#outMix').value || 'balanced';
+    const pool = poolForSelectedSources();
+    const chosen = pickProblems(pool, n, mix);
+    renderSheet(chosen, {title:`Random set (${n}) — ${mix}`});
+    window.scrollTo({ top: document.getElementById('sheetArea').offsetTop, behavior:'smooth' });
+  });
+
+  // print sheet
+  $('#printSheetBtn').addEventListener('click', ()=> window.print());
+
 })();
 </script>
 </body>
