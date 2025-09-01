@@ -3,334 +3,268 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trivial — Random Set (Statement Mode)</title>
+  <title>Problem Set — SMC 2024</title>
+
+  <!-- KaTeX for math rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+
+  <!-- PDF.js to read the official UKMT SMC 2024 paper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  </script>
+
   <style>
-    :root{--bg:#0b0f14;--fg:#e6edf3;--muted:#9aa7b3;--card:#11161d;--line:#1b2430;--accent:#6aa3ff;--green:#8bffa8;--red:#ff9b9b}
+    :root{
+      --bg:#0b0f14; --fg:#e6edf3; --muted:#9aa7b3;
+      --card:#11161d; --line:#1b2430; --accent:#6aa3ff; --bar:#21b09e;
+    }
     html,body{background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0}
     a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    header{padding:24px 16px;max-width:1100px;margin:0 auto}
-    h1{margin:0 0 6px;letter-spacing:-.02em}
-    .sub{color:var(--muted);font-size:14px}
-    .wrap{max-width:1100px;margin:0 auto;padding:0 16px 24px}
-    .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-    .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-    .btn{border:1px solid var(--line);background:#0f1520;color:var(--fg);padding:10px 12px;border-radius:12px;cursor:pointer}
-    .btn:hover{background:#111a2a}
-    input[type="number"],select{background:#0f1520;color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
-    label{display:flex;gap:8px;align-items:center}
-    .pill{display:inline-flex;padding:2px 8px;border-radius:999px;background:#101827;color:#cbd5e1;font-size:12px;border:1px solid var(--line);}
-    .meta{color:var(--muted);font-size:12px}
 
-    /* Problem viewer */
-    #viewer{display:grid;gap:10px}
-    #viewer .head{display:flex;gap:10px;align-items:center}
-    #title{font-weight:700}
-    #tag{margin-left:4px}
-    #progress{margin-left:auto;color:var(--muted)}
-    #box{border:1px solid var(--line);border-radius:12px;background:#0f1520;padding:16px;min-height:220px}
-    #statement{font-size:18px;line-height:1.55}
-    #solution{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);}
-    #solution.visible{display:block}
-    .note{color:var(--muted);font-size:12px}
+    /* Top bar like your screenshot */
+    .bar{background:var(--bar); color:#031a15; font-weight:800; padding:14px 18px; font-size:20px;}
+    .wrap{max-width:1000px; margin:0 auto; padding:12px 16px 40px;}
+    .actions{color:var(--muted); font-size:14px; margin:10px 0 18px; display:flex; gap:14px; flex-wrap:wrap}
+    .actions button{border:1px solid var(--line); background:#0f1520; color:var(--fg); padding:8px 10px; border-radius:10px; cursor:pointer}
+    .actions button:hover{background:#111a2a}
 
-    /* List */
-    .set{display:grid;gap:12px;margin:16px 0}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px}
+    .panel{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px; margin:14px 0}
+    .row{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+    input[type="number"],select{background:#0f1520; color:var(--fg); border:1px solid var(--line); border-radius:10px; padding:6px 8px}
 
-    /* Print styles */
+    /* Problem list styling */
+    .problem{padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:#0f1520; margin:12px 0}
+    .ptitle{font-weight:800; letter-spacing:.02em}
+    .meta{color:var(--muted); font-size:12px}
+    .stem{margin-top:8px; line-height:1.55; font-size:17px}
+    hr.sep{border:none; border-top:1px solid var(--line); margin:12px 0 0}
+
     @media print{
-      header,.panel .ctrls, #out .btn { display:none !important; }
-      #box { min-height:unset }
-      body{color:#000;background:#fff}
+      .panel, .actions { display:none !important; }
+      body{background:#fff; color:#000}
+      .problem{border:none; background:#fff}
+      .bar{background:#fff; color:#000; border-bottom:1px solid #000}
+      a{color:#000; text-decoration:none}
     }
   </style>
 </head>
 <body>
-<header>
-  <h1>Random Set — Statement Mode (UKMT & CRUX)</h1>
-  <div class="sub">This page shows full problem <em>statements</em> from sources you've been granted permission to restate. Keep the attribution footer intact. You control which sources are allowed below.</div>
-</header>
-<div class="wrap">
-  <section class="panel">
-    <div class="grid">
-      <div>
-        <label>Number of problems <input id="count" type="number" min="1" max="30" value="8"></label>
+  <div class="bar" id="titlebar">Problem Set — SMC 2024</div>
+  <div class="wrap">
+    <div class="actions">
+      <button id="btnCopy">Copy problem list</button>
+      <button id="btnPrint">Print this page</button>
+      <span id="status" class="meta"></span>
+    </div>
+
+    <!-- Optional: subset controls -->
+    <div class="panel">
+      <div class="row">
+        <label>Number of problems
+          <input id="count" type="number" min="1" max="25" value="25">
+        </label>
         <label>Difficulty mix
           <select id="mix">
             <option value="balanced">Balanced (E/M/H)</option>
-            <option value="easy">Easy‑leaning</option>
-            <option value="hard">Hard‑leaning</option>
+            <option value="easy">Easy-leaning</option>
+            <option value="hard">Hard-leaning</option>
             <option value="pureRandom">Pure random</option>
           </select>
         </label>
+        <button id="btnGenerate">Generate subset</button>
+        <button id="btnAll">Show all 25</button>
       </div>
-      <div>
-        <div class="sub" style="margin-bottom:6px">Sources (toggle quoting)</div>
-        <label><input type="checkbox" class="src" value="UKMT" checked> UKMT (JMC/IMC/SMC/BMO)</label><br>
-        <label><input type="checkbox" class="src" value="CRUX"> CRUX journal</label>
-      </div>
-      <div>
-        <div class="sub" style="margin-bottom:6px">Contest types</div>
-        <label><input type="checkbox" class="kind" value="mc" checked> Multiple‑choice</label>
-        <label><input type="checkbox" class="kind" value="proof" checked> Proof</label>
-      </div>
-      <div>
-        <div class="sub" style="margin-bottom:6px">Contest filters</div>
-        <div class="row">
-          <label><input type="checkbox" class="ct" value="JMC" checked> JMC</label>
-          <label><input type="checkbox" class="ct" value="IMC" checked> IMC</label>
-          <label><input type="checkbox" class="ct" value="SMC" checked> SMC</label>
-          <label><input type="checkbox" class="ct" value="BMO1" checked> BMO1</label>
-          <label><input type="checkbox" class="ct" value="BMO2"> BMO2</label>
-          <label><input type="checkbox" class="ct" value="CRUX"> CRUX</label>
-        </div>
+      <div class="meta" style="margin-top:6px">
+        Source: official UKMT SMC 2024 paper PDF. We restate problems here under your permission; no PDFs mirrored.
       </div>
     </div>
-    <div class="row ctrls" style="margin-top:10px">
-      <button class="btn" id="gen">Generate set</button>
-      <button class="btn" id="reshuffle">Reshuffle</button>
-      <button class="btn" id="prev">⟵ Prev</button>
-      <button class="btn" id="next">Next ⟶</button>
-      <button class="btn" id="toggle-sol">Show solution</button>
-      <button class="btn" id="print">Print</button>
-      <span id="sharebox" class="pill" style="margin-left:auto">Share link appears after Generate</span>
-    </div>
-  </section>
 
-  <section id="viewer" class="panel">
-    <div class="head">
-      <div id="title"></div>
-      <span id="tag" class="pill"></span>
-      <span id="progress"></span>
-    </div>
-    <div id="box">
-      <div id="statement"></div>
-      <div id="solution"></div>
-    </div>
-    <div class="note">Attribution and rights are shown at the bottom of each problem if provided. KaTeX renders inline math <code>\(\)</code> and display math <code>$$ $$</code>.</div>
-  </section>
-
-  <section id="out" class="set"></section>
-
-  <section class="panel">
-    <div class="sub">Data: Add more problems by editing the JSON below or loading from <code>/data/problems.statement.json</code> (optional). You can also paste JSON into the textarea and click "Load JSON".</div>
-    <div class="row" style="margin-top:8px">
-      <button class="btn" id="load-remote">Load /data/problems.statement.json</button>
-      <button class="btn" id="download-set">Download current set (JSON)</button>
-    </div>
-    <textarea id="jsonpaste" placeholder='[{"id":"SMC-2024-Q1","source":"UKMT",...}]' style="width:100%;height:120px;background:#0f1520;color:var(--fg);border:1px dashed var(--line);border-radius:12px;padding:10px;margin-top:10px"></textarea>
-    <div class="row" style="margin-top:8px"><button class="btn" id="load-json">Load JSON (replace)</button></div>
-  </section>
-</div>
-
-<script type="application/json" id="problem-data">{
-  "problems": [
-    {
-      "id":"SMC-2024-Q1",
-      "source":"UKMT",
-      "contest":"SMC",
-      "year":2024,
-      "num":1,
-      "kind":"mc",
-      "rights":"© UKMT, used with permission.",
-      "statement":"A demo multiple‑choice problem with algebraic flavour. If $a$ and $b$ are positive integers such that $a+b=10$ and $ab=21$, what is $a^2+b^2$?\\n\\n(A) 42 (B) 58 (C) 62 (D) 70 (E) 100",
-      "solution_text":"Since $(a+b)^2=a^2+2ab+b^2$, we have $a^2+b^2=(a+b)^2-2ab=10^2-2\\cdot21=58$.",
-      "tags":["algebra"],
-      "difficulty":"E"
-    },
-    {
-      "id":"SMC-2024-Q15",
-      "source":"UKMT",
-      "contest":"SMC",
-      "year":2024,
-      "num":15,
-      "kind":"mc",
-      "rights":"© UKMT, used with permission.",
-      "statement":"A demo geometry problem. A triangle has side lengths $a,b,c$ with $c$ opposite angle $\\gamma$. If $a=b$ and $\\gamma=120^\\circ$, find $c/a$. Use the Law of Cosines.",
-      "solution_text":"By the Law of Cosines, $c^2=a^2+a^2-2a^2\\cos120^\\circ=2a^2(1-(-1/2))=3a^2$, so $c/a=\\sqrt3$.",
-      "tags":["geometry"],
-      "difficulty":"M"
-    },
-    {
-      "id":"BMO1-2024-Q1",
-      "source":"UKMT",
-      "contest":"BMO1",
-      "year":2024,
-      "num":1,
-      "kind":"proof",
-      "rights":"© UKMT, used with permission.",
-      "statement":"(Demo proof‑style.) Prove that for all integers $n\\ge 1$, the number $n^3-n$ is divisible by $3$.",
-      "solution_text":"Note $n^3-n=n(n-1)(n+1)$, the product of three consecutive integers; one is a multiple of $3$, hence the product is divisible by $3$.",
-      "tags":["number theory"],
-      "difficulty":"E"
-    },
-    {
-      "id":"CRUX-2020-46-2-P1",
-      "source":"CRUX",
-      "contest":"CRUX",
-      "year":2020,
-      "num":1,
-      "kind":"proof",
-      "rights":"© Canadian Mathematical Society (CRUX), used with permission.",
-      "statement":"(Placeholder) State the CRUX problem text here if permission covers CRUX; otherwise leave this entry disabled by unchecking CRUX in Sources.",
-      "solution_text":"(Sketch/solution here as permitted.)",
-      "tags":["mixed"],
-      "difficulty":"M"
-    }
-  ]
-}
-</script>
+    <div id="list"></div>
+  </div>
 
 <script>
-(function(){
-  const $ = (s)=>document.querySelector(s);
-  const katexReady = () => window.renderMathInElement && window.katex;
-  function renderMath(){ if(katexReady()) window.renderMathInElement(document.getElementById('box'), {delimiters:[{left:"$$",right:"$$",display:true},{left:"\\(",right:"\\)",display:false},{left:"$",right:"$",display:false}]}); }
+/* ---------- Helpers ---------- */
+const $ = (s)=>document.querySelector(s);
+const statusEl = $('#status');
 
-  let data = JSON.parse($('#problem-data').textContent).problems;
-  let current = []; let idx = 0;
+function renderMathIn(el){
+  if (!window.renderMathInElement) return;
+  window.renderMathInElement(el, {
+    delimiters: [
+      {left:"$$", right:"$$", display:true},
+      {left:"\\(", right:"\\)", display:false},
+      {left:"$", right:"$", display:false}
+    ]
+  });
+}
 
-  function diff(p){
-    if(p.difficulty) return {E:0.2,M:0.5,H:0.85}[p.difficulty]||0.5;
-    if(p.kind==='mc'){ const n = +p.num||1; const max=25; return n/max; }
-    const n=+p.num||1; return Math.min(n,6)/6;
+function diffBucket(num){ // heuristic for SMC: larger number → harder
+  const d = num/25;
+  return d < .34 ? 'E' : d < .67 ? 'M' : 'H';
+}
+
+function choose(list,k){
+  const a = list.slice();
+  for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a.slice(0, Math.min(k, a.length));
+}
+
+/* ---------- PDF loader for SMC 2024 ---------- */
+const UKMT_SMC_2024 = "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf";
+// Optional local fallback if CORS blocks (upload the PDF as assets/SMC-2024-Paper.pdf)
+const LOCAL_FALLBACK = "assets/SMC-2024-Paper.pdf";
+
+async function extractSMC2024(url){
+  const pdf = await pdfjsLib.getDocument(url).promise;
+  let raw = "";
+  for (let p=1; p<=pdf.numPages; p++){
+    const page = await pdf.getPage(p);
+    const content = await page.getTextContent();
+    raw += " " + content.items.map(it => it.str).join(" ");
   }
-  function bucket(p){ const d=diff(p); return d<.34?'E':(d<.67?'M':'H'); }
-  function choose(list,k){ const a=list.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a.slice(0,Math.min(k,a.length)); }
+  // Normalize and force "\nN. " starts
+  let text = raw
+    .replace(/\u00A0/g," ")
+    .replace(/\s+/g," ")
+    .replace(/(\b[12]?\d)\s*\.\s/g, "\n$1. ");
 
-  function filterPool(){
-    const count= +$('#count').value||8;
-    const mix = $('#mix').value;
-    const srcs=[...document.querySelectorAll('.src:checked')].map(x=>x.value);
-    const kinds=[...document.querySelectorAll('.kind:checked')].map(x=>x.value);
-    const cts=[...document.querySelectorAll('.ct:checked')].map(x=>x.value);
-    let pool = data.filter(p=>srcs.includes(p.source) && kinds.includes(p.kind) && cts.includes(p.contest));
-    return {pool,count,mix};
-  }
+  // Split into numbered blocks
+  const blocks = [];
+  const re = /(?:^|\n)(\d{1,2})\.\s([\s\S]*?)(?=\n\d{1,2}\.\s|$)/g;
+  let m;
+  while((m = re.exec(text))!==null){
+    const n = +m[1];
+    if (n<1 || n>25) continue;
+    let body = m[2].trim();
 
-  function pickSet(pool,count,mix){
-    if(mix==='pureRandom') return choose(pool,count);
-    const weights = {balanced:{E:.4,M:.4,H:.2}, easy:{E:.6,M:.3,H:.1}, hard:{E:.15,M:.45,H:.4}}[mix]||{E:.4,M:.4,H:.2};
-    const buckets={E:pool.filter(p=>bucket(p)==='E'), M:pool.filter(p=>bucket(p)==='M'), H:pool.filter(p=>bucket(p)==='H')};
-    const want={E:Math.round(count*weights.E), M:Math.round(count*weights.M)}; want.H=count-want.E-want.M;
-    let chosen=[]; for(const k of ['E','M','H']) chosen = chosen.concat(choose(buckets[k], want[k]));
-    if(chosen.length<count){ const rest=pool.filter(p=>!chosen.includes(p)); chosen=chosen.concat(choose(rest, count-chosen.length)); }
-    return chosen;
-  }
-
-  function renderProblem(p){
-    $('#title').textContent = `${p.source} · ${p.contest} ${p.year} · Q${p.num}`;
-    $('#tag').textContent = bucket(p);
-    $('#statement').innerHTML = (p.statement||'[No statement provided]').replace(/\n/g,'<br>');
-    const rights = p.rights? `<div class="meta" style="margin-top:8px">${p.rights}</div>`:'';
-    const sol = p.solution_text? `<div class="meta" style="margin-bottom:6px">Solution</div>${p.solution_text}`: '<div class="meta">(No solution text provided.)</div>';
-    $('#solution').innerHTML = `<div>${sol}${rights}</div>`;
-    $('#solution').classList.remove('visible');
-    renderMath();
-  }
-
- function renderList(items){
-  const out = $('#out');
-  if (!items.length) { 
-    out.innerHTML = '<div class="sub">No problems selected.</div>'; 
-    return; 
-  }
-
-  out.innerHTML = items.map((p,i)=>{
-    const lab = `${i+1}. ${p.source} · ${p.contest} ${p.year} · Q${p.num}`;
-    const tag = `<span class="pill">${bucket(p)}</span>`;
-    return `
-      <article class="card">
-        <div class="row">
-          <strong>${lab}</strong> ${tag} 
-          <span class="meta">(${p.kind==='mc' ? 'multiple-choice' : 'proof'})</span>
-          <span class="meta" style="margin-left:auto">${p.rights || ''}</span>
-        </div>
-        <div class="row" style="margin-top:6px">
-          <button class="btn" data-idx="${i}">Show in viewer</button>
-          <button class="btn" data-sel="${i}">Toggle solution</button>
-        </div>
-      </article>`;
-  }).join('');
-
-  // open a problem in the inline viewer
-  out.querySelectorAll('button[data-idx]').forEach(btn =>
-    btn.addEventListener('click', (e) => {
-      const i = +e.currentTarget.getAttribute('data-idx');
-      jump(i);
-      window.scrollTo({ 
-        top: document.getElementById('viewer').getBoundingClientRect().top + window.scrollY - 10, 
-        behavior: 'smooth' 
-      });
-    })
-  );
-
-  // toggle solution for the currently viewed item
- out.querySelectorAll('button[data-sel]').forEach(btn =>
-  btn.addEventListener('click', (e) => {
-    const i = +e.currentTarget.getAttribute('data-sel');
-    if (current[i]) {
-      if (i === idx) $('#solution').classList.toggle('visible');
-      jump(i);
+    // Pull options A–E if present and format on separate lines
+    const opt = /\sA\s(.+?)\sB\s(.+?)\sC\s(.+?)\sD\s(.+?)\sE\s(.+?)$/;
+    let statement = body;
+    const om = opt.exec(body);
+    if (om){
+      const stem = body.slice(0, om.index).trim();
+      const [A,B,C,D,E] = om.slice(1).map(x=>x.trim());
+      statement = `${stem}\n(A) ${A}\n(B) ${B}\n(C) ${C}\n(D) ${D}\n(E) ${E}`;
     }
-  })
-);
-} // <-- closes renderList
+    blocks.push({num:n, statement});
+  }
+  // Sort by number and map to our shape
+  return blocks.sort((a,b)=>a.num-b.num).map(b => ({
+    id: `SMC-2024-Q${b.num}`,
+    source: "UKMT",
+    contest: "SMC",
+    year: 2024,
+    num: b.num,
+    kind: "mc",
+    rights: "© UKMT, used with permission.",
+    difficulty: diffBucket(b.num),
+    statement: b.statement
+  }));
+}
 
-
-  function updateProgress(){ $('#progress').textContent = current.length? `${idx+1} / ${current.length}` : ''; }
-  function jump(i){ if(!current.length) return; idx = (i+current.length)%current.length; renderProblem(current[idx]); updateProgress(); }
-
-  function toSharePayload(items){ const ids=items.map(p=>p.id); return btoa(unescape(encodeURIComponent(JSON.stringify({ids})))); }
-  function fromSharePayload(h){ try{const j=JSON.parse(decodeURIComponent(escape(atob(h)))); return j.ids||[]}catch(e){return []} }
-  function updateShare(items){
-  try {
-    const ids = items.map(p=>p.id);
-    const hash = btoa(unescape(encodeURIComponent(JSON.stringify({ids}))));
-    const url = location.origin + location.pathname + '#set=' + hash;
-    const box = $('#sharebox'); 
-    box.textContent = url; 
-    box.onclick = () => navigator.clipboard.writeText(url);
-  } catch (e) {
-    $('#sharebox').textContent = 'Share link unavailable';
+async function loadSMC2024(){
+  statusEl.textContent = "Loading SMC 2024 from UKMT…";
+  try{
+    let problems;
+    try {
+      problems = await extractSMC2024(UKMT_SMC_2024);
+    } catch (corsOrNet){
+      // try local fallback if present
+      problems = await extractSMC2024(LOCAL_FALLBACK);
+    }
+    if (!problems.length) throw new Error("No problems parsed.");
+    window._smc2024 = problems; // cache globally
+    statusEl.textContent = "Loaded SMC 2024 ✓";
+    return problems;
+  }catch(e){
+    console.error(e);
+    statusEl.textContent = "SMC 2024 load failed: " + e.message;
+    // Minimal seed so the page still works
+    return [
+      {id:"SMC-2024-Q1",source:"UKMT",contest:"SMC",year:2024,num:1,kind:"mc",
+       rights:"© UKMT, used with permission.",
+       difficulty:"E",
+       statement:"(Seed) If $a+b=10$ and $ab=21$, find $a^2+b^2$. (A) 42 (B) 58 (C) 62 (D) 70 (E) 100"}
+    ];
   }
 }
 
-  function loadFromHash(){ const m=/#set=([A-Za-z0-9+/=\-_]+)/.exec(location.hash||''); if(!m) return false; const ids=fromSharePayload(m[1]); const items=ids.map(id=>data.find(p=>p.id===id)).filter(Boolean); if(items.length){ current=items; idx=0; renderProblem(current[0]); updateProgress(); renderList(current); updateShare(current); return true } return false }
+/* ---------- Rendering ---------- */
+function renderList(problems){
+  const list = $('#list');
+  const lines = problems.map((p,i)=>{
+    const head = `
+      <div class="ptitle">PROBLEM ${i+1} <span class="meta">(${p.year} ${p.contest} #${p.num})</span></div>
+    `;
+    const body = `
+      <div class="stem" data-stem>${p.statement.replace(/\n/g,'<br>')}</div>
+      <div class="meta" style="margin-top:8px">${p.rights||''}</div>
+    `;
+    return `<div class="problem">${head}${body}<hr class="sep"></div>`;
+  }).join('');
+  list.innerHTML = lines;
+  renderMathIn(list);
+  $('#titlebar').textContent = `Problem Set — SMC 2024 (${problems.length} problems)`;
+}
 
-  function generate(){ const {pool,count,mix} = filterPool(); current = pickSet(pool,count,mix); idx=0; if(current[0]){ renderProblem(current[0]); updateProgress(); } renderList(current); updateShare(current); localStorage.setItem('trivial.lastSet', JSON.stringify(current.map(p=>p.id))); }
+function toPlainText(problems){
+  const parts = problems.map((p,i)=>[
+    `PROBLEM ${i+1} (${p.year} ${p.contest} #${p.num})`,
+    p.statement
+  ].join("\n"));
+  return parts.join("\n\n---\n\n");
+}
 
-  // Load remote JSON (optional)
-  async function loadRemote(){ try{ const r = await fetch('/data/problems.statement.json',{cache:'no-store'}); if(!r.ok) throw new Error('HTTP '+r.status); const arr = await r.json(); if(!Array.isArray(arr)) throw new Error('Expected JSON array'); data = arr; generate(); }catch(e){ alert('Failed to load /data/problems.statement.json: '+e.message); } }
-  function loadFromTextarea(){ try{ const txt=$('#jsonpaste').value.trim(); if(!txt) return; const arr = JSON.parse(txt); if(!Array.isArray(arr)) throw new Error('Expected JSON array'); data = arr; generate(); }catch(e){ alert('Invalid JSON: '+e.message); } }
-  function downloadSet(){ const ids=current.map(p=>p.id); const blob=new Blob([JSON.stringify(ids,null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='trivial-random-set.json'; a.click(); URL.revokeObjectURL(a.href); }
+/* ---------- Subset generation (optional) ---------- */
+function pickSubset(all, count, mix){
+  if (mix==='pureRandom') return choose(all, count);
+  const weights = {
+    balanced:{E:.4,M:.4,H:.2},
+    easy:{E:.6,M:.3,H:.1},
+    hard:{E:.15,M:.45,H:.4}
+  }[mix] || {E:.4,M:.4,H:.2};
+  const by = {E:[],M:[],H:[]};
+  all.forEach(p => by[p.difficulty || diffBucket(p.num)].push(p));
+  const want = {
+    E: Math.round(count*weights.E),
+    M: Math.round(count*weights.M)
+  };
+  want.H = count - want.E - want.M;
+  let out = [].concat(choose(by.E, want.E), choose(by.M, want.M), choose(by.H, want.H));
+  if (out.length < count) out = out.concat(choose(all.filter(p=>!out.includes(p)), count - out.length));
+  return out;
+}
 
-  // wire up
-  document.getElementById('gen').addEventListener('click', generate);
-  document.getElementById('reshuffle').addEventListener('click', generate);
-  document.getElementById('prev').addEventListener('click', ()=>jump(idx-1));
-  document.getElementById('next').addEventListener('click', ()=>jump(idx+1));
-  document.getElementById('toggle-sol').addEventListener('click', ()=>$('#solution').classList.toggle('visible'));
-  document.getElementById('print').addEventListener('click', ()=>window.print());
-  document.getElementById('load-remote').addEventListener('click', loadRemote);
-  document.getElementById('load-json').addEventListener('click', loadFromTextarea);
-  document.getElementById('download-set').addEventListener('click', downloadSet);
-  document.addEventListener('keydown', (e)=>{ if(e.key==='ArrowLeft') jump(idx-1); if(e.key==='ArrowRight') jump(idx+1); if(e.key==='s' && (e.ctrlKey||e.metaKey)) { e.preventDefault(); window.print(); }});
+/* ---------- Wire-up ---------- */
+(async function init(){
+  const problems = await loadSMC2024();
+  renderList(problems);
 
-  // Auto-generate
-  if(!loadFromHash()){
-    const last = localStorage.getItem('trivial.lastSet');
-    if(last){ try{ const ids=JSON.parse(last); current = ids.map(id=>data.find(p=>p.id===id)).filter(Boolean); if(current[0]){ idx=0; renderProblem(current[0]); updateProgress(); renderList(current); updateShare(current); } else generate(); } catch{ generate(); } }
-    else generate();
-  }
+  $('#btnCopy').addEventListener('click', async ()=>{
+    try { await navigator.clipboard.writeText(toPlainText(problems)); statusEl.textContent = "Copied list to clipboard ✓"; }
+    catch(e){ statusEl.textContent = "Copy failed: " + e.message; }
+  });
+  $('#btnPrint').addEventListener('click', ()=>window.print());
 
-  // Render math on first load after KaTeX is ready
-  const i=setInterval(()=>{ if(katexReady()) { clearInterval(i); renderMath(); } }, 60);
+  $('#btnAll').addEventListener('click', ()=>renderList(window._smc2024 || problems));
+  $('#btnGenerate').addEventListener('click', ()=>{
+    const n = Math.max(1, Math.min(25, +$('#count').value||25));
+    const mix = $('#mix').value;
+    const sub = pickSubset(window._smc2024 || problems, n, mix);
+    renderList(sub);
+  });
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', (e)=>{
+    if ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='p') return; // let print work
+    if ((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='c'){ e.preventDefault(); $('#btnCopy').click(); }
+  });
 })();
 </script>
 </body>
 </html>
+
