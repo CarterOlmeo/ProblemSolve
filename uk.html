@@ -120,50 +120,77 @@ const LOCAL_FALLBACK = "assets/SMC-2024-Paper.pdf";
 
 async function extractSMC2024(url){
   const pdf = await pdfjsLib.getDocument(url).promise;
-  let raw = "";
-  for (let p=1; p<=pdf.numPages; p++){
+  const lines = [];
+
+  for (let p = 1; p <= pdf.numPages; p++) {
     const page = await pdf.getPage(p);
     const content = await page.getTextContent();
-    raw += " " + content.items.map(it => it.str).join(" ");
+
+    // sort text items: top→bottom, left→right
+    const items = content.items.map(it => ({
+      s: it.str,
+      x: it.transform[4],
+      y: it.transform[5]
+    })).sort((a,b) => (a.y===b.y ? a.x-b.x : b.y-a.y));
+
+    // group into rows (y within ~2 px)
+    let row = [], prevY = null;
+    const flush = () => {
+      if (row.length) {
+        const txt = row.map(t=>t.s).join(' ').replace(/\s+/g,' ').trim();
+        if (txt) lines.push(txt);
+        row = [];
+      }
+    };
+    for (const it of items){
+      if (prevY === null) prevY = it.y;
+      if (Math.abs(it.y - prevY) > 2) { flush(); prevY = it.y; }
+      row.push(it);
+    }
+    flush();
+    lines.push(""); // page break
   }
-  // Normalize and force "\nN. " starts
-  let text = raw
-    .replace(/\u00A0/g," ")
-    .replace(/\s+/g," ")
-    .replace(/(\b[12]?\d)\s*\.\s/g, "\n$1. ");
 
-  // Split into numbered blocks
+  // join with real newlines and fix digits split by spaces (e.g., "4 5" -> "45")
+  let text = lines.join('\n').replace(/(\d)\s+(?=\d)/g, '$1');
+
+  // blocks that START a line with "N. "
+  const re = /^([1-9]|1\d|2[0-5])\.\s([\s\S]*?)(?=^\s*(?:[1-9]|1\d|2[0-5])\.\s|$)/gm;
   const blocks = [];
-  const re = /(?:^|\n)(\d{1,2})\.\s([\s\S]*?)(?=\n\d{1,2}\.\s|$)/g;
   let m;
-  while((m = re.exec(text))!==null){
-    const n = +m[1];
-    if (n<1 || n>25) continue;
-    let body = m[2].trim();
+  while ((m = re.exec(text)) !== null) {
+    const n = parseInt(m[1], 10);
+    let body = m[2].replace(/[ \t]+/g,' ').trim();
 
-    // Pull options A–E if present and format on separate lines
-    const opt = /\sA\s(.+?)\sB\s(.+?)\sC\s(.+?)\sD\s(.+?)\sE\s(.+?)$/;
+    // robust options split across newlines/spaces
+    const opt = /\(A\)\s*([\s\S]*?)\s*\(B\)\s*([\s\S]*?)\s*\(C\)\s*([\s\S]*?)\s*\(D\)\s*([\s\S]*?)\s*\(E\)\s*([\s\S]*?)$/;
     let statement = body;
     const om = opt.exec(body);
-    if (om){
+    if (om) {
       const stem = body.slice(0, om.index).trim();
-      const [A,B,C,D,E] = om.slice(1).map(x=>x.trim());
+      const [A,B,C,D,E] = om.slice(1).map(t => t.replace(/\s+/g,' ').trim());
       statement = `${stem}\n(A) ${A}\n(B) ${B}\n(C) ${C}\n(D) ${D}\n(E) ${E}`;
     }
-    blocks.push({num:n, statement});
+
+    // keep only MC questions that clearly contain all options (drop instructions)
+    if (!/\(A\)[\s\S]*\(B\)[\s\S]*\(C\)[\s\S]*\(D\)[\s\S]*\(E\)/.test(statement)) continue;
+
+    blocks.push({ num: n, statement });
   }
-  // Sort by number and map to our shape
-  return blocks.sort((a,b)=>a.num-b.num).map(b => ({
-    id: `SMC-2024-Q${b.num}`,
-    source: "UKMT",
-    contest: "SMC",
-    year: 2024,
-    num: b.num,
-    kind: "mc",
-    rights: "© UKMT, used with permission.",
-    difficulty: diffBucket(b.num),
-    statement: b.statement
-  }));
+
+  return blocks
+    .sort((a,b)=>a.num-b.num)
+    .map(b => ({
+      id: `SMC-2024-Q${b.num}`,
+      source: "UKMT",
+      contest: "SMC",
+      year: 2024,
+      num: b.num,
+      kind: "mc",
+      rights: "© UKMT, used with permission.",
+      difficulty: (b.num/25 < .34 ? 'E' : b.num/25 < .67 ? 'M' : 'H'),
+      statement: b.statement
+    }));
 }
 
 async function loadSMC2024(){
