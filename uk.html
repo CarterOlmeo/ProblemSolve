@@ -101,8 +101,7 @@ async function loadSMC2024(){
   options: b.options || [],   // 🔥 add this
   answer: b.answer || null
 }));
-
-    }));
+    
     window._smc2024 = probs;
     statusEl.textContent = `Loaded SMC 2024 ✓ (JSON, ${probs.length} problems)`;
     return probs;
