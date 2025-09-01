@@ -1,0 +1,209 @@
+[
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 1,
+    "statement": "Which of these has the greatest value?\nA: $2^0 + 2^2$\nB: $2^{02} + 2$ (OCR uncertain)\nC: $2^{02}\\times 2$ (OCR uncertain)\nD: $2\\times0\\times2\\times2$\nE: $2^0 \\times 2^2$",
+    "options": ["A","B","C","D","E"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 2,
+    "statement": "The number 5012 is reflected in the mirror-line shown. Onto which number is it reflected?",
+    "options": ["5102","2015","5012","2105","5105"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 3,
+    "statement": "Think of any number. Add five; multiply by two; add ten; divide by two; subtract your original number; add three. What is the resulting number?",
+    "options": ["10","11","12","13","14"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 4,
+    "statement": "What is the value of $0.6 + \\tfrac{2}{5}$ ?",
+    "options": ["0.15","0.24","0.8","1","2.4"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 5,
+    "statement": "How many of the following take integer values?\n$\\tfrac{1}{1}$, $1+\\tfrac{1}{11}$, $1+1+1$, $1+1+1+1$, $1+1+1+1+1$ (OCR spacing may vary)",
+    "options": ["0","1","2","3","4"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 6,
+    "statement": "The diagram shows a square and two equilateral triangles. What is the size of the marked angle?",
+    "diagram": "assets/images/jmc-2022-q06.png",
+    "options": ["10^{\\circ}","15^{\\circ}","20^{\\circ}","25^{\\circ}","30^{\\circ}"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 7,
+    "statement": "Kiwi fruit contain roughly two and a half times as much vitamin C as the same weight of oranges. What weight of kiwi fruit contains approximately the same amount of vitamin C as 1 kg of oranges?",
+    "options": ["100 g","200 g","250 g","400 g","550 g"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 8,
+    "statement": "Today is Thursday. What day will it be in 100 days’ time?",
+    "options": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 9,
+    "statement": "How many squares of any size can be seen in the diagram?",
+    "diagram": "assets/images/jmc-2022-q09.png",
+    "options": ["25","27","28","39","40"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 10,
+    "statement": "Half of a quarter of an eighth of a number is equal to $\\tfrac{1}{2}+\\tfrac{1}{4}+\\tfrac{1}{8}$. What is the number?",
+    "options": ["14","28","42","56","64"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 11,
+    "statement": "Nine of the numbers 1,2,3,4,5,6,7,8,9,10 are to be split into two groups so the sum of numbers in each group is a multiple of 4. What is the largest number that could be left out?",
+    "options": ["3","4","5","6","7"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 12,
+    "statement": "When my pot of paint is half full it weighs 5.8 kg. When it is one quarter full it weighs 3.1 kg. What is the weight of the full pot?",
+    "options": ["8.9 kg","11.2 kg","11.6 kg","12 kg","12.4 kg"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 13,
+    "statement": "The diagram shows five squares whose side-lengths, in cm, are 1,2,3,4 and 5. What percentage of the area of the outer square is shaded?",
+    "diagram": "assets/images/jmc-2022-q13.png",
+    "options": ["25\\%","30\\%","36\\%","40\\%","42\\%"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 14,
+    "statement": "A group of children stand evenly spaced around a circular ring numbered consecutively 1,2,3,... Number 13 is directly opposite number 35. How many children are there in the ring?",
+    "options": ["42","44","46","48","50"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 15,
+    "statement": "What is the value of $2\\div(4\\div(6\\div(8\\div10)))$ ?",
+    "options": ["1/960","1/5","3/8","1/2","15/4"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 16,
+    "statement": "A 7-sided polygon is formed from two equilateral triangles of side-lengths 5 cm and 8 cm which overlap in an equilateral triangle of side-length 2 cm. What is the perimeter of the 7-sided polygon?",
+    "diagram": "assets/images/jmc-2022-q16.png",
+    "options": ["27 cm","30 cm","33 cm","36 cm","39 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 17,
+    "statement": "Amrita and Beatrix start with 10 counters each. In each round the winner is given 3 counters and the loser loses 1 counter. At the end Amrita has 40 counters and Beatrix 16 counters. How many rounds did Amrita win?",
+    "options": ["10","11","12","13","14"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 18,
+    "statement": "The diagram shows a parallelogram with angles labelled $(2G-30)^{\\circ}, (3G-40)^{\\circ}$ and $(4H-50)^{\\circ}$. What is the value of $H$?",
+    "diagram": "assets/images/jmc-2022-q18.png",
+    "options": ["22","24","25","28","30"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 19,
+    "statement": "At the start of the day I had three times as many apples as pears. By the end, after eating five apples but no pears, I had twice as many pears as apples. How many pieces of fruit did I have at the start of the day?",
+    "options": ["4","8","12","16","20"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 20,
+    "statement": "During a class: Pam: 'I always tell the truth.' Quentin: 'Pam is lying.' Roger: 'Both Pam and Quentin are lying.' Susan: 'Everyone is lying.' Terry: 'Everyone is telling the truth.' How many people are telling the truth?",
+    "options": ["0","1","2","3","4"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 21,
+    "statement": "Two lists: S = 3,5,8,11,13,14 and T = 2,5,6,10,12,13. Jenny moves one number from S to T and one from T to S so the sums are equal. In how many ways can she do this?",
+    "options": ["1","2","3","4","5"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 22,
+    "statement": "A triangular pyramid is removed from a cube as shown. How many edges does the remaining solid have?",
+    "diagram": "assets/images/jmc-2022-q22.png",
+    "options": ["4","6","8","10","12"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 23,
+    "statement": "The price of a train ticket increased by 5% then decreased by 20% (special offer). It was then £4 less than its original price. What was the original price?",
+    "options": ["£8.60","£13","£20.40","£25","£26.40"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 24,
+    "statement": "Flori’s Flower shop contains fewer than 150 flowers, purple:yellow = 1:2, yellow:red = 3:4, red:white = 5:6. How many flowers are there?",
+    "options": ["133","136","139","142","145"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2022,
+    "num": 25,
+    "statement": "In the number pyramid the sum of the bottom row is 17. What is the central number of the bottom row?",
+    "diagram": "assets/images/jmc-2022-q25.png",
+    "options": ["2","3","4","5","6"],
+    "answer": ""
+  }
+]
