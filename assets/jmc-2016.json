@@ -1,0 +1,211 @@
+[
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 1,
+    "statement": "Which of the following is closest to zero? $\\mathrm{A}\\;6+5+4$, $\\mathrm{B}\\;6-5-4$, $\\mathrm{C}\\;6+5\\times4$, $\\mathrm{D}\\;6-5\\times4$, $\\mathrm{E}\\;6\\times5+4$",
+    "options": ["6+5+4","6-5-4","6+5\\times4","6-5\\times4","6\\times5+4"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 2,
+    "statement": "What number is twenty-one less than sixty thousand?",
+    "options": ["59,979","59,981","57,900","40,001","39,000"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 3,
+    "statement": "One lap of a standard running track is $400\\,$m. How many laps does each athlete run in a $5000\\,$m race?",
+    "options": ["4","5","8","10","12\\tfrac{1}{2}"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 4,
+    "statement": "In January 1859, an eight-year-old boy dropped a newly-hatched eel into a well in Sweden. The eel finally died in August 2014. How many years old was Åle when it died?",
+    "options": ["135","145","155","165","175"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 5,
+    "statement": "What is the value of $\\dfrac{1}{25}+0.025$ ?",
+    "options": ["0.29","0.30","0.35","0.50","0.65"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 6,
+    "statement": "Gill is now 28 years old and is a teacher of Mathematics at a school which has 600 pupils. There are 30 more girls than boys at the school. How many girls are at Gill's school?",
+    "options": ["270","300","315","330","345"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 7,
+    "statement": "A distance of 8 km is approximately 5 miles. Which of the following is closest to 1.2 km?",
+    "options": ["0.75 miles","1 mile","1.2 miles","1.6 miles","1.9 miles"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 8,
+    "statement": "What is the value of $\\dfrac{2+4+6+8+10+12+14+16+18+20}{1+2+3+4+5+6+7+8+9+10}$ ?",
+    "options": ["2","10","20","40","1024"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 9,
+    "statement": "One of the three symbols $+, -, \\times$ is inserted somewhere between the digits of 2016 to give a new number. For example, $20-16$ gives 4. How many of the following four numbers can be obtained in this way? 36, 195, 207, 320.",
+    "options": ["0","1","2","3","4"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 10,
+    "statement": "A square is folded exactly in half and then in half again. Which of the following could not be the resulting shape? (see paper for the five shape choices)",
+    "diagram": "assets/images/jmc-2016-q10.png",
+    "options": ["A shape 1","A shape 2","A shape 3","A shape 4","A shape 5"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 11,
+    "statement": "Which of the following statements is false? A: 12 is a multiple of 2. B: 123 is a multiple of 3. C: 1234 is a multiple of 4. D: 12,345 is a multiple of 5. E: 123,456 is a multiple of 6.",
+    "options": ["12 is a multiple of 2","123 is a multiple of 3","1234 is a multiple of 4","12,345 is a multiple of 5","123,456 is a multiple of 6"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 12,
+    "statement": "The musical Rent contains a song that starts \"Five hundred and twenty five thousand six hundred minutes\". Which of the following is closest to this length of time?",
+    "options": ["a week","a year","a decade","a century","a millennium"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 13,
+    "statement": "The diagram shows five circles placed at the corners of a pentagon. The numbers 1,2,3,4,5 are placed in the circles shown, one in each, so that the numbers in adjacent circles always differ by more than 1. What is the sum of the numbers in the two circles adjacent to the circle which contains the number 5?",
+    "diagram": "assets/images/jmc-2016-q13.png",
+    "options": ["3","4","5","6","7"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 14,
+    "statement": "In the diagram, $AB = AC$ and $D$ is a point on $AC$ such that $BD = BC$. Angle $BAC$ is $40^{\\circ}$. What is angle $ABD$?",
+    "diagram": "assets/images/jmc-2016-q14.png",
+    "options": ["15^{\\circ}","20^{\\circ}","25^{\\circ}","30^{\\circ}","35^{\\circ}"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 15,
+    "statement": "How many of these four expressions are perfect squares?\n$1^3+2^3$, $1^3+2^3+3^3$, $1^3+2^3+3^3+4^3$, $1^3+2^3+3^3+4^3+5^3$",
+    "options": ["0","1","2","3","4"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 16,
+    "statement": "Each of the nine small squares in this grid can be coloured completely black or completely white. What is the largest number of squares that can be coloured black so that the design created has rotational symmetry of order 2, but no lines of symmetry?",
+    "diagram": "assets/images/jmc-2016-q16.png",
+    "options": ["4","5","6","7","8"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 17,
+    "statement": "In a group of 48 children, the ratio of boys to girls is 3:5. How many boys must join the group to make the ratio of boys to girls 1:1?",
+    "options": ["48","40","32","24","8"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 18,
+    "statement": "In the addition sum shown, each letter represents a different non-zero digit. What digit does X represent? (see paper for the vertical addition figure)",
+    "diagram": "assets/images/jmc-2016-q18.png",
+    "options": ["1","3","5","7","9"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 19,
+    "statement": "Three boxes under my stairs contain apples or pears or both. Each box contains the same number of pieces of fruit. The first box contains all twelve of the apples and one-ninth of the pears. How many pieces of fruit are there in each box?",
+    "options": ["14","16","18","20","36"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 20,
+    "statement": "A cyclic quadrilateral has all four vertices on the circumference of a circle. Brahmagupta gave the following formula for the area, $\\sqrt{(s-a)(s-b)(s-c)(s-d)}$, where $a,b,c,d$ are side lengths and $s$ is the semiperimeter. If the four sides are 4 cm, 5 cm, 7 cm and 10 cm, what is the area of the quadrilateral?",
+    "diagram": "assets/images/jmc-2016-q20.png",
+    "options": ["6 cm^2","13 cm^2","26 cm^2","30 cm^2","36 cm^2"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 21,
+    "statement": "The diagram shows a pentagon drawn on a square grid. All vertices of the pentagon are triangle grid points. What fraction of the area of the pentagon is shaded?",
+    "diagram": "assets/images/jmc-2016-q21.png",
+    "options": ["\\tfrac{2}{7}","\\tfrac{1}{3}","\\tfrac{2}{5}","\\tfrac{1}{4}","\\tfrac{2}{9}"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 22,
+    "statement": "Four copies of the triangle shown are joined together, without gaps or overlaps, to make a parallelogram. What is the largest possible perimeter of the parallelogram? (triangle sides shown in diagram: 5, 12, 13)",
+    "diagram": "assets/images/jmc-2016-q22.png",
+    "options": ["46 cm","48 cm","58 cm","62 cm","76 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 23,
+    "statement": "The diagram shows the first five squares of a 'spiral' sequence of squares. The three smallest squares have side length 1. What is the side length of the 12th square?",
+    "diagram": "assets/images/jmc-2016-q23.png",
+    "options": ["153","123","83","53","13"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 24,
+    "statement": "Part of a wall is to be decorated with a row of four square tiles. Three different colours are available and there are at least two tiles of each colour available. Tiles of all three colours must be used. In how many ways can the row of four tiles be chosen?",
+    "options": ["12","18","24","36","48"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2016,
+    "num": 25,
+    "statement": "Beatrix places dominoes on a $5\\times5$ board, either horizontally or vertically, so that each domino covers two small squares. She stops when she cannot place another domino. What is the largest possible number of squares that may still be uncovered?",
+    "options": ["4","5","6","7","8"],
+    "answer": ""
+  }
+]
