@@ -1,27 +1,12 @@
 [
-  { "num": 1, "statement": "Write full Problem 1 stem here.\n(A) choice\n(B) choice\n(C) choice\n(D) choice\n(E) choice", "answer":"E" },
-  { "num": 2, "statement": "…", "answer":"B" }
-  { "num": 3, "statement": "…", "answer":"B" }
-  { "num": 4, "statement": "…", "answer":"B" }
-  { "num": 5, "statement": "…", "answer":"B" }
-  { "num": 6, "statement": "…", "answer":"B" }
-  { "num": 7, "statement": "…", "answer":"B" }
-  { "num": 8, "statement": "…", "answer":"B" }
-  { "num": 9, "statement": "…", "answer":"B" }
-  { "num": 10, "statement": "…", "answer":"B" }
-  { "num": 11, "statement": "…", "answer":"B" }
-  { "num": 12, "statement": "…", "answer":"B" }
-  { "num": 13, "statement": "…", "answer":"B" }
-  { "num": 14, "statement": "…", "answer":"B" }
-  { "num": 15, "statement": "…", "answer":"B" }
-  { "num": 16, "statement": "…", "answer":"B" }
-  { "num": 17, "statement": "…", "answer":"B" }
-  { "num": 18, "statement": "…", "answer":"B" }
-  { "num": 19, "statement": "…", "answer":"B" }
-  { "num": 20, "statement": "…", "answer":"B" }
-  { "num": 21, "statement": "…", "answer":"B" }
-  { "num": 22, "statement": "…", "answer":"B" }
-  { "num": 23, "statement": "…", "answer":"B" }
-  { "num": 24, "statement": "…", "answer":"B" }
-  { "num": 25, "statement": "…", "answer":"B" }
+  {
+    "num": 1,
+    "statement": "If a+b=10 and ab=21, find a^2+b^2.\n(A) 42\n(B) 58\n(C) 62\n(D) 70\n(E) 100",
+    "answer": "B"
+  },
+  {
+    "num": 2,
+    "statement": "Demo problem 2.\n(A) ...\n(B) ...\n(C) ...\n(D) ...\n(E) ...",
+    "answer": "C"
+  }
 ]
