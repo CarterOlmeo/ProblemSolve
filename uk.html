@@ -233,23 +233,50 @@
     renderMath();
   }
 
-  function renderList(items){
-    const out=$('#out');
-    if(!items.length){ out.innerHTML='<div class="sub">No problems selected.</div>'; return; }
-    out.innerHTML = items.map((p,i)=>{
-      const lab=`${i+1}. ${p.source} · ${p.contest} ${p.year} · Q${p.num}`;
-      const tag=`<span class="pill">${bucket(p)}</span>`;
-      return `<article class="card"><div class="row"><strong>${lab}</strong> ${tag} <span class="meta">(${p.kind==='mc'?'multiple‑choice':'proof'})</span>
-      <span class="meta" style="margin-left:auto">${p.rights||''}</span></div>
-      <div class="row" style="margin-top:6px"><button class="btn" data-idx="${i}">Show in viewer</button><button class="btn" data-sel="${i}">Toggle solution</button></div></article>`;
-    }).join('');
-    out.querySelectorAll('button[data-idx]').forEach(btn=>btn.addEventListener('click', (e)=>{
-      const i = +e.currentTarget.getAttribute('data-idx'); jump(i);
-      window.scrollTo({top: document.getElementById('viewer').getBoundingClientRect().top + window.scrollY - 10, behavior:'smooth'});
-    }));
-    out.querySelectorAll('button[data-sel]').forEach(btn=>btn.addEventListener('click', (e)=>{
-      const i = +e.currentTarget.getAttribute('data-sel'); if(current[i]){ if(i===idx) $('#solution').classList.toggle('visible'); jump(i);} });
+ function renderList(items){
+  const out = $('#out');
+  if (!items.length) { 
+    out.innerHTML = '<div class="sub">No problems selected.</div>'; 
+    return; 
   }
+
+  out.innerHTML = items.map((p,i)=>{
+    const lab = `${i+1}. ${p.source} · ${p.contest} ${p.year} · Q${p.num}`;
+    const tag = `<span class="pill">${bucket(p)}</span>`;
+    return `
+      <article class="card">
+        <div class="row">
+          <strong>${lab}</strong> ${tag} 
+          <span class="meta">(${p.kind==='mc' ? 'multiple-choice' : 'proof'})</span>
+          <span class="meta" style="margin-left:auto">${p.rights || ''}</span>
+        </div>
+        <div class="row" style="margin-top:6px">
+          <button class="btn" data-idx="${i}">Show in viewer</button>
+          <button class="btn" data-sel="${i}">Toggle solution</button>
+        </div>
+      </article>`;
+  }).join('');
+
+  // open a problem in the inline viewer
+  out.querySelectorAll('button[data-idx]').forEach(btn =>
+    btn.addEventListener('click', (e) => {
+      const i = +e.currentTarget.getAttribute('data-idx');
+      jump(i);
+      window.scrollTo({ 
+        top: document.getElementById('viewer').getBoundingClientRect().top + window.scrollY - 10, 
+        behavior: 'smooth' 
+      });
+    })
+  );
+
+  // toggle solution for the currently viewed item
+  out.querySelectorAll('button[data-sel]').forEach(btn =>
+    btn.addEventListener('click', (e) => {
+      const i = +e.currentTarget.getAttribute('data-sel');
+      if (current[i]) {
+        if (i === idx) $('#solution').classList.toggle('visible');
+        jump(i);
+      }
 
   function updateProgress(){ $('#progress').textContent = current.length? `${idx+1} / ${current.length}` : ''; }
   function jump(i){ if(!current.length) return; idx = (i+current.length)%current.length; renderProblem(current[idx]); updateProgress(); }
