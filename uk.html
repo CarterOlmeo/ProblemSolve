@@ -191,27 +191,58 @@ async function extractSMC2024(url){
 }
 
 /* -------- sources -------- */
-const LOCAL_ABS = "/ProblemSolve/assets/SMC-2024-Paper.pdf";   // your repo asset (works)
-const LOCAL_REL = "assets/SMC-2024-Paper.pdf";                 // if this file moves into a folder
-const UKMT_SMC_2024 = "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf";
+const JSON_LOCAL = "/ProblemSolve/assets/smc-2024.json";
+
+async function loadFromJSON(u){
+  const r = await fetch(u, {cache:'no-store'});
+  if (!r.ok) throw new Error(`JSON ${r.status}`);
+  const arr = await r.json();
+  if (!Array.isArray(arr) || !arr.length) throw new Error("Empty JSON");
+  // expected shape: [{num: 1, statement: "...", answer: "E"} , ...]
+  return arr
+    .filter(x => typeof x.num === 'number' && x.statement)
+    .sort((a,b)=>a.num-b.num)
+    .map(x => ({
+      id:`SMC-2024-Q${x.num}`,
+      source:"UKMT",
+      contest:"SMC",
+      year:2024,
+      num:x.num,
+      kind:"mc",
+      rights:"© UKMT, used with permission.",
+      difficulty: (x.num/25 < .34 ? 'E' : x.num/25 < .67 ? 'M' : 'H'),
+      statement: x.statement,
+      answer: x.answer || null
+    }));
+}
 
 /* -------- loader (local first, then UKMT) -------- */
 async function loadSMC2024(){
   statusEl.textContent = "Loading SMC 2024…";
-  const tries = [LOCAL_ABS, LOCAL_REL, UKMT_SMC_2024];
-  for (const u of tries){
+  // Try JSON first (if you create /assets/smc-2024.json), then local PDF, then UKMT
+  const tries = [
+    {kind:'json', url: JSON_LOCAL},
+    {kind:'pdf',  url: "/ProblemSolve/assets/SMC-2024-Paper.pdf"},
+    {kind:'pdf',  url: "assets/SMC-2024-Paper.pdf"},
+    {kind:'pdf',  url: "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf"},
+  ];
+
+  for (const t of tries){
     try{
-      const probs = await extractSMC2024(u);
+      const probs = t.kind === 'json' ? await loadFromJSON(t.url) : await extractSMC2024(t.url);
       if (probs && probs.length){
         window._smc2024 = probs;
-        statusEl.textContent = `Loaded SMC 2024 ✓ (${u.includes('http') ? 'UKMT' : 'local'})`;
+        statusEl.textContent = `Loaded SMC 2024 ✓ (${t.kind === 'json' ? 'JSON' : (t.url.includes('http')?'UKMT PDF':'local PDF')}) — ${probs.length} problems`;
         return probs;
+      } else {
+        throw new Error("Parsed zero problems");
       }
     }catch(e){
-      console.warn('load failed for', u, e);
-      statusEl.textContent = `Tried ${u.includes('http')?'UKMT':'local'}…`;
+      console.warn('load failed for', t, e);
+      statusEl.textContent = `Tried ${t.kind} (${t.url.includes('http')?'UKMT':'local'}): ${e.message}`;
     }
   }
+
   statusEl.textContent = "SMC 2024 load failed — using a tiny seed so the page isn’t blank.";
   return [
     {id:"SMC-2024-Q1",source:"UKMT",contest:"SMC",year:2024,num:1,kind:"mc",
