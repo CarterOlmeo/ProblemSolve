@@ -1,0 +1,210 @@
+[
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 1,
+    "statement": "Exactly one of the following five numbers is not prime. Which is it?\n101, 103, 107, 109, 111",
+    "options": ["101","103","107","109","111"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 2,
+    "statement": "What is the value of 2020 \\div 20 ?",
+    "options": ["10","11","100","101","111"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 3,
+    "statement": "Each of these figures is based on a rectangle whose centre is shown. How many of the figures have rotational symmetry of order two?",
+    "diagram": "assets/images/jmc-2020-q03.png",
+    "options": ["1","2","3","4","5"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 4,
+    "statement": "How many centimetres are there in 66.6 metres?",
+    "options": ["66600","6660","666","66.6","66"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 5,
+    "statement": "Amrita thinks of a number. She doubles it, adds 9, divides her answer by 3 and finally subtracts 1. She obtains the same number she originally thought of. What was Amrita's number?",
+    "options": ["1","2","3","4","6"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 6,
+    "statement": "What is the value of\n\\n\\[\\tfrac{6}{12}-\\tfrac{5}{12}+\\tfrac{4}{12}-\\tfrac{3}{12}+\\tfrac{2}{12}-\\tfrac{1}{12}\\]",
+    "options": ["\\tfrac{1}{2}","\\tfrac{1}{3}","\\tfrac{1}{4}","\\tfrac{1}{5}","\\tfrac{1}{6}"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 7,
+    "statement": "Four different positive integers have a product of 110. What is the sum of the four integers?",
+    "options": ["19","22","24","25","28"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 8,
+    "statement": "Wesley has a grid of six cells. He wants to colour two of the cells black so that the two black cells share a vertex but not a side. In how many ways can he achieve this?",
+    "diagram": "assets/images/jmc-2020-q08.png",
+    "options": ["2","3","4","5","6"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 9,
+    "statement": "One half of one third of one quarter of one fifth of a number is 2. What is the number?",
+    "options": ["240","120","60","1/120","1/240"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 10,
+    "statement": "How many of these equations have the solution x = 12?\n\nx - 2 = 10\nx/2 = 24\n10 - x = 2\n2x - 1 = 25",
+    "options": ["4","3","2","1","0"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 11,
+    "statement": "This 3 by 3 grid shows nine 1 cm × 1 cm squares and uses 24 cm of wire. What length of wire is required for a similar 20 by 20 grid?",
+    "diagram": "assets/images/jmc-2020-q11.png",
+    "options": ["400 cm","420 cm","441 cm","800 cm","840 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 12,
+    "statement": "The diagram shows an equilateral triangle divided into four smaller equilateral triangles. One of these triangles has itself been divided into four smaller equilateral triangles.\n\nWhat fraction of the area of the large triangle has been shaded?",
+    "diagram": "assets/images/jmc-2020-q12.png",
+    "options": ["\\tfrac{1}{8}","\\tfrac{3}{16}","\\tfrac{1}{4}","\\tfrac{5}{16}","\\tfrac{3}{8}"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 13,
+    "statement": "The mean of four positive integers is 5. The median of the four integers is 6. What is the mean of the largest and smallest of the integers?",
+    "options": ["3","4","5","6","8"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 14,
+    "statement": "In the diagram, angle OLM is twice as large as angle PON. What is the size of angle OLM?",
+    "diagram": "assets/images/jmc-2020-q14.png",
+    "options": ["102^{\\circ}","106^{\\circ}","108^{\\circ}","112^{\\circ}","124^{\\circ}"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 15,
+    "statement": "A group of 42 children all play tennis or football, or both sports. The same number play tennis as play just football. Twice as many play both tennis and football as play just tennis. How many of the children play football?",
+    "options": ["7","14","21","28","35"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 16,
+    "statement": "You are given the sequence of digits \"0625\", and can insert a decimal point at the beginning, at the end, or at any of the other three positions. Which of these numbers can you not make?\nOptions: 6/25, 5/8, 1/16, 25/4, 25/2",
+    "options": ["6/25","5/8","1/16","25/4","25/2"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 17,
+    "statement": "In 1925, Zbigniew Morón published a rectangle that could be dissected into nine different sized squares as shown in the diagram. The lengths of the sides of these squares are 1, 4, 7, 8, 9, 10, 14, 15 and 18. What is the area of Morón's rectangle?",
+    "diagram": "assets/images/jmc-2020-q17.png",
+    "options": ["144","225","900","1024","1056"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 18,
+    "statement": "How many two-digit primes have both their digits non-prime?",
+    "options": ["6","5","4","3","2"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 19,
+    "statement": "In the table shown, the sum of each row is shown to the right of the row and the sum of each column is shown below the column. What is the value of L?",
+    "diagram": "assets/images/jmc-2020-q19.png",
+    "options": ["1","2","3","5","7"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 20,
+    "statement": "Edmund makes a cube using eight small cubes. Samuel uses cubes of the same size as the small cubes to make a cuboid twice as long, three times as wide and four times as high as Edmund's cube. How many more cubes does Samuel use than Edmund?",
+    "options": ["9","24","64","184","190"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 21,
+    "statement": "The digits of both the two-digit numbers in the first calculation below have been reversed to give the two-digit numbers in the second calculation. The answers to the two calculations are the same.\n62 × 13 = 806\n26 × 31 = 806\n\nFor which one of the calculations below is the same thing true?",
+    "options": ["25 × 36","34 × 42","54 × 56","42 × 48","32 × 43"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 22,
+    "statement": "Harriet has a square piece of paper. She folds it in half to form a rectangle and then in half again to form a second rectangle (which is not a square). The perimeter of the second rectangle is 30 cm. What is the area of the original square?",
+    "options": ["36","64","81","100","144"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 23,
+    "statement": "There is more than one integer, greater than 1, which leaves a remainder of 1 when divided by each of the four smallest primes. What is the difference between the two smallest such integers?",
+    "options": ["211","210","31","30","7"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 24,
+    "statement": "Susan is attending a talk at her son's school. There are 8 rows of 10 chairs where 54 parents are sitting. Susan notices that every parent is either sitting on their own or next to just one other person. What is the largest possible number of adjacent empty chairs in a single row at that talk?",
+    "options": ["3","4","5","7","8"],
+    "answer": ""
+  },
+  {
+    "contest": "JMC",
+    "year": 2020,
+    "num": 25,
+    "statement": "In the diagram, PQRS, JQK and LRK are straight lines. What is the size of the angle JKL?",
+    "diagram": "assets/images/jmc-2020-q25.png",
+    "options": ["34^{\\circ}","35^{\\circ}","36^{\\circ}","37^{\\circ}","38^{\\circ}"],
+    "answer": ""
+  }
+]
