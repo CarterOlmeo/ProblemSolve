@@ -93,62 +93,101 @@ function choose(list,k){ const a=list.slice(); for(let i=a.length-1;i>0;i--){con
 
 /* -------- PDF extractor (blob-aware) -------- */
 async function extractSMC2024(url){
+  // load as URL; if that fails, fetch as bytes (blob) and hand to pdf.js
   async function loadPdf(u){
     try {
-      // first attempt: direct URL
       return await pdfjsLib.getDocument({ url: u, disableRange: true, disableStream: true }).promise;
-    } catch (e) {
-      // fallback: fetch bytes, then feed pdf.js
-      const resp = await fetch(u, { cache: 'no-store' });
-      if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${u}`);
-      const buf = await resp.arrayBuffer();
+    } catch {
+      const r = await fetch(u, { cache: 'no-store' });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const buf = await r.arrayBuffer();
       return await pdfjsLib.getDocument({ data: buf }).promise;
     }
   }
 
   const pdf = await loadPdf(url);
-  const lines = [];
 
-  for (let p=1; p<=pdf.numPages; p++){
+  // 1) Pull lines (y-join more tolerant: 4px)
+  const lines = [];
+  for (let p = 1; p <= pdf.numPages; p++) {
     const page = await pdf.getPage(p);
     const content = await page.getTextContent();
-    const items = content.items.map(it=>({s:it.str,x:it.transform[4],y:it.transform[5]}))
-      .sort((a,b)=> (a.y===b.y ? a.x-b.x : b.y-a.y));
-    let row=[], prevY=null;
-    const flush=()=>{ if(row.length){ const txt=row.map(t=>t.s).join(' ').replace(/\s+/g,' ').trim(); if(txt) lines.push(txt); row=[]; } };
-    for(const it of items){ if(prevY===null) prevY=it.y; if(Math.abs(it.y-prevY)>2){ flush(); prevY=it.y; } row.push(it); }
-    flush(); lines.push('');
+    const items = content.items
+      .map(it => ({ s: it.str, x: it.transform[4], y: it.transform[5] }))
+      .sort((a,b) => (a.y===b.y ? a.x-b.x : b.y-a.y));
+    let row = [], prevY = null;
+    const flush = () => {
+      if (row.length) {
+        const txt = row.map(t=>t.s).join(' ').replace(/\s+/g,' ').trim();
+        if (txt) lines.push(txt);
+        row = [];
+      }
+    };
+    for (const it of items) {
+      if (prevY === null) prevY = it.y;
+      if (Math.abs(it.y - prevY) > 4) { flush(); prevY = it.y; }
+      row.push(it);
+    }
+    flush();
+    lines.push(''); // page break
   }
 
-  let text = lines.join('\n').replace(/(\d)\s+(?=\d)/g,'$1'); // 4 5 -> 45
+  // 2) Normalise
+  let text = lines.join('\n')
+    .replace(/\u00A0/g, ' ')
+    .replace(/(\d)\s+(?=\d)/g, '$1'); // fix "4 5" -> "45"
 
-  // Pull blocks that start with "N. " on a new line, up to the next "M. "
-  const re = /^([1-9]|1\d|2[0-5])\.\s([\s\S]*?)(?=^\s*(?:[1-9]|1\d|2[0-5])\.\s|$)/gm;
-  const blocks=[]; let m;
-  while((m=re.exec(text))!==null){
-    const n=parseInt(m[1],10);
-    let body=m[2].replace(/[ \t]+/g,' ').trim();
+  // 3) Primary parse: start-of-line "N" then "." or ")"
+  let blocks = [];
+  const rePrimary = /^\s*(\d{1,2})\s*[.)]\s+([\s\S]*?)(?=^\s*\d{1,2}\s*[.)]\s+|$)/gm;
+  let m;
+  while ((m = rePrimary.exec(text)) !== null) {
+    blocks.push({ num: +m[1], body: m[2].trim() });
+  }
 
-    // Options A–E over multiple lines/spaces
-    const opt=/\(A\)\s*([\s\S]*?)\s*\(B\)\s*([\s\S]*?)\s*\(C\)\s*([\s\S]*?)\s*\(D\)\s*([\s\S]*?)\s*\(E\)\s*([\s\S]*?)$/;
-    let statement=body;
-    const om=opt.exec(body);
-    if(om){
-      const stem=body.slice(0,om.index).trim();
-      const [A,B,C,D,E]=om.slice(1).map(t=>t.replace(/\s+/g,' ').trim());
-      statement=`${stem}\n(A) ${A}\n(B) ${B}\n(C) ${C}\n(D) ${D}\n(E) ${E}`;
+  // 4) Fallback parse if none found: allow missing dot
+  if (blocks.length === 0) {
+    const reLoose = /^\s*(\d{1,2})\s+([\s\S]*?)(?=^\s*\d{1,2}\s+|$)/gm;
+    while ((m = reLoose.exec(text)) !== null) {
+      blocks.push({ num: +m[1], body: m[2].trim() });
+    }
+  }
+
+  // 5) Build statements. Prefer A–E extraction; if not found, keep the stem.
+  const items = [];
+  for (const b of blocks) {
+    if (b.num < 1 || b.num > 25) continue;
+
+    const opt =
+      /(?:\(?A\)?)[\s.:]*([\s\S]*?)(?:\(?B\)?)[\s.:]*([\s\S]*?)(?:\(?C\)?)[\s.:]*([\s\S]*?)(?:\(?D\)?)[\s.:]*([\s\S]*?)(?:\(?E\)?)[\s.:]*([\s\S]*?)$/i;
+
+    let statement = b.body.replace(/[ \t]+/g,' ').trim();
+
+    const om = opt.exec(b.body);
+    if (om) {
+      const stem = b.body.slice(0, om.index).trim();
+      const [A,B,C,D,E] = om.slice(1).map(t => t.replace(/\s+/g,' ').trim());
+      statement = `${stem}\n(A) ${A}\n(B) ${B}\n(C) ${C}\n(D) ${D}\n(E) ${E}`;
     }
 
-    // keep only genuine MC questions (drop instruction blocks)
-    if(!/\(A\)[\s\S]*\(B\)[\s\S]*\(C\)[\s\S]*\(D\)[\s\S]*\(E\)/.test(statement)) continue;
+    // Drop obvious instruction blocks
+    if (!/(?:\(?A\)?| A )[^\n]*\n?/.test(statement)) continue;
 
-    blocks.push({num:n, statement});
+    items.push({
+      id: `SMC-2024-Q${b.num}`,
+      source: "UKMT",
+      contest: "SMC",
+      year: 2024,
+      num: b.num,
+      kind: "mc",
+      rights: "© UKMT, used with permission.",
+      difficulty: (b.num/25 < .34 ? 'E' : b.num/25 < .67 ? 'M' : 'H'),
+      statement
+    });
   }
 
-  return blocks.sort((a,b)=>a.num-b.num).map(b=>({
-    id:`SMC-2024-Q${b.num}`, source:"UKMT", contest:"SMC", year:2024, num:b.num, kind:"mc",
-    rights:"© UKMT, used with permission.", difficulty:diffBucket(b.num), statement:b.statement
-  }));
+  // If still too few (e.g., < 10), don’t treat as fatal — return what we have.
+  return items.sort((a,b)=>a.num-b.num);
 }
 
 /* -------- sources -------- */
