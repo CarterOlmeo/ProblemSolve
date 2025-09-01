@@ -1,0 +1,220 @@
+[
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 1,
+    "statement": "Which calculation gives the largest result?\\nA: $2+0+1+8$; B: $2\\times0+1+8$; C: $2+0\\times1+8$; D: $2+0+1\\times8$; E: $2\\times0\\times1+8$",
+    "options": ["A","B","C","D","E"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 2,
+    "statement": "Which of the following expressions, when it replaces the symbol $\\Omega$, makes the equation\\n$$0\\times\\Omega=2\\times2\\times2\\times3\\times3$$\\ncorrect?",
+    "diagram": "assets/images/jk-2018-q02.png",
+    "options": ["2","3","$2\\times3$","$2\\times3\\times3$","$2\\times2\\times3$"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 3,
+    "statement": "Each of the designs shown is initially divided into squares. For how many of the designs is the total area of the shaded region equal to three-fifths of the area of the whole design?",
+    "diagram": "assets/images/jk-2018-q03.png",
+    "options": ["0","1","2","3","4"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 4,
+    "statement": "Milly likes to multiply by 3, Abby likes to add 2 and Sam likes to subtract 1. In what order should they perform their favourite actions to start with 3 and end with 14?",
+    "options": ["MAS","MSA","BMS","ASM","SMA"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 5,
+    "statement": "Emily has two identical cards in the shape of equilateral triangles. She places them both onto a sheet of paper so that they touch or overlap and draws around the shape she creates. Which one of the following is it impossible for her to draw?",
+    "diagram": "assets/images/jk-2018-q05.png",
+    "options": ["A","B","C","D","E"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 6,
+    "statement": "Lucy has lots of identical lolly sticks. She arranges the lolly sticks end to end to make different triangles. Which number of lolly sticks could she not use to make a triangle?",
+    "options": ["7","6","5","4","3"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 7,
+    "statement": "In triangle $PQR$, the short sides of triangles $PQR$ and $PRQ$ are the same. The point $S$ lies on $QR$ so that $QS=PS$ and $\\angle RPS=75^\\circ$. What is the size of $\\angle QRP$?",
+    "diagram": "assets/images/jk-2018-q07.png",
+    "options": ["35°","30°","25°","20°","15°"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 8,
+    "statement": "William has four cards with different integers written on them. Three of these integers are 2, 3 and 4. He puts one card in each cell of the $2\\times2$ grid shown. The sum of the two integers in the second row is 6. The sum of the two integers in the second column is 10. Which number is on the card he places in the top-left cell?",
+    "diagram": "assets/images/jk-2018-q08.png",
+    "options": ["2","3","4","6","Can't be sure"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 9,
+    "statement": "Tom throws two darts at the target shown in the diagram. Both his darts hit the target. For each dart, he scores the number of points shown in the region it hits. How many different totals could he score?",
+    "diagram": "assets/images/jk-2018-q09.png",
+    "options": ["6","7","8","9","10"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 10,
+    "statement": "The diagram below shows five rectangles, each containing some of the letters P, R, I, S and M. Harry wants to cross out letters so that each rectangle contains only one letter and each rectangle contains a different letter. Which letter does not cross out in rectangle 2?",
+    "diagram": "assets/images/jk-2018-q10.png",
+    "options": ["P","R","I","S","M"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 11,
+    "statement": "The five symbols @, *, #, & and ^ used in the equations below represent different digits.\\n@ + @ + @ = *\\n# + # + # = ^\\n* + ^ = &\\nWhat is the value of & ?",
+    "options": ["0","2","3","6","9"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 12,
+    "statement": "The two diagrams show a side view and a plan view of a tower made with light and dark coloured blocks. In the tower, only dark coloured blocks are placed on top of dark coloured blocks and only light coloured blocks are placed on top of light coloured blocks. How many blocks in the tower are light coloured?",
+    "diagram": "assets/images/jk-2018-q12.png",
+    "options": ["9","13","18","20","24"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 13,
+    "statement": "The diagram shows a triangle joined to a square to form an irregular pentagon. The triangle has the same perimeter as the square. What is the ratio of the perimeter of the pentagon to the perimeter of the square?",
+    "diagram": "assets/images/jk-2018-q13.png",
+    "options": ["2:1","3:2","4:3","5:4","6:5"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 14,
+    "statement": "A box contains seven cards, each with a different integer from 1 to 7 written on it. Avani takes three cards from the box and then Niamh takes two cards, leaving two cards in the box. Avani looks at her cards and then tells Niamh 'I know the sum of the numbers on your cards is even.' What is the sum of the numbers on Avani's cards?",
+    "options": ["6","9","10","11","12"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 15,
+    "statement": "Today Rachel realised the following facts were true: in two years' time her brother Tim will be twice as old as he was two years ago and in three years' time her sister Tina will be three times as old as she was three years ago. Which of the following statements is also true?",
+    "options": [
+      "Tim is two years older than Tina",
+      "Tim is one year older than Tina",
+      "Tim is one year younger than Tina",
+      "Tim is two years younger than Tina",
+      "Tim is the same age as Tina"
+    ],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 16,
+    "statement": "Ali is arranging the books on his bookshelves. He puts half his books on the bottom shelf and two-thirds of what remains on the second shelf. Finally he splits the rest of his books over the other two shelves so that the third shelf contains four more books than the top shelf. There are three books on the top shelf. How many books are on the bottom shelf?",
+    "options": ["60","50","40","30","20"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 17,
+    "statement": "A large circular table has 60 chairs around it. What is the largest number of people who can sit around the table so that each person is only sitting next to exactly one other person?",
+    "options": ["40","36","30","25","20"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 18,
+    "statement": "The points P, Q, R and S are marked on a straight line in some order. The lengths of the line segments PQ, QR, RS and SP are 13 cm, 11 cm, 14 cm and 12 cm respectively. What is the distance between the two points that are farthest apart?",
+    "options": ["14 cm","25 cm","27 cm","38 cm","50 cm"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 19,
+    "statement": "My TV screen has sides in the ratio 16:9. My mother's TV screen has sides in the ratio 4:3. A picture which exactly fills the screen of my TV only fills the width of my mother's TV. What fraction of the screen on my mother's TV is not covered?",
+    "diagram": "assets/images/jk-2018-q19.png",
+    "options": ["1/6","1/3","1/4","1/5","It depends on the size of the screen"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 20,
+    "statement": "Steven subtracts the units digit from the tens digit for each two-digit number. He then finds the sum of all his answers. What is the value of Steven's sum?",
+    "options": ["30","45","60","55","100"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 21,
+    "statement": "In triangle PQR, the point S is on PQ so that the ratio of the length of PS to the length of SQ is 2:3. The point T lies on SR so that the area of triangle PTR is 20 and the area of triangle SQT is 18, as shown. What is the area of triangle PQR?",
+    "diagram": "assets/images/jk-2018-q21.png",
+    "options": ["100","90","80","70","60"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 22,
+    "statement": "The diagram shows a plan of a town with various bus stops. There are four bus routes in the town. Route 1 goes C–D–E–F–G–H–C and is 17 km long. Route 2 goes A–B–C–F–A and is 12 km long. Route 3 goes A–B–C–D–E–F–G–A and is 20 km long. Route 4 goes C–F–G–H–C. How long is route 4?",
+    "diagram": "assets/images/jk-2018-q22.png",
+    "options": ["10 km","9 km","8 km","7 km","6 km"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 23,
+    "statement": "Three friends, Ms Raja, Ms Omar and Ms Beatty all live in the same street. They are a doctor, an engineer and a musician in some order. The youngest one, the doctor, does not have a brother. Ms Beatty is older than the engineer and is married to Ms Omar's brother. What are the names, in order, of the doctor and the engineer?",
+    "options": ["Raja and Omar","Omar and Beatty","Beatty and Omar","Raja and Beatty","Omar and Raja"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 24,
+    "statement": "In the sum $KAN + GA = ROO$ each letter stands for a different digit. What is the answer to the subtraction $RN? - KG$ shown? (See paper for layout.)",
+    "options": ["10","11","12","21","22"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2018,
+    "num": 25,
+    "statement": "What is the largest number of digits that can be erased from the 1000-digit number 201820182018...2018 so that the sum of the remaining digits is 2018?",
+    "options": ["343","582","671","741","746"],
+    "answer": ""
+  }
+]
