@@ -3,200 +3,205 @@
     "contest": "JMC",
     "year": 2025,
     "num": 1,
-    "statement": "What is one quarter of one half of 200?",
-    "options": ["25", "50", "75", "100", "200"],
-    "answer": "A"
+    "statement": "What is $\\tfrac{1}{2}$ of $10\\%$ of $20$?",
+    "options": ["1","2","5","10","20"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 2,
-    "statement": "What is the value of \\(4444 + 5555 - 6666\\)?",
-    "options": ["1233", "2333", "3333", "4333", "5333"],
-    "answer": "B"
+    "statement": "What is the value of $\\dfrac{4444+5555}{1111+2222}$?",
+    "options": ["3","6.5","33","333","3333"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 3,
-    "statement": "What is the remainder when \\(12345\\) is divided by 9?",
-    "options": ["0", "3", "5", "6", "9"],
-    "answer": "C"
+    "statement": "How many of the following are factors of $2025$? 15, 25, 45, 75, 225",
+    "options": ["1","2","3","4","5"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 4,
-    "statement": "Which of these is equal to \\(2^{10}\\)?",
-    "options": ["512", "1024", "2048", "4096", "8192"],
-    "answer": "B"
+    "statement": "Jasmin Paris finished a 100-mile race in 59 hours 58 minutes 21 seconds. The cut-off time was 60 hours. By how many seconds did she beat the cut-off?",
+    "options": ["99","109","119","129","139"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 5,
-    "statement": "What is the area of a triangle with base 10 cm and height 6 cm?",
-    "options": ["15", "20", "25", "30", "35"],
-    "answer": "D"
+    "statement": "The diagram shows the square $PQRS$ and the equilateral triangle $PTS$. What is the size of the angle $RPT$?",
+    "image": "assets/images/jmc-2025-q5.png",
+    "options": ["$10^{\\circ}$","$12^{\\circ}$","$15^{\\circ}$","$22\\tfrac{1}{2}^{\\circ}$","$30^{\\circ}$"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 6,
-    "statement": "The mean of five numbers is 8. If four of the numbers are 5, 7, 9 and 10, what is the fifth?",
-    "options": ["7", "8", "9", "10", "11"],
-    "answer": "C"
+    "statement": "Carol and Sandra swim in a 25 m pool. Sandra always swims 4 lengths in the same time Carol swims 3 lengths. One morning Carol swims 36 lengths. How far does Sandra swim in the same time?",
+    "options": ["600 m","675 m","900 m","1200 m","1350 m"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 7,
-    "statement": "What is \\(\\tfrac{3}{4} \\times \\tfrac{2}{5}\\)?",
-    "options": ["\\tfrac{3}{10}", "\\tfrac{6}{20}", "\\tfrac{3}{8}", "\\tfrac{2}{5}", "\\tfrac{6}{5}"],
-    "answer": "C"
+    "statement": "What is the difference between the smallest four-digit multiple of 3 and the largest three-digit multiple of 4?",
+    "options": ["3","4","5","6","7"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 8,
-    "statement": "How many lines of symmetry does a regular hexagon have?",
-    "options": ["3", "4", "5", "6", "12"],
-    "answer": "D"
+    "statement": "Switzerland average consumption is 8.8 kg chocolate per person per year. How many 100 g bars is that?",
+    "options": ["8.8","88","880","8800","88000"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 9,
-    "statement": "The angles of a quadrilateral are in the ratio 1 : 2 : 3 : 4. What is the largest angle?",
-    "options": ["90^\\circ", "100^\\circ", "120^\\circ", "160^\\circ", "180^\\circ"],
-    "answer": "C"
+    "statement": "All four digits of two two-digit numbers are different. What is the smallest possible sum of the two numbers?",
+    "options": ["30","33","37","40","42"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 10,
-    "statement": "How many positive factors does \\(60\\) have?",
-    "options": ["10", "12", "15", "16", "20"],
-    "answer": "B"
+    "statement": "The length of a turtle is 60 cm plus a third of its length. How long is the turtle?",
+    "options": ["70 cm","75 cm","85 cm","90 cm","120 cm"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 11,
-    "statement": "What is the difference between the largest and smallest three-digit palindromes?",
-    "options": ["808", "818", "898", "909", "919"],
-    "answer": "C"
+    "statement": "Three consecutive one-digit positive integers are a square, a cube and a prime (not necessarily in that order). What is the product of the three integers?",
+    "options": ["0","6","60","210","504"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 12,
-    "statement": "What is \\(7!\\)?",
-    "options": ["720", "4030", "5040", "6040", "7050"],
-    "answer": "C"
+    "statement": "Two identical squares $PQRS$ and $TUVW$ overlap to form the $21\\text{ cm}\\times12\\text{ cm}$ rectangle $PQVW$. What is the area (cm$^2$) of the shaded rectangle $TURS$?",
+    "image": "assets/images/jmc-2025-q12.png",
+    "options": ["24","36","48","72","96"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 13,
-    "statement": "A square has area 144 cm$^2$. What is its perimeter?",
-    "options": ["24", "36", "48", "72", "144"],
-    "answer": "C"
+    "statement": "In a sequence of rectangles the first has height 10 cm and width 13 cm. Each subsequent rectangle is 2 cm higher and 1 cm wider than the previous one. How many rectangles in this sequence are squares?",
+    "options": ["0","1","2","4","An infinite number"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 14,
-    "statement": "The sum of two numbers is 50 and their difference is 10. What is the larger number?",
-    "options": ["20", "25", "30", "35", "40"],
-    "answer": "D"
+    "statement": "Which of these is equal to $3^3+4^3+5^3$?",
+    "options": ["$6^3$","$8^3$","$10^3$","$12^3$","$12^3+1$"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 15,
-    "statement": "What is the value of \\(0.\\overline{3} + 0.\\overline{6}\\)?",
-    "options": ["0.9", "1", "1.2", "1.3", "2"],
-    "answer": "B"
+    "statement": "A baby weighed 8 pounds 13 ounces. (16 ounces = 1 pound; 1 ounce ≈ 28.35 g.) What was the approximate weight in kilograms?",
+    "options": ["3 kg","4 kg","5 kg","6 kg","7 kg"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 16,
-    "statement": "How many diagonals does a regular octagon have?",
-    "options": ["20", "24", "28", "32", "36"],
-    "answer": "A"
+    "statement": "What is the sum of $20\\%$ of $40\\%$ of $60$ and $40\\%$ of $60\\%$ of $80$?",
+    "options": ["20","20.4","24","24.4","28"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 17,
-    "statement": "The mean of ten numbers is 20. If one number is removed, the mean becomes 19. What number was removed?",
-    "options": ["10", "20", "25", "30", "40"],
-    "answer": "E"
+    "statement": "The diagram shows three pairs of parallel line segments. Altogether, how many triangles are there in the diagram?",
+    "image": "assets/images/jmc-2025-q17.png",
+    "options": ["4","6","8","10","12"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 18,
-    "statement": "The sum of the first 20 odd numbers is:",
-    "options": ["200", "300", "400", "500", "600"],
-    "answer": "C"
+    "statement": "A number has exactly nine factors (including 1 and itself). The number has 9 and 12 as factors. What is the number?",
+    "options": ["24","36","48","72","144"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 19,
-    "statement": "A circle has circumference 31.4 cm. What is its radius? (Take \\(\\pi = 3.14\\))",
-    "options": ["5", "10", "15", "20", "25"],
-    "answer": "A"
+    "statement": "Ibraheem has 10 cards (four P, three Q, two R, one S) and 10 counters (one 3, two 1, three 4, four 2). He places one counter on each card so every pairing is different. Which pairing does he NOT make?",
+    "options": ["P2","R4","Q1","R2","S4"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 20,
-    "statement": "What is the smallest prime factor of 2025?",
-    "options": ["3", "5", "9", "15", "25"],
-    "answer": "A"
+    "statement": "Points $P,Q,R,S$ lie in that order on a line. $PR=6$ cm, $QS=4$ cm and $R$ is 1 cm nearer to $S$ than to $Q$. What is $PS$?",
+    "options": ["7 cm","7.5 cm","8 cm","8.5 cm","9 cm"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 21,
-    "statement": "What is the 12th term of the sequence 2, 4, 8, 16, ...?",
-    "options": ["1024", "2048", "4096", "8192", "16384"],
-    "answer": "C"
+    "statement": "In the diagram, $PQRS$ and $JKLM$ are squares. Each corner of $JKLM$ is one third of the way along an edge of $PQRS$. What is the ratio of area$(JKLM)$ to area$(PQRS)$?",
+    "image": "assets/images/jmc-2025-q21.png",
+    "options": ["1:2","5:9","3:5","4:7","3:4"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 22,
-    "statement": "The average of four consecutive integers is 15. What is the largest integer?",
-    "options": ["14", "15", "16", "17", "18"],
-    "answer": "D"
+    "statement": "Idil has 12 bags of sweets. Some bags contain (3 mints, 4 toffees, 1 fudge), some contain (4 mints, 5 toffees, 2 fudges), and the remaining bags contain (6 mints, 0 toffees, 3 fudges). The bags contain 31 toffees in total. In total, how many fudges do the bags contain?",
+    "options": ["22","23","24","25","26"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 23,
-    "statement": "A die is rolled. What is the probability of getting an even number?",
-    "options": ["\\tfrac{1}{6}", "\\tfrac{1}{3}", "\\tfrac{1}{2}", "\\tfrac{2}{3}", "\\tfrac{5}{6}"],
-    "answer": "C"
+    "statement": "The map shows three towns $P,Q,R$ and the road lengths between them are whole kilometres. The route $P\\to Q\\to R$ is twice as long as direct $P\\to R$. The route $P\\to R\\to Q$ is three times as long as direct $P\\to Q$. Which of the following could be the length of the route from $P$ back to $P$ via $Q$ and $R$?",
+    "image": "assets/images/jmc-2025-q23.png",
+    "options": ["74 km","81 km","95 km","108 km","124 km"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 24,
-    "statement": "A shop sells pens at 3 for £2. How much do 12 pens cost?",
-    "options": ["£6", "£7", "£8", "£9", "£10"],
-    "answer": "C"
+    "statement": "When 180 is divided by a positive integer $N$, the remainder is 5. For how many values of $N$ is this true?",
+    "options": ["4","5","6","7","8"],
+    "answer": ""
   },
   {
     "contest": "JMC",
     "year": 2025,
     "num": 25,
-    "statement": "Which of these numbers is prime?",
-    "options": ["91", "93", "95", "97", "99"],
-    "answer": "D"
+    "statement": "Given a cube, how many equilateral triangles are there whose vertices are three vertices of the cube?",
+    "options": ["1","3","6","8","24"],
+    "answer": ""
   }
 ]
