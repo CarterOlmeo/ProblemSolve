@@ -1,0 +1,217 @@
+[
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 1,
+    "statement": "Which single digit should be placed in all three of the boxes shown to give a correct calculation? [ ] [ ] × [ ] = 176",
+    "options": ["3","4","5","6","8"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 2,
+    "statement": "The sum of the ages of three children, Ava, Bob and Carlo, is 31. What will the sum of their ages be in three years' time?",
+    "options": ["34","37","39","40","43"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 3,
+    "statement": "Nico is learning to drive. He knows how to turn right but has not yet learned how to turn left. What is the smallest number of right turns he could make to travel from P to Q, moving first in the direction shown?",
+    "diagram": "assets/images/jk-2023-q03.png",
+    "options": ["3","4","6","8","10"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 4,
+    "statement": "A doctor told Mikael to take a pill every 75 minutes. He took his first pill at 11:05. At what time did he take his fourth pill?",
+    "options": ["12:20","13:35","14:50","16:05","17:20"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 5,
+    "statement": "When she drew two intersecting circles, Tatiana divided the space into three regions. When drawing two intersecting squares, what is the largest number of regions inside one or both of the squares that Tatiana could create?",
+    "diagram": "assets/images/jk-2023-q05.png",
+    "options": ["4","6","7","8","9"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 6,
+    "statement": "The integer 36 is divisible by its units digit. The integer 38 is not. How many integers between 20 and 30 are divisible by their units digit?",
+    "options": ["2","3","4","5","6"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 7,
+    "statement": "What is the largest number of \"T\"-shaped pieces, as shown, that can be placed on the 4×5 grid in the diagram, without any overlap of the pieces?",
+    "diagram": "assets/images/jk-2023-q07.png",
+    "options": ["2","3","4","5","6"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 8,
+    "statement": "Peter the penguin likes catching fish. On Monday, he realised that if he had caught three times as many fish as he actually did, he would have had 24 more fish. How many fish did Peter catch?",
+    "options": ["12","10","9","8","6"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 9,
+    "statement": "Maria has drawn some shapes on identical square pieces of paper, as shown. Each line she has drawn is parallel to an edge of her paper. How many of her shapes have the same perimeter as the sheet of paper itself?",
+    "diagram": "assets/images/jk-2023-q09.png",
+    "options": ["1","2","3","4","5"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 10,
+    "statement": "Christopher has made a building out of blocks. The grid on the right shows the number of blocks in each part of the building, when viewed from above. Which of the following gives the view you see when you look at Christopher's building from the front?",
+    "diagram": "assets/images/jk-2023-q10.png",
+    "options": ["A","B","C","D","E"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 11,
+    "statement": "In a class election, each of the five candidates got a different number of votes. There were 36 votes cast in total. The winner got 12 votes. The candidate in last place got 4 votes. How many votes did the candidate in second place get?",
+    "options": ["8","9","10","11","12"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 12,
+    "statement": "The diagram shows a wooden cube of side 3 cm with a smaller cube of side 1 cm cut out at one corner. A second cube of side 3 cm has a cube of side 1 cm cut out at each corner. How many faces does the shape formed from the second cube have?",
+    "diagram": "assets/images/jk-2023-q12.png",
+    "options": ["6","8","24","30","36"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 13,
+    "statement": "How many pairs of two-digit positive integers have a difference of 50?",
+    "options": ["10","20","25","35","40"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 14,
+    "statement": "A lot of goals were scored in a hockey match I watched recently. In the first half, six goals were scored and the away team was leading at half-time. In the second half, the home team scored three goals and won the game. How many goals did the home team score altogether?",
+    "options": ["3","4","5","6","9"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 15,
+    "statement": "In a certain month, the dates of three of the Sundays are prime. On what day does the 7th of the month fall?",
+    "options": ["Thursday","Friday","Saturday","Monday","Tuesday"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 16,
+    "statement": "Alisha wrote an integer in each square of a 4×4 grid. Integers in squares with a common edge differ by 1. She wrote a 3 in the top left corner, as shown. She also wrote a 9 somewhere in the grid. How many different integers did she write?",
+    "diagram": "assets/images/jk-2023-q16.png",
+    "options": ["4","5","6","7","8"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 17,
+    "statement": "Ali, Bev and Chaz never tell the truth. Each of them owns exactly one coloured stone that is either red or green. Ali says, 'My stone is the same colour as Bev\\'s.' Bev says, 'My stone is the same colour as Chaz\\'s.' Chaz says, 'Exactly two of us own red stones.' Which of the following statements is true?",
+    "options": [
+      "Ali's stone is green",
+      "Bev's stone is green",
+      "Chaz's stone is red",
+      "Ali's stone and Chaz's stone are different colours",
+      "None of the statements A to D are true"
+    ],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 18,
+    "statement": "There are 66 cats in my street. I don't like 21 of them because they catch mice. Of the rest, 32 have stripes and 27 have one black ear. The number of cats with both stripes and one black ear is as small as it could possibly be. How many cats have both stripes and one black ear?",
+    "options": ["5","8","11","13","14"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 19,
+    "statement": "A group of 40 boys and 28 girls stand hand in hand in a circle facing inwards. Exactly 18 of the boys give their right hand to a girl. How many boys give their left hand to a girl?",
+    "options": ["12","14","18","20","22"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 20,
+    "statement": "For how many three-digit numbers can you subtract 297 and obtain a second three-digit number which is the original three-digit number reversed?",
+    "options": ["5","10","20","40","60"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 21,
+    "statement": "The diagram shows a square PQRS with area 120 cm². Point T is the mid-point of PQ. The ratio QU : UR = 2 : 1, the ratio RV : VS = 3 : 1 and the ratio SW : WP = 4 : 1. What is the area, in cm², of quadrilateral TUVW?",
+    "diagram": "assets/images/jk-2023-q21.png",
+    "options": ["66","67","68","69","70"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 22,
+    "statement": "In the Maths Premier League, teams get 3 points for a win, 1 point for a draw and 0 points for a loss. Last year my team played 38 games and got 80 points. We won more than twice the number of games we drew and more than five times the number of games we lost. How many games did we draw?",
+    "options": ["8","9","10","11","14"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 23,
+    "statement": "For a given list of three numbers, the operation 'changesum' replaces each number in the list with the sum of the other two. For example, applying 'changesum' to [3,11,7] gives [18,10,14]. Arav starts with the list [20,2,3] and applies the operation 'changesum' 2023 times. What is the largest difference between two of the three numbers in his final list?",
+    "options": ["17","18","20","2021","2023"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 24,
+    "statement": "Emily makes four identical numbered cubes using the net shown. She then glues them together so that only faces with the same number on are glued together to form the 2×2×1 block. What is the largest possible total of all the numbers on the faces of the block that Emily could achieve?",
+    "diagram": "assets/images/jk-2023-q24.png",
+    "options": ["72","70","68","66","64"],
+    "answer": ""
+  },
+  {
+    "contest": "Junior Kangaroo",
+    "year": 2023,
+    "num": 25,
+    "statement": "Tony had a large number of 1p, 5p, 10p and 20p coins in a bag. He removed some of the coins. The mean value of the coins he removed was 13p. He noticed that a 1p piece in his group of removed coins was damaged so he threw it away. The mean value of the rest of his removed coins was then 14p. How many 10p coins did he remove from the bag?",
+    "options": ["0","1","2","3","4"],
+    "answer": ""
+  }
+]
