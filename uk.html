@@ -93,6 +93,211 @@
     <div id="list"></div>
   </div>
 
+  <!-- Add these libs in head (KaTeX already present in your site) -->
+<!-- Insert this block where you want the controls + list -->
+<div class="panel">
+  <div class="row">
+    <label>Number <input id="outCount" type="number" min="1" max="50" value="12"></label>
+    <label>Difficulty mix
+      <select id="outMix">
+        <option value="balanced">Balanced (E/M/H)</option>
+        <option value="easy">Easy-leaning</option>
+        <option value="hard">Hard-leaning</option>
+        <option value="pureRandom">Pure random</option>
+      </select>
+    </label>
+    <label>Sources (choose) <span id="sourcesSpan"></span></label>
+    <button id="buildBtn" class="btn">Generate sheet</button>
+    <button id="printBtn" class="btn">Print</button>
+  </div>
+</div>
+
+<section id="sheetArea" class="panel"></section>
+
+<script>
+/* ---------- CONFIG ---------- */
+// If you have assets/index.json, the loader will use it. Otherwise list files here:
+const FALLBACK_JSON_LIST = [
+  '/ProblemSolve/assets/junior-kangaroo-2024.json',
+  '/ProblemSolve/assets/jmc-2024.json',
+  '/ProblemSolve/assets/smc-2024.json'
+  // add more files here
+];
+
+const INDEX_JSON_PATH = '/ProblemSolve/assets/index.json'; // optional
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const el = s => document.createElement(s);
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function bucketFromDifficulty(d){ // fallback
+  if(!d) return 'M';
+  if(['E','e','1'].includes(d)) return 'E';
+  if(['M','m','2'].includes(d)) return 'M';
+  return 'H';
+}
+
+/* ---------- load all JSONs ---------- */
+async function loadAllProblems(){
+  // try index.json first
+  let list;
+  try {
+    const r = await fetch(INDEX_JSON_PATH, {cache:'no-store'});
+    if(r.ok) list = await r.json();
+  } catch(e){ /* ignore */ }
+  if(!Array.isArray(list)) list = FALLBACK_JSON_LIST;
+
+  const problems = [];
+  for(const path of list){
+    try {
+      const r = await fetch(path, {cache:'no-store'});
+      if(!r.ok) { console.warn('skip',path,r.status); continue; }
+      const arr = await r.json();
+      if(Array.isArray(arr)){
+        for(const item of arr){
+          // normalize minimal fields
+          problems.push({
+            id: item.id || `${item.contest||'X'}-${item.year||'NA'}-${item.num||'0'}`,
+            contest: item.contest || 'Unknown',
+            year: item.year || null,
+            num: item.num || null,
+            kind: item.kind || 'mc',
+            difficulty: bucketFromDifficulty(item.difficulty || item.level || item.diff),
+            statement: item.statement || '',
+            options: item.options || [],
+            answer: item.answer || '',
+            images: item.images || [],
+            tags: item.tags || [],
+            rights: item.rights || ''
+          });
+        }
+      }
+    } catch(err){
+      console.error('failed load', path, err);
+    }
+  }
+  return problems;
+}
+
+/* ---------- UI for source checkboxes ---------- */
+function buildSourceControls(problems){
+  const sources = [...new Set(problems.map(p=>p.contest))].sort();
+  const span = $('#sourcesSpan'); span.innerHTML='';
+  for(const s of sources){
+    const lbl = el('label');
+    const cb = el('input'); cb.type='checkbox'; cb.value=s; cb.checked=true; cb.className='srcchk';
+    lbl.appendChild(cb);
+    lbl.insertAdjacentText('beforeend', ' ' + s + ' ');
+    span.appendChild(lbl);
+  }
+}
+
+/* ---------- picking algorithm ---------- */
+function pickProblems(pool, count, mix='balanced'){
+  if(mix === 'pureRandom') return shuffle(pool).slice(0, count);
+  // weights by bucket
+  const weights = {
+    balanced: {E:.4,M:.4,H:.2},
+    easy: {E:.6,M:.3,H:.1},
+    hard: {E:.15,M:.45,H:.4}
+  }[mix] || {E:.4,M:.4,H:.2};
+
+  const by = {E:[],M:[],H:[]};
+  pool.forEach(p => by[p.difficulty || 'M'].push(p));
+  const want = { E: Math.round(count*weights.E), M: Math.round(count*weights.M) };
+  want.H = count - want.E - want.M;
+  let out = [];
+  out = out.concat(shuffle(by.E).slice(0,want.E));
+  out = out.concat(shuffle(by.M).slice(0,want.M));
+  out = out.concat(shuffle(by.H).slice(0,want.H));
+  if(out.length < count){
+    const remaining = pool.filter(p=>!out.includes(p));
+    out = out.concat(shuffle(remaining).slice(0, count - out.length));
+  }
+  // preserve ordering by contest/num or keep shuffled — here we keep the chosen order random:
+  return shuffle(out);
+}
+
+/* ---------- rendering sheet ---------- */
+function renderSheet(problems, opts={title:'Custom problem set'}){
+  const host = $('#sheetArea');
+  host.innerHTML = '';
+  const header = el('div'); header.className='row'; header.style.justifyContent='space-between';
+  header.innerHTML = `<div><strong>${opts.title}</strong></div><div class="meta">${new Date().toLocaleString()}</div>`;
+  host.appendChild(header);
+
+  problems.forEach((p,i)=>{
+    const box = el('div'); box.className='problem'; box.style.marginBottom='16px';
+    const head = el('div'); head.innerHTML = `<div class="ptitle">PROBLEM ${i+1} <span class="meta">(${p.contest} ${p.year} #${p.num})</span></div>`;
+    const statement = el('div'); statement.className='stem'; statement.innerHTML = p.statement.replace(/\n/g,'<br>');
+    // images
+    if(p.images && p.images.length){
+      for(const src of p.images){
+        const im = el('img'); im.src = src; im.style.maxWidth='380px'; im.style.display='block';
+        statement.appendChild(im);
+      }
+    }
+    box.appendChild(head);
+    box.appendChild(statement);
+
+    // options (if any)
+    if(p.options && p.options.length){
+      const ul = el('ul'); ul.style.marginTop='8px';
+      p.options.forEach((opt,j) => {
+        const li = el('li');
+        li.innerHTML = `(${String.fromCharCode(65+j)}) ${opt}`;
+        ul.appendChild(li);
+      });
+      box.appendChild(ul);
+    }
+
+    // solution hidden
+    const sol = el('div'); sol.className='meta solution'; sol.style.display='none';
+    sol.innerHTML = `<strong>Answer:</strong> ${p.answer || '—'} ${p.rights?('<div class="meta">'+p.rights+'</div>'):''}`;
+    box.appendChild(sol);
+
+    host.appendChild(box);
+  });
+
+  // add a toggle for solutions at bottom
+  const ctrl = el('div'); ctrl.className='row'; ctrl.style.gap='8px';
+  const showBtn = el('button'); showBtn.className='btn'; showBtn.textContent='Toggle solutions';
+  showBtn.addEventListener('click', ()=>{
+    host.querySelectorAll('.solution').forEach(s=>{
+      s.style.display = (s.style.display === 'none') ? 'block' : 'none';
+    });
+  });
+  ctrl.appendChild(showBtn);
+  host.appendChild(ctrl);
+  // typeset math
+  if(window.renderMathInElement) window.renderMathInElement(host, {delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}]});
+}
+
+/* ---------- wire up ---------- */
+let ALL_PROBLEMS = [];
+
+(async function init(){
+  ALL_PROBLEMS = await loadAllProblems();
+  if(!ALL_PROBLEMS.length){
+    $('#sheetArea').textContent = 'No problems loaded — check assets/index.json or the file list in FALLBACK_JSON_LIST.';
+    return;
+  }
+  buildSourceControls(ALL_PROBLEMS);
+
+  $('#buildBtn').addEventListener('click', ()=>{
+    const n = Math.max(1, Math.min(50, +$('#outCount').value||12));
+    const mix = $('#outMix').value;
+    const srcChecked = [...document.querySelectorAll('.srcchk:checked')].map(i=>i.value);
+    const pool = ALL_PROBLEMS.filter(p => srcChecked.includes(p.contest));
+    const chosen = pickProblems(pool, n, mix);
+    renderSheet(chosen, {title:`Random set (${n}) — ${mix}`});
+  });
+
+  $('#printBtn').addEventListener('click', ()=>window.print());
+})();
+</script>
+
 <script>
 const $ = (s)=>document.querySelector(s);
 const statusEl = $('#status');
