@@ -116,7 +116,7 @@ function choose(list,k){
 /* ---------- PDF loader for SMC 2024 ---------- */
 const UKMT_SMC_2024 = "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf";
 // Optional local fallback if CORS blocks (upload the PDF as assets/SMC-2024-Paper.pdf)
-const LOCAL_FALLBACK = "assets/SMC-2024-Paper.pdf";
+const LOCAL_FALLBACK = "/ProblemSolve/assets/SMC-2024-Paper.pdf";;
 
 async function extractSMC2024(url){
   const pdf = await pdfjsLib.getDocument(url).promise;
