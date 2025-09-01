@@ -69,7 +69,7 @@
   </div>
 
 <script>
-/* show JS errors in the status line */
+/* show JS errors in the status line so it's never silent */
 window.addEventListener('error', e => {
   const s = document.getElementById('status');
   if (s) s.textContent = 'JS error: ' + e.message;
@@ -95,8 +95,10 @@ function choose(list,k){ const a=list.slice(); for(let i=a.length-1;i>0;i--){con
 async function extractSMC2024(url){
   async function loadPdf(u){
     try {
+      // first attempt: direct URL
       return await pdfjsLib.getDocument({ url: u, disableRange: true, disableStream: true }).promise;
     } catch (e) {
+      // fallback: fetch bytes, then feed pdf.js
       const resp = await fetch(u, { cache: 'no-store' });
       if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${u}`);
       const buf = await resp.arrayBuffer();
@@ -118,13 +120,16 @@ async function extractSMC2024(url){
     flush(); lines.push('');
   }
 
-  let text = lines.join('\n').replace(/(\d)\s+(?=\d)/g,'$1');
+  let text = lines.join('\n').replace(/(\d)\s+(?=\d)/g,'$1'); // 4 5 -> 45
 
+  // Pull blocks that start with "N. " on a new line, up to the next "M. "
   const re = /^([1-9]|1\d|2[0-5])\.\s([\s\S]*?)(?=^\s*(?:[1-9]|1\d|2[0-5])\.\s|$)/gm;
   const blocks=[]; let m;
   while((m=re.exec(text))!==null){
     const n=parseInt(m[1],10);
     let body=m[2].replace(/[ \t]+/g,' ').trim();
+
+    // Options A–E over multiple lines/spaces
     const opt=/\(A\)\s*([\s\S]*?)\s*\(B\)\s*([\s\S]*?)\s*\(C\)\s*([\s\S]*?)\s*\(D\)\s*([\s\S]*?)\s*\(E\)\s*([\s\S]*?)$/;
     let statement=body;
     const om=opt.exec(body);
@@ -133,7 +138,10 @@ async function extractSMC2024(url){
       const [A,B,C,D,E]=om.slice(1).map(t=>t.replace(/\s+/g,' ').trim());
       statement=`${stem}\n(A) ${A}\n(B) ${B}\n(C) ${C}\n(D) ${D}\n(E) ${E}`;
     }
+
+    // keep only genuine MC questions (drop instruction blocks)
     if(!/\(A\)[\s\S]*\(B\)[\s\S]*\(C\)[\s\S]*\(D\)[\s\S]*\(E\)/.test(statement)) continue;
+
     blocks.push({num:n, statement});
   }
 
@@ -144,8 +152,8 @@ async function extractSMC2024(url){
 }
 
 /* -------- sources -------- */
-const LOCAL_ABS = "/ProblemSolve/assets/SMC-2024-Paper.pdf";
-const LOCAL_REL = "assets/SMC-2024-Paper.pdf";
+const LOCAL_ABS = "/ProblemSolve/assets/SMC-2024-Paper.pdf";   // your repo asset (works)
+const LOCAL_REL = "assets/SMC-2024-Paper.pdf";                 // if this file moves into a folder
 const UKMT_SMC_2024 = "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf";
 
 /* -------- loader (local first, then UKMT) -------- */
@@ -165,7 +173,7 @@ async function loadSMC2024(){
       statusEl.textContent = `Tried ${u.includes('http')?'UKMT':'local'}…`;
     }
   }
-  statusEl.textContent = "SMC 2024 load failed — check the PDF path/casing.";
+  statusEl.textContent = "SMC 2024 load failed — using a tiny seed so the page isn’t blank.";
   return [
     {id:"SMC-2024-Q1",source:"UKMT",contest:"SMC",year:2024,num:1,kind:"mc",
      rights:"© UKMT, used with permission.",difficulty:"E",
@@ -185,7 +193,8 @@ function renderList(problems){
     </div>
   `).join('');
   renderMathIn(list);
-  document.getElementById('titlebar').textContent = `Problem Set — SMC 2024 (${problems.length} problems)`;
+  document.getElementById('titlebar').textContent =
+    `Problem Set — SMC 2024 (${problems.length} problems)`;
 }
 
 function toPlainText(problems){
@@ -196,7 +205,7 @@ function pickSubset(all,count,mix){
   if(mix==='pureRandom') return choose(all,count).sort((a,b)=>a.num-b.num);
   const weights={balanced:{E:.4,M:.4,H:.2},easy:{E:.6,M:.3,H:.1},hard:{E:.15,M:.45,H:.4}}[mix]||{E:.4,M:.4,H:.2};
   const by={E:[],M:[],H:[]}; all.forEach(p=>by[p.difficulty||diffBucket(p.num)].push(p));
-  const want={E:Math.round(count*weights.E), M:Math.round(count*weights.M)}; want.H=count-want.E-want.M;
+  const want={E:Math.round(count*weights.E), M:Math.round(count*weights.M)}; want.H=count-want.E-want-M;
   let out=[].concat(choose(by.E,want.E), choose(by.M,want.M), choose(by.H,want.H));
   if(out.length<count) out=out.concat(choose(all.filter(p=>!out.includes(p)), count-out.length));
   return out.sort((a,b)=>a.num-b.num);
