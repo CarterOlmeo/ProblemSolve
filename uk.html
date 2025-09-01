@@ -220,12 +220,8 @@ async function loadFromJSON(u){
 async function loadSMC2024(){
   statusEl.textContent = "Loading SMC 2024…";
   // Try JSON first (if you create /assets/smc-2024.json), then local PDF, then UKMT
-  const tries = [
-    {kind:'json', url: JSON_LOCAL},
-    {kind:'pdf',  url: "/ProblemSolve/assets/SMC-2024-Paper.pdf"},
-    {kind:'pdf',  url: "assets/SMC-2024-Paper.pdf"},
-    {kind:'pdf',  url: "https://ukmt.org.uk/wp-content/uploads/2024/10/SMC-2024-Paper.pdf"},
-  ];
+  const tries = [{ kind: 'json', url: '/ProblemSolve/assets/smc-2024.json' }];
+;
 
   for (const t of tries){
     try{
